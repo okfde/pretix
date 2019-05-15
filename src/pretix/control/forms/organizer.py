@@ -1,3 +1,4 @@
+from django_scopes.forms import SafeModelChoiceField
 from urllib.parse import urlparse
 
 from django import forms
@@ -147,6 +148,9 @@ class TeamForm(forms.ModelForm):
                 'data-inverse-dependency': '#id_all_events'
             }),
         }
+        field_classes = {
+            'limit_events': SafeModelChoiceField
+        }
 
     def clean(self):
         data = super().clean()
@@ -174,6 +178,9 @@ class DeviceForm(forms.ModelForm):
             'limit_events': forms.CheckboxSelectMultiple(attrs={
                 'data-inverse-dependency': '#id_all_events'
             }),
+        }
+        field_classes = {
+            'limit_events': SafeModelChoiceField
         }
 
 
@@ -303,4 +310,7 @@ class WebHookForm(forms.ModelForm):
             'limit_events': forms.CheckboxSelectMultiple(attrs={
                 'data-inverse-dependency': '#id_all_events'
             }),
+        }
+        field_classes = {
+            'limit_events': SafeModelChoiceField
         }
