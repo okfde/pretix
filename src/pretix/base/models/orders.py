@@ -15,7 +15,7 @@ from django.db import models, transaction
 from django.db.models import (
     Case, Exists, F, Max, OuterRef, Q, Subquery, Sum, Value, When,
 )
-from django.db.models.functions import Coalesce
+from django.db.models.functions import Coalesce, Greatest
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.urls import reverse
@@ -26,6 +26,7 @@ from django.utils.functional import cached_property
 from django.utils.timezone import make_aware, now
 from django.utils.translation import pgettext_lazy, ugettext_lazy as _
 from django_countries.fields import Country, CountryField
+from django_scopes import ScopedManager, scopes_disabled
 from i18nfield.strings import LazyI18nString
 from jsonfallback.fields import FallbackJSONField
 
@@ -186,6 +187,8 @@ class Order(LockModel, LoggedModel):
         verbose_name=_('E-mail address verified')
     )
 
+    objects = ScopedManager(organizer='event__organizer')
+
     class Meta:
         verbose_name = _("Order")
         verbose_name_plural = _("Orders")
@@ -195,6 +198,8 @@ class Order(LockModel, LoggedModel):
         return self.full_code
 
     def gracefully_delete(self, user=None, auth=None):
+        from . import Voucher
+
         if not self.testmode:
             raise TypeError("Only test mode orders can be deleted.")
         self.event.log_action(
@@ -203,6 +208,12 @@ class Order(LockModel, LoggedModel):
                 'code': self.code,
             }
         )
+
+        if self.status != Order.STATUS_CANCELED:
+            for position in self.positions.all():
+                if position.voucher:
+                    Voucher.objects.filter(pk=position.voucher.pk).update(redeemed=Greatest(0, F('redeemed') - 1))
+
         OrderPosition.all.filter(order=self, addon_to__isnull=False).delete()
         OrderPosition.all.filter(order=self).delete()
         OrderFee.all.filter(order=self).delete()
@@ -223,6 +234,7 @@ class Order(LockModel, LoggedModel):
         return self.all_fees(manager='objects')
 
     @cached_property
+    @scopes_disabled()
     def count_positions(self):
         if hasattr(self, 'pcnt'):
             return self.pcnt or 0
@@ -246,6 +258,7 @@ class Order(LockModel, LoggedModel):
             return None
 
     @property
+    @scopes_disabled()
     def payment_refund_sum(self):
         payment_sum = self.payments.filter(
             state__in=(OrderPayment.PAYMENT_STATE_CONFIRMED, OrderPayment.PAYMENT_STATE_REFUNDED)
@@ -257,6 +270,7 @@ class Order(LockModel, LoggedModel):
         return payment_sum - refund_sum
 
     @property
+    @scopes_disabled()
     def pending_sum(self):
         total = self.total
         if self.status == Order.STATUS_CANCELED:
@@ -431,6 +445,7 @@ class Order(LockModel, LoggedModel):
         return round_decimal(fee, self.event.currency)
 
     @property
+    @scopes_disabled()
     def user_cancel_allowed(self) -> bool:
         """
         Returns whether or not this order can be canceled by the user.
@@ -814,6 +829,8 @@ class QuestionAnswer(models.Model):
         max_length=255
     )
 
+    objects = ScopedManager(organizer='question__event__organizer')
+
     @property
     def backend_file_url(self):
         if self.file:
@@ -1136,6 +1153,8 @@ class OrderPayment(models.Model):
         null=True, blank=True, related_name='payments', on_delete=models.SET_NULL
     )
     migrated = models.BooleanField(default=False)
+
+    objects = ScopedManager(organizer='order__event__organizer')
 
     class Meta:
         ordering = ('local_id',)
@@ -1493,6 +1512,8 @@ class OrderRefund(models.Model):
         null=True, blank=True
     )
 
+    objects = ScopedManager(organizer='order__event__organizer')
+
     class Meta:
         ordering = ('local_id',)
 
@@ -1554,7 +1575,7 @@ class OrderRefund(models.Model):
         super().save(*args, **kwargs)
 
 
-class ActivePositionManager(models.Manager):
+class ActivePositionManager(ScopedManager(organizer='order__event__organizer').__class__):
     def get_queryset(self):
         return super().get_queryset().filter(canceled=False)
 
@@ -1631,7 +1652,7 @@ class OrderFee(models.Model):
     )
     canceled = models.BooleanField(default=False)
 
-    all = models.Manager()
+    all = ScopedManager(organizer='order__event__organizer')
     objects = ActivePositionManager()
 
     @property
@@ -1736,7 +1757,7 @@ class OrderPosition(AbstractPosition):
     )
     canceled = models.BooleanField(default=False)
 
-    all = models.Manager()
+    all = ScopedManager(organizer='order__event__organizer')
     objects = ActivePositionManager()
 
     class Meta:
@@ -1943,6 +1964,8 @@ class CartPosition(AbstractPosition):
     )
     is_bundled = models.BooleanField(default=False)
 
+    objects = ScopedManager(organizer='event__organizer')
+
     class Meta:
         verbose_name = _("Cart position")
         verbose_name_plural = _("Cart positions")
@@ -1991,6 +2014,8 @@ class InvoiceAddress(models.Model):
         verbose_name=_('Beneficiary'),
         blank=True
     )
+
+    objects = ScopedManager(organizer='order__event__organizer')
 
     def save(self, **kwargs):
         if self.order:
