@@ -1,0 +1,31 @@
+{% extends "pretixpresale/event/base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% block title %}{% trans "Anmeldelink noch einmal verschicken" %}{% endblock %}
+{% block content %}
+    <h2>
+        {% trans "Anmeldelink noch einmal verschicken" %}
+    </h2>
+    <div class="row">
+        <div class="panel-body">
+          {% blocktrans trimmed %}
+          Wenn du den Link von deiner Anmeldung verloren hast,
+          kannst du hier den Link noch einmal an deine Email-Adresse schicken lassen.
+          Du hast auch deine Email-Adresse vergessen? Dann schreib uns eine Mail.
+        {% endblocktrans %}
+    </div>
+    </div>
+    <div class="row">
+    <form class="form" method="post">
+        {% csrf_token %}
+        <div class="col-md-8 col-sm-6 col-xs-12">
+                {% bootstrap_form form layout="inline" %}
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <button class="btn btn-primary btn-block" type="submit">
+                {% trans "Anmeldelink erneut verschicken" %}
+            </button>
+        </div>
+    </form>
+    </div>
+{% endblock %}

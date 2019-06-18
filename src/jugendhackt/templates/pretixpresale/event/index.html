@@ -6,7 +6,7 @@
 {% load thumb %}
 {% load eventsignal %}
 {% load rich_text %}
-{% block title %}{% trans "Presale" %}{% endblock %}
+{% block title %}{% trans "Anmeldung" %}{% endblock %}
 
 {% block custom_header %}
     {{ block.super }}
@@ -53,9 +53,10 @@
                     {% include "pretixpresale/event/fragment_cart.html" with cart=cart event=request.event editable=True %}
                     <em id="cart-deadline" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
                         {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
-                            {% blocktrans trimmed with minutes=cart.minutes_left %}
-                                The items in your cart are reserved for you for {{ minutes }} minutes.
-                            {% endblocktrans %}
+                      {% blocktrans trimmed with minutes=cart.minutes_left %}
+                      Diese Session zur Anmeldung ist noch {{ minutes }} aktiv.
+                      Dannach musst du von vorne beginnen.
+                      {% endblocktrans %}
                         {% else %}
                             {% trans "The items in your cart are no longer reserved for you." %}
                         {% endif %}
