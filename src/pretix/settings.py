@@ -394,6 +394,7 @@ ALL_LANGUAGES = [
     ('en', _('English')),
     ('de', _('German')),
     ('de-informal', _('German (informal)')),
+    ('de-jugendhackt', _('German (Jugend Hackt)')),
     ('nl', _('Dutch')),
     ('nl-informal', _('Dutch (informal)')),
     ('da', _('Danish')),
