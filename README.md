@@ -47,13 +47,23 @@ and here https://hackmd.okfn.de/5G3L7O5HSQ2NCmV7yjQ38A#Was-passiert-wenn-sich-du
 Afterwards run  `$ make localecompile`, commit the changes and push to origin master. On the server pull from origin and rebuild the docker container.
 
 
-## Docker compose
+## Production setup
 
-`docker-compose.yml` contains our Docker production setup.
+`docker-compose.yml` contains our Docker production setup and uses `db/Dockerfile` for the database setup and describes the Redis setup in addition to pretix itself.
 
 It'll read config values from the environment. See `env.sample` for variables needed.
 On the server (or wherever) `$ cp env.sample .env` and adjust your values.
-Then you can `$ docker-compose up` that stuff.
+
+It will create volumes for database and logs, make sure that the correct owner is set, so that the pretix container user can access them.
+
+Pretix also needs another config file that you have to manually add to `./volumes/pretix/` (which pretix will think of as /etc/pretix/) that is called `pretix.cfg`.
+You can find the base [`pretix.cfg` in the developer documentation](https://docs.pretix.eu/en/latest/admin/installation/docker_smallscale.html#config-file).
+
+The important things to update in that file are the `url` and the database usernames and passwords according to the .env values.
+
+Once that is done, `$ docker-compose up` that stuff.
+
+
 
 ## Contributing
 
