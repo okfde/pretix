@@ -2,7 +2,8 @@ version: '2'
 services:
 
   db:
-    image: postgres:10.5
+    build: db
+    read_only: true
     restart: unless-stopped
     volumes:
       - ./volumes/db/var/lib/postgresql/data:/var/lib/postgresql/data
