@@ -11,7 +11,7 @@ from django.utils.formats import get_format
 from django.utils.timezone import make_aware
 from django.utils.translation import pgettext, ugettext as _
 
-from pretix.base.models import Order, Organizer, User, Voucher
+from pretix.base.models import Order, Organizer, SubEvent, User, Voucher
 from pretix.control.forms.event import EventWizardCopyForm
 from pretix.control.permissions import event_permission_required
 from pretix.helpers.daterange import daterange
@@ -158,23 +158,27 @@ def nav_context_list(request):
     if query:
         qs_orga = qs_orga.filter(Q(name__icontains=query) | Q(slug__icontains=query))
 
-    qs_orders = Order.objects.filter(code__icontains=query).select_related('event', 'event__organizer')
-    if not request.user.has_active_staff_session(request.session.session_key):
-        qs_orders = qs_orders.filter(
-            Q(event__organizer_id__in=request.user.teams.filter(
-                all_events=True, can_view_orders=True).values_list('organizer', flat=True))
-            | Q(event_id__in=request.user.teams.filter(
-                can_view_orders=True).values_list('limit_events__id', flat=True))
-        )
+    if query:
+        qs_orders = Order.objects.filter(code__icontains=query).select_related('event', 'event__organizer')
+        if not request.user.has_active_staff_session(request.session.session_key):
+            qs_orders = qs_orders.filter(
+                Q(event__organizer_id__in=request.user.teams.filter(
+                    all_events=True, can_view_orders=True).values_list('organizer', flat=True))
+                | Q(event_id__in=request.user.teams.filter(
+                    can_view_orders=True).values_list('limit_events__id', flat=True))
+            )
 
-    qs_vouchers = Voucher.objects.filter(code__icontains=query).select_related('event', 'event__organizer')
-    if not request.user.has_active_staff_session(request.session.session_key):
-        qs_vouchers = qs_vouchers.filter(
-            Q(event__organizer_id__in=request.user.teams.filter(
-                all_events=True, can_view_vouchers=True).values_list('organizer', flat=True))
-            | Q(event_id__in=request.user.teams.filter(
-                can_view_vouchers=True).values_list('limit_events__id', flat=True))
-        )
+        qs_vouchers = Voucher.objects.filter(code__icontains=query).select_related('event', 'event__organizer')
+        if not request.user.has_active_staff_session(request.session.session_key):
+            qs_vouchers = qs_vouchers.filter(
+                Q(event__organizer_id__in=request.user.teams.filter(
+                    all_events=True, can_view_vouchers=True).values_list('organizer', flat=True))
+                | Q(event_id__in=request.user.teams.filter(
+                    can_view_vouchers=True).values_list('limit_events__id', flat=True))
+            )
+    else:
+        qs_vouchers = Voucher.objects.none()
+        qs_orders = Order.objects.none()
 
     show_user = not query or (
         query and request.user.email and query.lower() in request.user.email.lower()
@@ -210,6 +214,46 @@ def nav_context_list(request):
 
     doc = {
         'results': results,
+        'pagination': {
+            "more": total >= (offset + pagesize)
+        }
+    }
+    return JsonResponse(doc)
+
+
+@event_permission_required("can_view_orders")
+def seat_select2(request, **kwargs):
+    query = request.GET.get('query', '')
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    if request.event.has_subevents:
+        try:
+            qs = request.event.subevents.get(active=True, pk=request.GET.get('subevent', 0)).free_seats
+        except SubEvent.DoesNotExist:
+            qs = request.event.seats.none()
+    else:
+        qs = request.event.free_seats
+    qs = qs.filter(
+        Q(name__icontains=query) | Q(seat_guid__icontains=query)
+    ).order_by('name').select_related('product', 'subevent')
+
+    total = qs.count()
+    pagesize = 20
+    offset = (page - 1) * pagesize
+    doc = {
+        'results': [
+            {
+                'id': e.pk,
+                'text': '{} ({})'.format(e.name, str(e.product)),
+                'product': e.product_id,
+                'event': str(e.subevent) if e.subevent else ''
+
+            }
+            for e in qs[offset:offset + pagesize]
+        ],
         'pagination': {
             "more": total >= (offset + pagesize)
         }

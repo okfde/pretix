@@ -27,9 +27,13 @@ presale_end                           datetime                   The date at whi
 location                              multi-lingual string       The event location (or ``null``)
 has_subevents                         boolean                    ``true`` if the event series feature is active for this
                                                                  event. Cannot change after event is created.
-meta_data                             dict                       Values set for organizer-specific meta data parameters.
+meta_data                             object                     Values set for organizer-specific meta data parameters.
 plugins                               list                       A list of package names of the enabled plugins for this
                                                                  event.
+seating_plan                          integer                    If reserved seating is in use, the ID of a seating
+                                                                 plan. Otherwise ``null``.
+seat_category_mapping                 object                     An object mapping categories of the seating plan
+                                                                 (strings) to items in the event (integers or ``null``).
 ===================================== ========================== =======================================================
 
 
@@ -53,6 +57,10 @@ plugins                               list                       A list of packa
 .. versionchanged:: 2.8
 
     When cloning events, the ``testmode`` attribute will now be cloned, too.
+
+.. versionchanged:: 3.0
+
+   The attributes ``seating_plan`` and ``seat_category_mapping`` have been added.
 
 Endpoints
 ---------
@@ -99,6 +107,8 @@ Endpoints
             "location": null,
             "has_subevents": false,
             "meta_data": {},
+            "seating_plan": null,
+            "seat_category_mapping": {},
             "plugins": [
               "pretix.plugins.banktransfer"
               "pretix.plugins.stripe"
@@ -160,6 +170,8 @@ Endpoints
         "presale_end": null,
         "location": null,
         "has_subevents": false,
+        "seating_plan": null,
+        "seat_category_mapping": {},
         "meta_data": {},
         "plugins": [
           "pretix.plugins.banktransfer"
@@ -191,7 +203,7 @@ Endpoints
       POST /api/v1/organizers/bigevents/events/ HTTP/1.1
       Host: pretix.eu
       Accept: application/json, text/javascript
-      Content: application/json
+      Content-Type: application/json
 
       {
         "name": {"en": "Sample Conference"},
@@ -205,6 +217,8 @@ Endpoints
         "is_public": false,
         "presale_start": null,
         "presale_end": null,
+        "seating_plan": null,
+        "seat_category_mapping": {},
         "location": null,
         "has_subevents": false,
         "meta_data": {},
@@ -235,6 +249,8 @@ Endpoints
         "presale_start": null,
         "presale_end": null,
         "location": null,
+        "seating_plan": null,
+        "seat_category_mapping": {},
         "has_subevents": false,
         "meta_data": {},
         "plugins": [
@@ -269,7 +285,7 @@ Endpoints
       POST /api/v1/organizers/bigevents/events/sampleconf/clone/ HTTP/1.1
       Host: pretix.eu
       Accept: application/json, text/javascript
-      Content: application/json
+      Content-Type: application/json
 
       {
         "name": {"en": "Sample Conference"},
@@ -284,6 +300,8 @@ Endpoints
         "presale_start": null,
         "presale_end": null,
         "location": null,
+        "seating_plan": null,
+        "seat_category_mapping": {},
         "has_subevents": false,
         "meta_data": {},
         "plugins": [
@@ -314,6 +332,8 @@ Endpoints
         "presale_end": null,
         "location": null,
         "has_subevents": false,
+        "seating_plan": null,
+        "seat_category_mapping": {},
         "meta_data": {},
         "plugins": [
           "pretix.plugins.stripe",
@@ -342,7 +362,7 @@ Endpoints
       PATCH /api/v1/organizers/bigevents/events/sampleconf/ HTTP/1.1
       Host: pretix.eu
       Accept: application/json, text/javascript
-      Content: application/json
+      Content-Type: application/json
 
       {
         "plugins": [
@@ -375,6 +395,8 @@ Endpoints
         "presale_end": null,
         "location": null,
         "has_subevents": false,
+        "seating_plan": null,
+        "seat_category_mapping": {},
         "meta_data": {},
         "plugins": [
           "pretix.plugins.banktransfer",

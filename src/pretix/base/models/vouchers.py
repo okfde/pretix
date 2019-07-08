@@ -10,6 +10,8 @@ from django.utils.timezone import now
 from django.utils.translation import pgettext_lazy, ugettext_lazy as _
 from django_scopes import ScopedManager, scopes_disabled
 
+from pretix.base.models import SeatCategoryMapping
+
 from ..decimal import round_decimal
 from .base import LoggedModel
 from .event import Event, SubEvent
@@ -173,6 +175,10 @@ class Voucher(LoggedModel):
         blank=True, verbose_name=_("Comment"),
         help_text=_("The text entered in this field will not be visible to the user and is available for your "
                     "convenience.")
+    )
+    show_hidden_items = models.BooleanField(
+        verbose_name=_("Shows hidden products that match this voucher"),
+        default=True
     )
 
     objects = ScopedManager(organizer='event__organizer')
@@ -395,3 +401,11 @@ class Voucher(LoggedModel):
         """
 
         return Order.objects.filter(all_positions__voucher__in=[self]).distinct()
+
+    def seating_available(self):
+        kwargs = {}
+        if self.subevent:
+            kwargs['subevent'] = self.subevent
+        if self.quota_id:
+            return SeatCategoryMapping.objects.filter(product__quotas__pk=self.quota_id, **kwargs).exists()
+        return self.item.seat_category_mappings.filter(**kwargs).exists()

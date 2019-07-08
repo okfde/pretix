@@ -209,7 +209,7 @@ Endpoints
       POST /api/v1/organizers/bigevents/events/sampleconf/checkinlists/ HTTP/1.1
       Host: pretix.eu
       Accept: application/json, text/javascript
-      Content: application/json
+      Content-Type: application/json
 
       {
         "name": "VIP entry",
@@ -396,6 +396,7 @@ Order position endpoints
             "addon_to": null,
             "subevent": null,
             "pseudonymization_id": "MQLJvANO3B",
+            "seat": null,
             "checkins": [
               {
                 "list": 1,
@@ -505,6 +506,7 @@ Order position endpoints
         "addon_to": null,
         "subevent": null,
         "pseudonymization_id": "MQLJvANO3B",
+        "seat": null,
         "checkins": [
           {
             "list": 1,

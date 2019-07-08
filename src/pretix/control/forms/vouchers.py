@@ -32,7 +32,7 @@ class VoucherForm(I18nModelForm):
         localized_fields = '__all__'
         fields = [
             'code', 'valid_until', 'block_quota', 'allow_ignore_quota', 'value', 'tag',
-            'comment', 'max_usages', 'price_mode', 'subevent'
+            'comment', 'max_usages', 'price_mode', 'subevent', 'show_hidden_items'
         ]
         field_classes = {
             'valid_until': SplitDateTimeField,
@@ -148,14 +148,16 @@ class VoucherForm(I18nModelForm):
             data, self.instance.event,
             self.instance.quota, self.instance.item, self.instance.variation
         )
-        if self.instance.quota:
-            if all(i.hide_without_voucher for i in self.instance.quota.items.all()):
-                raise ValidationError({
-                    'itemvar': [
-                        _('The quota you selected only contains hidden products. Hidden products can currently only be '
-                          'shown by using vouchers that directly apply to the product, not via a quota.')
-                    ]
-                })
+        if not self.instance.show_hidden_items and (
+            (self.instance.quota and all(i.hide_without_voucher for i in self.instance.quota.items.all()))
+            or (self.instance.item and self.instance.item.hide_without_voucher)
+        ):
+            raise ValidationError({
+                'show_hidden_items': [
+                    _('The voucher only matches hidden products but you have not selected that it should show '
+                      'them.')
+                ]
+            })
         Voucher.clean_subevent(
             data, self.instance.event
         )
@@ -197,7 +199,7 @@ class VoucherBulkForm(VoucherForm):
         localized_fields = '__all__'
         fields = [
             'valid_until', 'block_quota', 'allow_ignore_quota', 'value', 'tag', 'comment',
-            'max_usages', 'price_mode', 'subevent'
+            'max_usages', 'price_mode', 'subevent', 'show_hidden_items'
         ]
         field_classes = {
             'valid_until': SplitDateTimeField,
