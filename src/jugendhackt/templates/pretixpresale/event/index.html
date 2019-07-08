@@ -39,9 +39,8 @@
                     <span>
                         <strong id="cart-deadline-short" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
                             {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
-                                {{ cart.minutes_left|stringformat:"02d" }}:{{ cart.seconds_left|stringformat:"02d" }}
                             {% else %}
-                                {% trans "Cart expired" %}
+                                {% trans "Anmeldung zurück gesetzt" %}
                             {% endif %}
                         </strong>
                         <i class="fa fa-angle-down collapse-indicator"></i>
@@ -51,16 +50,16 @@
             <div>
                 <div class="panel-body">
                     {% include "pretixpresale/event/fragment_cart.html" with cart=cart event=request.event editable=True %}
-                    <em id="cart-deadline" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
+                      <em>
                         {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
-                      {% blocktrans trimmed with minutes=cart.minutes_left %}
-                      Diese Session zur Anmeldung ist noch {{ minutes }} aktiv.
-                      Dannach musst du von vorne beginnen.
-                      {% endblocktrans %}
+                        {% blocktrans trimmed with minutes=cart.minutes_left %}
+                        Bitte schließe deine Anmeldung innerhalb von {{ minutes}} Minuten ab.
+                        Sonst setzen wir sie zurück.
+                        {% endblocktrans %}
                         {% else %}
-                            {% trans "The items in your cart are no longer reserved for you." %}
+                        {% trans "Deine Anmeldung wurde zurück gesetzt. Bitte fange noch einmal am Anfang an." %}
                         {% endif %}
-                    </em>
+                      </em>
                     <div class="row checkout-button-row">
                         <div class="col-md-4 col-xs-12 hidden-xs">
                             <form method="post" data-asynctask action="{% eventurl request.event "presale:event.cart.clear" cart_namespace=cart_namespace %}">
@@ -214,8 +213,8 @@
 
         {% if ev.presale_is_running or event.settings.show_items_outside_presale_period %}
             <form method="post" data-asynctask
-                    data-asynctask-headline="{% trans "We're now trying to reserve this for you!" %}"
-                    data-asynctask-text="{% blocktrans with time=event.settings.reservation_time %}Once the items are in your cart, you will have {{ time }} minutes to complete your purchase.{% endblocktrans %}"
+                    data-asynctask-headline="{% trans "Wir starten deine Anmeldung!" %}"
+                    data-asynctask-text="{% blocktrans with time=event.settings.reservation_time %}Sobald du mit der Anmeldung beginnst, hast du {{ time }} Minuten um sie abzuschließen. Danach setzen wir sie zurück und du musst von vorne beginnen.{% endblocktrans %}"
                     action="{% eventurl request.event "presale:event.cart.add" cart_namespace=cart_namespace %}?next={{ cart_redirect|urlencode }}">
                 {% csrf_token %}
               <input type="hidden" name="subevent" value="{{ subevent.id|default_if_none:"" }}" />

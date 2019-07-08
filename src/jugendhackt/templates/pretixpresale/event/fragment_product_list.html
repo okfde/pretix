@@ -49,22 +49,7 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <div class="col-md-2 col-xs-6 price">
-                            {% if item.min_price != item.max_price or item.free_price %}
-                                {{ item.min_price|money:event.currency  }} – {{ item.max_price|money:event.currency  }}
-                            {% elif not item.min_price and not item.max_price %}
-                                {% trans "FREE" context "price" %}
-                            {% else %}
-                                {{ item.min_price|money:event.currency }}
-                            {% endif %}
-                        </div>
-                        <div class="col-md-2 col-xs-6 availability-box">
-                            {% if not event.settings.show_variations_expanded %}
-                                <a href="#" data-toggle="variations" class="js-only">
-                                    {% trans "Show variants" %}
-                                </a>
-                            {% endif %}
-                        </div>
+
                         <div class="clearfix"></div>
                     </summary>
                     <div class="variations {% if not event.settings.show_variations_expanded %}variations-collapsed{% endif %}">
@@ -85,54 +70,7 @@
                                         {% include "pretixpresale/event/fragment_quota_left.html" with avail=var.cached_availability %}
                                     {% endif %}
                                 </div>
-                                <div class="col-md-2 col-xs-6 price">
-                                    {% if var.original_price %}
-                                        {% if event.settings.display_net_prices %}
-                                            <del>{{ var.original_price.net|money:event.currency }}</del>
-                                        {% else %}
-                                            <del>{{ var.original_price.gross|money:event.currency }}</del>
-                                        {% endif %}
-                                        <ins>
-                                    {% endif %}
-                                    {% if item.free_price %}
-                                        <div class="input-group input-group-price">
-                                            <span class="input-group-addon">{{ event.currency }}</span>
-                                            <input type="number" class="form-control input-item-price"
-                                                   {% if not ev.presale_is_running %}disabled{% endif %}
-                                                   placeholder="0"
-                                                   min="{% if event.settings.display_net_prices %}{{ var.display_price.net|money_numberfield:event.currency }}{% else %}{{ var.display_price.gross|money_numberfield:event.currency }}{% endif %}"
-                                                   name="price_{{ item.id }}_{{ var.id }}"
-                                                   title="{% blocktrans trimmed with item=var.value %}Modify price for {{ item }}{% endblocktrans %}"
-                                                   step="any"
-                                                   value="{% if event.settings.display_net_prices %}{{ var.display_price.net|money_numberfield:event.currency }}{% else %}{{ var.display_price.gross|money_numberfield:event.currency }}{% endif %}"
-                                            >
-                                        </div>
-                                    {% elif not var.display_price.gross %}
-                                        {% trans "FREE" context "price" %}
-                                        {% elif event.settings.display_net_prices %}
-                                        {{ var.display_price.net|money:event.currency }}
-                                    {% else %}
-                                        {{ var.display_price.gross|money:event.currency }}
-                                    {% endif %}
-                                    {% if item.original_price or var.original_price %}
-                                        </ins>
-                                    {% endif %}
-                                    {% if item.includes_mixed_tax_rate %}
-                                        {% if event.settings.display_net_prices %}
-                                            <small>{% trans "plus taxes" %}</small>
-                                        {% else %}
-                                            <small>{% trans "incl. taxes" %}</small>
-                                        {% endif %}
-                                    {% elif var.display_price.rate and var.display_price.gross and event.settings.display_net_prices %}
-                                        <small>{% blocktrans trimmed with rate=var.display_price.rate|floatformat:-2 name=var.display_price.name %}
-                                            <strong>plus</strong> {{ rate }}% {{ name }}
-                                        {% endblocktrans %}</small>
-                                    {% elif var.display_price.rate and var.display_price.gross %}
-                                        <small>{% blocktrans trimmed with rate=var.display_price.rate|floatformat:-2 name=var.display_price.name %}
-                                            incl. {{ rate }}% {{ name }}
-                                        {% endblocktrans %}</small>
-                                    {% endif %}
-                                </div>
+
                                 {% if item.require_voucher %}
                                     <div class="col-md-2 col-xs-6 availability-box unavailable">
                                         <small>
@@ -201,52 +139,7 @@
                             {% endif %}
                         </div>
                     </div>
-                    <div class="col-md-2 col-xs-6 price">
-                        {% if item.original_price %}
-                            {% if event.settings.display_net_prices %}
-                                <del>{{ item.original_price.net|money:event.currency }}</del>
-                            {% else %}
-                                <del>{{ item.original_price.gross|money:event.currency }}</del>
-                            {% endif %}
-                            <ins>
-                        {% endif %}
-                        {% if item.free_price %}
-                            <div class="input-group input-group-price">
-                                <span class="input-group-addon">{{ event.currency }}</span>
-                                <input type="number" class="form-control input-item-price" placeholder="0"
-                                       {% if not ev.presale_is_running %}disabled{% endif %}
-                                       min="{% if event.settings.display_net_prices %}{{ item.display_price.net|money_numberfield:event.currency }}{% else %}{{ item.display_price.gross|money_numberfield:event.currency }}{% endif %}"
-                                       name="price_{{ item.id }}"
-                                       title="{% blocktrans trimmed with item=item.name %}Modify price for {{ item }}{% endblocktrans %}"
-                                       value="{% if event.settings.display_net_prices %}{{ item.display_price.net|money_numberfield:event.currency }}{% else %}{{ item.display_price.gross|money_numberfield:event.currency }}{% endif %}"
-                                       step="any">
-                            </div>
-                        {% elif not item.display_price.gross %}
-                            {% trans "FREE" context "price" %}
-                            {% elif event.settings.display_net_prices %}
-                            {{ item.display_price.net|money:event.currency }}
-                        {% else %}
-                            {{ item.display_price.gross|money:event.currency }}
-                        {% endif %}
-                        {% if item.original_price %}
-                            </ins>
-                        {% endif %}
-                        {% if item.includes_mixed_tax_rate %}
-                            {% if event.settings.display_net_prices %}
-                                <small>{% trans "plus taxes" %}</small>
-                            {% else %}
-                                <small>{% trans "incl. taxes" %}</small>
-                            {% endif %}
-                        {% elif item.display_price.rate and item.display_price.gross and event.settings.display_net_prices %}
-                            <small>{% blocktrans trimmed with rate=item.display_price.rate|floatformat:-2 name=item.display_price.name %}
-                                <strong>plus</strong> {{ rate }}% {{ name }}
-                            {% endblocktrans %}</small>
-                        {% elif item.display_price.rate and item.display_price.gross %}
-                            <small>{% blocktrans trimmed with rate=item.display_price.rate|floatformat:-2 name=item.display_price.name %}
-                                incl. {{ rate }}% {{ name }}
-                            {% endblocktrans %}</small>
-                        {% endif %}
-                    </div>
+
                     {% if item.require_voucher %}
                         <div class="col-md-2 col-xs-6 availability-box unavailable">
                             <small>

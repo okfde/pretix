@@ -5,7 +5,7 @@
 {% blocktrans asvar s_taxes %}taxes{% endblocktrans %}
 {% for line in cart.positions %}
     <div class="row cart-row {% if download and line.item.admission|default:event.settings.ticket_download_nonadm %}has-downloads{% endif %}">
-        <div class="product">
+        <div class="">
             {% if line.addon_to %}
                 <span class="addon-signifier">+</span>
             {% endif %}
@@ -24,11 +24,10 @@
                 {% endif %}
             {% endif %}
 
-
             {% if line.has_questions %}
                 <dl>
                     {% if line.item.admission and event.settings.attendee_names_asked %}
-                        <dt>{% trans "Attendee name" %}</dt>
+                        <dt><strong>{% trans "Attendee name" %}</strong></dt>
                         <dd>{% if line.attendee_name %}{{ line.attendee_name }}{% else %}<em>{% trans "not answered" %}</em>{% endif %}</dd>
                     {% endif %}
                     {% if line.item.admission and event.settings.attendee_emails_asked %}
@@ -36,7 +35,7 @@
                         <dd>{% if line.attendee_email %}{{ line.attendee_email }}{% else %}<em>{% trans "not answered" %}</em>{% endif %}</dd>
                     {% endif %}
                     {% for q in line.questions %}
-                        <dt>{{ q.question }}</dt>
+                        <dt><strong>{{ q.question }}</strong></dt>
                         <dd>
                             {% if q.answer %}
                                 {% if q.answer.file %}
@@ -75,29 +74,9 @@
                 {% endfor %}
             {% endif %}
             </div>
-        {% elif line.addon_to %}
-            <div class="count">&nbsp;</div>
-            <div class="singleprice price">
-                {% if event.settings.display_net_prices %}
-                    {{ line.net_price|money:event.currency }}
-                {% else %}
-                    {{ line.price|money:event.currency }}
-                {% endif %}
-            </div>
         {% else %}
             <div class="count">
-                {% if editable %}
-                <form action="{% eventurl event "presale:event.cart.remove" cart_namespace=cart_namespace|default_if_none:"" %}"
-                        data-asynctask-headline="{% trans "Okay, we're removing that…" %}"
-                        method="post" data-asynctask>
-                    {% csrf_token %}
-                    <input type="hidden" name="id" value="{{ line.id }}" />
-                    <button class="btn btn-mini btn-link" title="{% trans "Remove one" %}">
-                        <i class="fa fa-minus"></i>
-                    </button>
-                </form>
-                {% endif %}
-                {{ line.count }}
+
                 {% if editable %}
                 <form action="{% eventurl event "presale:event.cart.add" cart_namespace=cart_namespace|default_if_none:"" %}"
                         data-asynctask-headline="{% trans "We're trying to reserve another one for you!" %}"
@@ -116,9 +95,7 @@
                         <input type="hidden" name="price_{{ line.item.id }}"
                                 value="{% if event.settings.display_net_prices %}{{ line.net_price }}{% else %}{{ line.price }}{% endif %}" />
                     {% endif %}
-                    <button class="btn btn-mini btn-link" title="{% trans "Add one more" %}">
-                        <i class="fa fa-plus"></i>
-                    </button>
+
                 </form>
                 {% endif %}
             </div>

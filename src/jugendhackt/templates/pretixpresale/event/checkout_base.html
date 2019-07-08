@@ -12,9 +12,9 @@
                 <span>
                     <strong id="cart-deadline-short" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
                         {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
-                            {{ cart.minutes_left|stringformat:"02d" }}:{{ cart.seconds_left|stringformat:"02d" }}
+
                         {% else %}
-                            {% trans "Cart expired" %}
+                            {% trans "Anmeldung zurück gesetzt" %}
                         {% endif %}
                     </strong>
                 </span>

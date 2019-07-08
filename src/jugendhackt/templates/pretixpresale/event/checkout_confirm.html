@@ -8,7 +8,7 @@
     {% include "pretixpresale/event/fragment_checkoutflow.html" %}
     <h3>{% trans "Bitte überprüfe deine Angaben und bestätige deine Anmeldung." %}</h3>
     <form method="post" data-asynctask
-            data-asynctask-headline="{% trans "Please hang tight, we're finalizing your order!" %}">
+            data-asynctask-headline="{% trans "Warte kurz, wir speichern deine Anmeldung!" %}">
         {% csrf_token %}
         <div class="panel panel-primary cart">
             <div class="panel-heading">
@@ -23,7 +23,7 @@
                     {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
                         {{ cart.minutes_left|stringformat:"02d" }}:{{ cart.seconds_left|stringformat:"02d" }}
                     {% else %}
-                        {% trans "Cart expired" %}
+                        {% trans "Deine Anmeldung wurde zurück gesetzt. Bitte fange noch einmal am Anfang an." %}
                     {% endif %}
                 </strong>
                 <h3 class="panel-title">
@@ -33,17 +33,17 @@
             <div class="panel-body">
                 {% include "pretixpresale/event/fragment_cart.html" with cart=cart event=request.event editable=False %}
                 <div class="cart-row row">
-                    <div class="col-md-6 col-xs-12">
-                        <em id="cart-deadline" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
-                            {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
-                                {% blocktrans trimmed with minutes=cart.minutes_left %}
-                                    Diese Session zur Anmeldung ist noch {{ minutes }} aktiv.
-                                    Dannach musst du von vorne beginnen.
-                                {% endblocktrans %}
-                            {% else %}
-                                {% trans "The items in your cart are no longer reserved for you." %}
-                            {% endif %}
-                        </em>
+                  <div class="col-md-6 col-xs-12">
+                    <em>
+                      {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
+                      {% blocktrans trimmed with minutes=cart.minutes_left %}
+                      Bitte schließe deine Anmeldung innerhalb von {{ minutes}} Minuten ab.
+                      Sonst setzen wir sie zurück.
+                      {% endblocktrans %}
+                      {% else %}
+                      {% trans "Deine Anmeldung wurde zurück gesetzt. Bitte fange noch einmal am Anfang an." %}
+                      {% endif %}
+                    </em>
                     </div>
                     <div class="clearfix"></div>
                 </div>
