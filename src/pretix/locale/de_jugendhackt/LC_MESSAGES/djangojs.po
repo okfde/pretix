@@ -32,12 +32,12 @@ msgstr "Kommentar:"
 #: pretix/plugins/statistics/static/pretixplugins/statistics/statistics.js:15
 #: pretix/plugins/statistics/static/pretixplugins/statistics/statistics.js:39
 msgid "Placed orders"
-msgstr "Getätigte Bestellungen"
+msgstr "Getätigte Anmeldungen"
 
 #: pretix/plugins/statistics/static/pretixplugins/statistics/statistics.js:15
 #: pretix/plugins/statistics/static/pretixplugins/statistics/statistics.js:39
 msgid "Paid orders"
-msgstr "Bezahlte Bestellungen"
+msgstr "Bezahlte Anmeldungen"
 
 #: pretix/plugins/statistics/static/pretixplugins/statistics/statistics.js:27
 msgid "Total revenue"
@@ -248,19 +248,19 @@ msgstr[1] "({num} weitere Termine)"
 
 #: pretix/static/pretixpresale/js/ui/cart.js:39
 msgid "The items in your cart are no longer reserved for you."
-msgstr "Die Produkte in deinem Warenkorb sind nicht mehr für dich reserviert."
+msgstr "Deine Auswahl is nicht mehr für dich reserviert."
 
 #: pretix/static/pretixpresale/js/ui/cart.js:41
 msgid "Cart expired"
-msgstr "Warenkorb abgelaufen"
+msgstr "Auswahl abgelaufen"
 
 #: pretix/static/pretixpresale/js/ui/cart.js:46
 msgid "The items in your cart are reserved for you for one minute."
 msgid_plural "The items in your cart are reserved for you for {num} minutes."
 msgstr[0] ""
-"Die Produkte in deinem Warenkorb sind noch eine Minute für dich reserviert."
+"Deine Auswahl ist noch eine Minute für dich reserviert."
 msgstr[1] ""
-"Die Produkte in deinem Warenkorb sind noch {num} Minuten für dich reserviert."
+"Deine Auswahl ist noch {num} Minuten für dich reserviert."
 
 #: pretix/static/pretixpresale/js/ui/main.js:202
 msgid "Please enter a quantity for one of the ticket types."
@@ -341,7 +341,7 @@ msgstr "Der Ticket-Shop konnte nicht geladen werden."
 #: pretix/static/pretixpresale/js/widget/widget.js:29
 msgctxt "widget"
 msgid "The cart could not be created. Please try again later"
-msgstr "Der Warenkorb konnte nicht erstellt werden. Bitte erneut versuchen."
+msgstr "Deine Auswahl konnte nicht erstellt werden. Bitte erneut versuchen."
 
 #: pretix/static/pretixpresale/js/widget/widget.js:30
 msgctxt "widget"
@@ -354,8 +354,8 @@ msgid ""
 "You currently have an active cart for this event. If you select more "
 "products, they will be added to your existing cart."
 msgstr ""
-"Du hast einen aktiven Warenkorb für diese Veranstaltung. Wenn du mehr "
-"Produkte auswählst, werden diese zu deinem Warenkorb hinzugefügt."
+"Du hast eine aktiven Auswahl für diese Veranstaltung. Wenn du etwas "
+"anderes auswählst, werden diese zu deiner Auswahl hinzugefügt."
 
 #: pretix/static/pretixpresale/js/widget/widget.js:33
 msgctxt "widget"
