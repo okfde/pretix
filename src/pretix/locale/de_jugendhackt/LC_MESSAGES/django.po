@@ -187,37 +187,37 @@ msgstr ""
 
 #: pretix/api/webhooks.py:113 pretix/base/notifications.py:194
 msgid "New order placed"
-msgstr "Neue Bestellung eingegangen"
+msgstr "Neue Anmeldung eingegangen"
 
 #: pretix/api/webhooks.py:117 pretix/base/notifications.py:200
 msgid "New order requires approval"
-msgstr "Neue Bestellungen mit erforderlicher Freigabe"
+msgstr "Neue Anmeldungen mit erforderlicher Freigabe"
 
 #: pretix/api/webhooks.py:121 pretix/base/notifications.py:206
 msgid "Order marked as paid"
-msgstr "Bestellung als bezahlt markiert"
+msgstr "Anmeldung als bezahlt markiert"
 
 #: pretix/api/webhooks.py:125 pretix/base/notifications.py:212
 #: pretix/control/templates/pretixcontrol/event/mail.html:63
 msgid "Order canceled"
-msgstr "Bestellung storniert"
+msgstr "Anmeldung storniert"
 
 #: pretix/api/webhooks.py:129 pretix/base/notifications.py:218
 msgid "Order expired"
-msgstr "Bestellung abgelaufen"
+msgstr "Anmeldung abgelaufen"
 
 #: pretix/api/webhooks.py:133 pretix/base/notifications.py:224
 msgid "Order information changed"
-msgstr "Bestell-Informationen geändert"
+msgstr "Anmelde-Informationen geändert"
 
 #: pretix/api/webhooks.py:137 pretix/base/notifications.py:230
 msgid "Order contact address changed"
-msgstr "E-Mail-Adresse einer Bestellung geändert"
+msgstr "E-Mail-Adresse einer Anmeldung geändert"
 
 #: pretix/api/webhooks.py:141 pretix/base/notifications.py:236
 #: pretix/control/templates/pretixcontrol/event/mail.html:54
 msgid "Order changed"
-msgstr "Bestellung geändert"
+msgstr "Anmeldung geändert"
 
 #: pretix/api/webhooks.py:145 pretix/base/notifications.py:248
 msgid "External refund of payment"
@@ -225,11 +225,11 @@ msgstr "Externe Erstattung einer Zahlung"
 
 #: pretix/api/webhooks.py:149
 msgid "Order approved"
-msgstr "Bestellung freigegeben"
+msgstr "Anmeldung freigegeben"
 
 #: pretix/api/webhooks.py:153
 msgid "Order denied"
-msgstr "Bestellung abgelehnt"
+msgstr "Anmeldung abgelehnt"
 
 #: pretix/api/webhooks.py:157
 msgid "Ticket checked in"
@@ -303,7 +303,7 @@ msgid ""
 "date does not always correspond to the order or payment date."
 msgstr ""
 "Nur Rechnungen, die an oder nach diesem Tag erstellt wurden. Achtung: Das "
-"Rechnungsdatum korrespondiert nicht zwingend zum Bestell- oder Zahlungsdatum."
+"Rechnungsdatum korrespondiert nicht zwingend zum Anmelde- oder Zahlungsdatum."
 
 #: pretix/base/exporters/invoices.py:82
 #: pretix/control/templates/pretixcontrol/events/index.html:66
@@ -318,7 +318,7 @@ msgid ""
 "date does not always correspond to the order or payment date."
 msgstr ""
 "Nur Rechnungen, die an oder vor diesem Tag erstellt wurden. Achtung: Das "
-"Rechnungsdatum korrespondiert nicht zwingend zum Bestell- oder Zahlungsdatum."
+"Rechnungsdatum korrespondiert nicht zwingend zum Anmelde- oder Zahlungsdatum."
 
 #: pretix/base/exporters/invoices.py:90 pretix/base/models/orders.py:1103
 #: pretix/base/models/orders.py:1420 pretix/control/forms/filter.py:93
@@ -339,9 +339,9 @@ msgid ""
 "this payment provider. Note that this might include some invoices of orders "
 "which in the end have been fully or partially paid with a different provider."
 msgstr ""
-"Nur Rechnungen für Bestellungen, die mindestens einen Zahlungsversuch mit "
+"Nur Rechnungen für Anmeldungen, die mindestens einen Zahlungsversuch mit "
 "dieser Zahlungsmethode haben. Achtung: Dies kann auch Rechnungen für "
-"Bestellungen enthalten, die am Ende mit einem anderen Zahlungsanbieter "
+"Anmeldungen enthalten, die am Ende mit einem anderen Zahlungsanbieter "
 "bezahlt wurden."
 
 #: pretix/base/exporters/mail.py:16
@@ -354,7 +354,7 @@ msgstr "Nach Status filtern"
 
 #: pretix/base/exporters/orderlist.py:23
 msgid "Order data"
-msgstr "Bestelldaten"
+msgstr "Anmeldedaten"
 
 #: pretix/base/exporters/orderlist.py:28 pretix/base/models/orders.py:185
 #: pretix/control/navigation.py:181
@@ -362,12 +362,12 @@ msgstr "Bestelldaten"
 #: pretix/control/templates/pretixcontrol/orders/index.html:7
 #: pretix/control/templates/pretixcontrol/orders/index.html:9
 msgid "Orders"
-msgstr "Bestellungen"
+msgstr "Anmeldungen"
 
 #: pretix/base/exporters/orderlist.py:29 pretix/base/models/orders.py:1674
 #: pretix/base/notifications.py:183
 msgid "Order positions"
-msgstr "Bestellzeilen"
+msgstr "Anmeldezeilen"
 
 #: pretix/base/exporters/orderlist.py:30
 msgid "Order fees"
@@ -375,7 +375,7 @@ msgstr "Gebühren"
 
 #: pretix/base/exporters/orderlist.py:39
 msgid "Only paid orders"
-msgstr "Nur bezahlte Bestellungen"
+msgstr "Nur bezahlte Anmeldungen"
 
 #: pretix/base/exporters/orderlist.py:91 pretix/base/exporters/orderlist.py:193
 #: pretix/base/exporters/orderlist.py:267
@@ -394,7 +394,7 @@ msgstr "Nur bezahlte Bestellungen"
 #: pretix/plugins/reports/exporters.py:363
 #: pretix/plugins/ticketoutputpdf/exporters.py:40
 msgid "Order code"
-msgstr "Bestellnummer"
+msgstr "Anmeldenummer"
 
 #: pretix/base/exporters/orderlist.py:91 pretix/base/notifications.py:179
 #: pretix/control/templates/pretixcontrol/orders/index.html:101
@@ -441,7 +441,7 @@ msgstr "E-Mail"
 #: pretix/plugins/reports/exporters.py:300
 #: pretix/plugins/reports/exporters.py:363
 msgid "Order date"
-msgstr "Bestelldatum"
+msgstr "Anmeldedatum"
 
 #: pretix/base/exporters/orderlist.py:92 pretix/base/exporters/orderlist.py:203
 #: pretix/base/exporters/orderlist.py:293
@@ -698,7 +698,7 @@ msgstr "Nur erfolgreiche Zahlungen"
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:15
 #: pretix/plugins/checkinlists/exporters.py:211
 msgid "Order"
-msgstr "Bestellung"
+msgstr "Anmeldung"
 
 #: pretix/base/exporters/orderlist.py:407
 #: pretix/plugins/paypal/templates/pretixplugins/paypal/control.html:5
@@ -752,7 +752,7 @@ msgstr "Gesamtkontingent"
 
 #: pretix/base/exporters/orderlist.py:441 pretix/control/views/item.py:608
 msgid "Paid orders"
-msgstr "Bezahlte Bestellungen"
+msgstr "Bezahlte Anmeldungen"
 
 #: pretix/base/exporters/orderlist.py:441 pretix/control/views/item.py:613
 msgid "Pending orders"
@@ -1069,7 +1069,7 @@ msgid ""
 "process."
 msgstr ""
 "Die USt-ID-Nr. konnte nicht geprüft werden, da der Prüfdienst deines Landes "
-"im Moment nicht verfügbar ist. Wir müssen daher USt auf deine Bestellung "
+"im Moment nicht verfügbar ist. Wir müssen daher USt für deine Anmeldung "
 "berechnen. Du kannst den Steuerbetrag über das "
 "Umsatzsteuervergütungsverfahren zurück erlangen."
 
@@ -1080,8 +1080,8 @@ msgid ""
 "on your invoice. Please contact support to resolve this manually."
 msgstr ""
 "Die USt-ID-Nr. konnte nicht geprüft werden, da der Prüfdienst deines Landes "
-"ein ungültiges Ergebnis zurückgeliefert hat. Wir müssen daher USt auf deine "
-"Bestellung berechnen. Bitte kontaktiere den Support, um das Problem manuell "
+"ein ungültiges Ergebnis zurückgeliefert hat. Wir müssen daher USt für deine "
+"Anmeldung berechnen. Bitte kontaktiere den Support, um das Problem manuell "
 "zu beheben."
 
 #: pretix/base/forms/user.py:16 pretix/control/forms/users.py:22
@@ -1210,7 +1210,7 @@ msgstr "Rechnungsempfänger"
 #: pretix/base/invoice.py:302
 msgctxt "invoice"
 msgid "Order code"
-msgstr "Bestellnummer"
+msgstr "Anmeldenummer"
 
 #: pretix/base/invoice.py:311
 msgctxt "invoice"
@@ -1456,7 +1456,7 @@ msgstr "Termin"
 #: pretix/base/models/checkin.py:17
 msgctxt "checkin"
 msgid "Include pending orders"
-msgstr "Bestellungen mit ausstehender Zahlung mit einschließen"
+msgstr "Anmeldungen mit ausstehender Zahlung mit einschließen"
 
 #: pretix/base/models/checkin.py:19
 msgid ""
@@ -1465,7 +1465,7 @@ msgid ""
 "or newer."
 msgstr ""
 "Mit dieser Option wird ein Check-In auch dann möglich sein, wenn die "
-"Bestellung noch nicht bezahlt wurde. Dies funktioniert nur mit pretixdesk "
+"Anmeldung noch nicht bezahlt wurde. Dies funktioniert nur mit pretixdesk "
 "0.3.0 oder pretixdroid 1.9 oder neuer."
 
 #: pretix/base/models/devices.py:51
@@ -1505,7 +1505,7 @@ msgstr ""
 "Punkte enthalten. Muss unter deinen Veranstaltungen einmalig sein. Wir "
 "empfehlen eine Abkürzung oder ein Datum mit unter 10 Zeichen, das man sich "
 "gut merken kann. Du kannst jedoch auch einen zufälligen Wert verwendet. Dies "
-"wird z.B. in Links, Bestellnummern, Rechnungsnummern und Verwendungszwecken "
+"wird z.B. in Links, Anmeldenummern, Rechnungsnummern und Verwendungszwecken "
 "für Banküberweisungen benutzt."
 
 #: pretix/base/models/event.py:291 pretix/base/models/organizer.py:40
@@ -1874,7 +1874,7 @@ msgstr ""
 
 #: pretix/base/models/items.py:320
 msgid "Buying this product requires approval"
-msgstr "Die Bestellung dieses Produktes erfordert eine manuelle Freigabe"
+msgstr "Diese Auswahl erfordert eine manuelle Freigabe"
 
 #: pretix/base/models/items.py:322
 msgid ""
@@ -1883,7 +1883,7 @@ msgid ""
 "completed. You can use this e.g. for discounted tickets that are only "
 "available to specific groups."
 msgstr ""
-"Wenn dieses Produkt Teil einer Bestellung ist, wird die Bestellung nicht "
+"Wenn diese Auswahl Teil einer Anmeldung ist, wird die Anmeldung nicht "
 "direkt freigegeben, sondern muss von dir bestätigt werden, bevor sie bezahlt "
 "und abgeschlossen werden kann. Du kannst das z.B. für Tickets nutzen, die "
 "nur für bestimmte Mitglieder zur Verfügung stehen."
@@ -1930,13 +1930,13 @@ msgid ""
 "users but only by you."
 msgstr ""
 "Wenn diese Option aktiviert ist, greifen die üblichen Stornobedingungen der "
-"Veranstaltungen. Wenn sie deaktiviert ist, können Bestellungen mit diesem "
+"Veranstaltungen. Wenn sie deaktiviert ist, können Anmeldungen mit diesem "
 "Produkt niemals von Kunden selbst storniert werden, unabhängig von der "
 "veranstaltungsweiten Einstellung."
 
 #: pretix/base/models/items.py:344
 msgid "Minimum amount per order"
-msgstr "Minimale Anzahl pro Bestellung"
+msgstr "Minimale Anzahl pro Anmeldung"
 
 #: pretix/base/models/items.py:346
 msgid ""
@@ -1950,7 +1950,7 @@ msgstr ""
 
 #: pretix/base/models/items.py:350
 msgid "Maximum amount per order"
-msgstr "Maximale Anzahl pro Bestellung"
+msgstr "Maximale Anzahl pro Anmeldung"
 
 #: pretix/base/models/items.py:352
 msgid ""
@@ -1959,10 +1959,10 @@ msgid ""
 "product. The limit for the maximum number of items in the whole order "
 "applies regardless."
 msgstr ""
-"Dieses Produkt kann pro Bestellung höchstens so oft bestellt werden wie hier "
+"Diese Auswahl kann pro Anmeldung höchstens so oft bestellt werden wie hier "
 "angegeben. Wenn das Feld leer ist oder auf 0 gesetzt wird, gibt es keine "
-"Beschränkung. Die Beschränkung für die Gesamtanzahl von Produkten in einer "
-"Bestellung bleibt davon unberührt."
+"Beschränkung. Die Beschränkung für die Gesamtanzahl in einer "
+"Anmeldung bleibt davon unberührt."
 
 #: pretix/base/models/items.py:357 pretix/base/models/orders.py:158
 msgid "Requires special attention"
@@ -2016,8 +2016,8 @@ msgid ""
 "The maximum number per order can not be lower than the minimum number per "
 "order."
 msgstr ""
-"Die minimale Anzahl pro Bestellung muss unter der maximalen Anzahl pro "
-"Bestellung liegen."
+"Die minimale Anzahl pro Anmeldung muss unter der maximalen Anzahl pro "
+"Anmeldung liegen."
 
 #: pretix/base/models/items.py:524
 msgid "The item's category must belong to the same event as the item."
@@ -2327,7 +2327,7 @@ msgstr ""
 #: pretix/base/models/log.py:91
 #, python-brace-format
 msgid "Order {val}"
-msgstr "Bestellung {val}"
+msgstr "Anmeldung {val}"
 
 #: pretix/base/models/log.py:101
 #, python-brace-format
@@ -2434,13 +2434,13 @@ msgid ""
 "The payment can not be accepted as the order is expired and you configured "
 "that no late payments should be accepted in the payment settings."
 msgstr ""
-"Diese Zahlung kann nicht akzeptiert werden, da die Bestellung abgelaufen ist "
+"Diese Zahlung kann nicht akzeptiert werden, da die Anmeldung abgelaufen ist "
 "und in den Zahlungseinstellungen konfiguriert ist, dass verspätete Zahlungen "
 "nicht akzeptiert werden sollen."
 
 #: pretix/base/models/orders.py:615
 msgid "This order is not yet approved by the event organizer."
-msgstr "Diese Bestellung wurde noch nicht vom Veranstalter freigegeben."
+msgstr "Diese Anmeldung wurde noch nicht vom Veranstalter freigegeben."
 
 #: pretix/base/models/orders.py:633
 #, python-brace-format
@@ -2501,7 +2501,7 @@ msgstr "Zahlungsinformationen"
 #: pretix/base/models/orders.py:1264
 #, python-format
 msgid "Payment received for your order: %(code)s"
-msgstr "Zahlung erhalten für die Bestellung: %(code)s"
+msgstr "Zahlung erhalten für die Anmeldung: %(code)s"
 
 #: pretix/base/models/orders.py:1369
 msgctxt "refund_state"
@@ -2586,11 +2586,11 @@ msgstr "Warenkorb-ID (z.B. Session-ID)"
 
 #: pretix/base/models/orders.py:1823
 msgid "Cart position"
-msgstr "Produkt im Warenkorb"
+msgstr "Auswahl"
 
 #: pretix/base/models/orders.py:1824
 msgid "Cart positions"
-msgstr "Produkte im Warenkorb"
+msgstr "Auswahlen"
 
 #: pretix/base/models/orders.py:1850 pretix/control/forms/event.py:685
 msgid "Company name"
@@ -2677,11 +2677,11 @@ msgstr "Kann Produkte ändern"
 
 #: pretix/base/models/organizer.py:170
 msgid "Can view orders"
-msgstr "Kann Bestellungen einsehen"
+msgstr "Kann Anmeldungen einsehen"
 
 #: pretix/base/models/organizer.py:174
 msgid "Can change orders"
-msgstr "Kann Bestellungen verändern"
+msgstr "Kann Anmeldungen verändern"
 
 #: pretix/base/models/organizer.py:178
 msgid "Can view vouchers"
@@ -2849,8 +2849,7 @@ msgstr "Gutscheinwert"
 #: pretix/base/models/vouchers.py:143 pretix/control/forms/vouchers.py:24
 msgid "This product is added to the user's cart if the voucher is redeemed."
 msgstr ""
-"Dieses Produkt wird zum Warenkorb des Benutzers hinzugefügt, wenn er den "
-"Gutschein einlöst."
+"Dieses Auswahl wird getroffen, wenn er den Gutschein einlöst wird."
 
 #: pretix/base/models/vouchers.py:151
 msgid "This variation of the product select above is being used."
@@ -3053,67 +3052,67 @@ msgstr "Offener Betrag"
 #: pretix/base/notifications.py:182 pretix/control/forms/filter.py:100
 #: pretix/control/forms/filter.py:200
 msgid "Order status"
-msgstr "Bestellstatus"
+msgstr "Anmeldestatus"
 
 #: pretix/base/notifications.py:184
 #: pretix/base/templates/pretixbase/email/plainwrapper.html:31
 msgid "View order details"
-msgstr "Bestelldetails anzeigen"
+msgstr "Anmeldedetails anzeigen"
 
 #: pretix/base/notifications.py:195
 #, python-brace-format
 msgid "A new order has been placed: {order.code}"
-msgstr "Eine neue Bestellung ist eingegangen: {order.code}"
+msgstr "Eine neue Anmeldung ist eingegangen: {order.code}"
 
 #: pretix/base/notifications.py:201
 #, python-brace-format
 msgid "A new order has been placed that requires approval: {order.code}"
-msgstr "Eine neue Bestellung wartet auf Freigabe: {order.code}"
+msgstr "Eine neue Anmeldung wartet auf Freigabe: {order.code}"
 
 #: pretix/base/notifications.py:207
 #, python-brace-format
 msgid "Order {order.code} has been marked as paid."
-msgstr "Bestellung {order.code} wurde als bezahlt markiert."
+msgstr "Anmeldung {order.code} wurde als bezahlt markiert."
 
 #: pretix/base/notifications.py:213
 #, python-brace-format
 msgid "Order {order.code} has been canceled."
-msgstr "Bestellung {order.code} wurde storniert."
+msgstr "Anmeldung {order.code} wurde storniert."
 
 #: pretix/base/notifications.py:219
 #, python-brace-format
 msgid "Order {order.code} has been marked as expired."
-msgstr "Bestellung {order.code} wurde als abgelaufen markiert."
+msgstr "Anmeldung {order.code} wurde als abgelaufen markiert."
 
 #: pretix/base/notifications.py:225
 #, python-brace-format
 msgid "The ticket information of order {order.code} has been changed."
-msgstr "Die Ticket-Informationen der Bestellung {order.code} wurden geändert."
+msgstr "Die Ticket-Informationen der Anmeldung {order.code} wurden geändert."
 
 #: pretix/base/notifications.py:231
 #, python-brace-format
 msgid "The contact address of order {order.code} has been changed."
-msgstr "Die E-Mail-Adresse der Bestellung {order.code} wurde geändert."
+msgstr "Die E-Mail-Adresse der Anmeldung {order.code} wurde geändert."
 
 #: pretix/base/notifications.py:237
 #, python-brace-format
 msgid "Order {order.code} has been changed."
-msgstr "Die Bestellung {order.code} wurde geändert."
+msgstr "Die Anmeldung {order.code} wurde geändert."
 
 #: pretix/base/notifications.py:242
 msgid "Order has been overpaid"
-msgstr "Bestellung wurde überzahlt"
+msgstr "Anmeldung wurde überzahlt"
 
 #: pretix/base/notifications.py:243
 #, python-brace-format
 msgid "Order {order.code} has been overpaid."
-msgstr "Bestellung {order.code} wurde überzahlt."
+msgstr "Anmeldung {order.code} wurde überzahlt."
 
 #: pretix/base/notifications.py:249
 #, python-brace-format
 msgid "An external refund for {order.code} has occurred."
 msgstr ""
-"Eine Zahlung für Bestellung {order.code} wurde in einem externen System "
+"Eine Zahlung für Anmeldung {order.code} wurde in einem externen System "
 "erstattet."
 
 #: pretix/base/notifications.py:254
@@ -3123,7 +3122,7 @@ msgstr "Erstattung angefordert"
 #: pretix/base/notifications.py:255
 #, python-brace-format
 msgid "You have been requested to issue a refund for {order.code}."
-msgstr "Eine Erstattung für die Bestellung {order.code} wurde angefordert."
+msgstr "Eine Erstattung für die Anmeldung {order.code} wurde angefordert."
 
 #: pretix/base/payment.py:44 pretix/control/forms/event.py:581
 #: pretix/control/forms/event.py:1150
@@ -3251,8 +3250,8 @@ msgid ""
 "No payment is required as this order only includes products which are free "
 "of charge."
 msgstr ""
-"Es ist keine Zahlung erforderlich, da diese Bestellung nur kostenlose "
-"Produkte enthält."
+"Es ist keine Zahlung erforderlich, da diese Anmeldung nur kostenlose "
+"Auswahlen enthält."
 
 #: pretix/base/payment.py:678
 msgid "Free of charge"
@@ -3272,7 +3271,7 @@ msgid ""
 "In test mode, you can just manually mark this order as paid in the backend "
 "after it has been created."
 msgstr ""
-"Im Testmodus kannst du die Bestellung zum Testen einfach im Backend als "
+"Im Testmodus kannst du die Anmeldung zum Testen einfach im Backend als "
 "bezahlt markieren."
 
 #: pretix/base/payment.py:768 pretix/plugins/banktransfer/payment.py:102
@@ -3294,7 +3293,7 @@ msgstr ""
 
 #: pretix/base/payment.py:778
 msgid "Payment process description in order confirmation emails"
-msgstr "Beschreibung des Zahlungsvorgangs in Bestellbestätigungs-E-Mails"
+msgstr "Beschreibung des Zahlungsvorgangs in Anmeldebestätigungs-E-Mails"
 
 #: pretix/base/payment.py:779
 #, python-brace-format
@@ -3305,13 +3304,13 @@ msgid ""
 "{total_with_currency}"
 msgstr ""
 "Dieser Text wird statt des {payment_info}-Platzhalters in "
-"Bestellbestätigungen verwendet. Er sollte den Kunden darüber informieren, "
+"Anmeldebestätigungen verwendet. Er sollte den Kunden darüber informieren, "
 "wie die Zahlung vervollständigt werden kann. Die Platzhalter {order}, "
 "{total}, {currency} und {total_with_currency} können verwendet werden."
 
 #: pretix/base/payment.py:786
 msgid "Payment process description for pending orders"
-msgstr "Beschreibung des Zahlungsvorgangs für ausstehende Bestellungen"
+msgstr "Beschreibung des Zahlungsvorgangs für ausstehende Anmeldungen"
 
 #: pretix/base/payment.py:787
 #, python-brace-format
@@ -3320,7 +3319,7 @@ msgid ""
 "It should instruct the user on how to proceed with the payment. You can "
 "usethe placeholders {order}, {total}, {currency} and {total_with_currency}"
 msgstr ""
-"Dieser Text wird auf der Bestellbestätigungsseite angezeigt. Er sollte dem "
+"Dieser Text wird auf der Anmeldebestätigungsseite angezeigt. Er sollte dem "
 "Kunden erklären, wie mit der Zahlung fortzufahren ist. Die Platzhalter "
 "{order}, {total}, {currency} und {total_with_currency} können verwendet "
 "werden."
@@ -3617,7 +3616,7 @@ msgid ""
 "for details."
 msgstr ""
 "Einige der ausgewählten Produkte sind zwischenzeitlich nicht mehr verfügbar, "
-"bitte überprüfe deinen Warenkorb."
+"bitte überprüfe deine Auswahl."
 
 #: pretix/base/services/cart.py:55
 msgid ""
@@ -3625,18 +3624,18 @@ msgid ""
 "you selected. Please see below for details."
 msgstr ""
 "Einige der ausgewählten Produkte sind zwischenzeitlich nicht mehr in der "
-"gewünschten Anzahl verfügbar, bitte überprüfe deinen Warenkorb."
+"gewünschten Anzahl verfügbar, bitte überprüfe deine Auswahl."
 
 #: pretix/base/services/cart.py:57
 #, python-format
 msgid "You cannot select more than %s items per order."
-msgstr "Du kannst nicht mehr als %s Produkte pro Bestellung auswählen."
+msgstr "Du kannst nicht mehr als %s Auswahlen pro Anmeldung auswählen."
 
 #: pretix/base/services/cart.py:58
 #, python-format
 msgid "You cannot select more than %(max)s items of the product %(product)s."
 msgstr ""
-"Du kannst das Produkt %(product)s höchstens %(max)s mal pro Bestellung "
+"Du kannst die Auswahl %(product)s höchstens %(max)s mal pro Anmeldung "
 "auswählen."
 
 #: pretix/base/services/cart.py:59
@@ -3650,7 +3649,7 @@ msgid ""
 "We removed %(product)s from your cart as you can not buy less than %(min)s "
 "items of it."
 msgstr ""
-"Wir haben das Produkt %(product)s aus deinem Warenkorb entfernt, da es nicht "
+"Wir haben deine Auswahl %(product)s entfernt, da es nicht "
 "weniger als %(min)s mal gekauft werden kann."
 
 #: pretix/base/services/cart.py:62 pretix/base/services/orders.py:66
@@ -3702,10 +3701,10 @@ msgid ""
 "or that you tried to redeem it before but did not complete the checkout "
 "process. You can try to use it again in %d minutes."
 msgstr ""
-"Dieser Gutscheincode ist im Moment gesperrt, da er bereits in einem "
-"Warenkorb ist. Das bedeutet entweder, dass gerade jemand anderes diesen "
-"Gutschein einlöst, oder dass du ihn bereits zuvor eingegeben hast, aber den "
-"Kauf nicht abgeschlossen hast. Du kannst es in %d Minuten erneut versuchen."
+"Dieser Gutscheincode ist im Moment gesperrt. Das bedeutet entweder, dass "
+"gerade jemand anderes diesen Gutschein einlöst, oder dass du ihn bereits "
+"zuvor eingegeben hast, aber den Kauf nicht abgeschlossen hast. "
+"Du kannst es in %d Minuten erneut versuchen."
 
 #: pretix/base/services/cart.py:75
 #, python-format
@@ -3718,7 +3717,7 @@ msgid ""
 "cart if you want to use it for a different product."
 msgstr ""
 "Du hast diesen Gutscheincode bereits benutzt. Entferne die entsprechende "
-"Zeile aus deinem Warenkorb, um ihn für ein anderes Produkt verwenden zu "
+"Zeile aus deiner Auswahl, um ihn für eine andere Auswahl verwenden zu "
 "können."
 
 #: pretix/base/services/cart.py:78
@@ -3742,7 +3741,7 @@ msgstr "Dieser Gutschein ist für diesen Termin nicht gültig."
 #: pretix/base/services/cart.py:83
 msgid "You need a valid voucher code to order this product."
 msgstr ""
-"Du brauchst einen gültigen Gutscheincode, um dieses Produkt zu bestellen."
+"Du brauchst einen gültigen Gutscheincode, um diese Auswahl zu treffen."
 
 #: pretix/base/services/cart.py:84
 msgctxt "subevent"
@@ -3791,15 +3790,15 @@ msgstr ""
 
 #: pretix/base/services/checkin.py:95
 msgid "This order position has been canceled."
-msgstr "Die Bestellposition wurde storniert."
+msgstr "Die Auswahl wurde storniert."
 
 #: pretix/base/services/checkin.py:109
 msgid "This order position has an invalid product for this check-in list."
-msgstr "Diese Bestellposition hat ein für diese Liste ungültiges Produkt."
+msgstr "Diese Auswahl ist ungültig."
 
 #: pretix/base/services/checkin.py:116
 msgid "This order is not marked as paid."
-msgstr "Die Bestellung ist nicht als bezahlt markiert."
+msgstr "Die Anmeldung ist nicht als bezahlt markiert."
 
 #: pretix/base/services/checkin.py:121
 msgid "You need to answer questions to complete this check-in."
@@ -3872,7 +3871,7 @@ msgstr "Beispielprodukt A"
 #, python-brace-format
 msgid "You are receiving this email because you placed an order for {event}."
 msgstr ""
-"Du erhältst diese E-Mail, weil du eine Bestellung für die Veranstaltung "
+"Du erhältst diese E-Mail, weil du eine Anmeldung für die Veranstaltung "
 "{event} getätigt hast."
 
 #: pretix/base/services/mail.py:141
@@ -3881,7 +3880,7 @@ msgid ""
 "You can view your order details at the following URL:\n"
 "{orderurl}."
 msgstr ""
-"Du kannst deine Bestellung unter folgender Adresse einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse einsehen:\n"
 "{orderurl}."
 
 #: pretix/base/services/orders.py:54
@@ -3889,24 +3888,21 @@ msgid ""
 "Some of the products you selected were no longer available. Please see below "
 "for details."
 msgstr ""
-"Einige der ausgewählten Produkte waren zwischenzeitlich nicht mehr "
-"verfügbar, bitte überprüfe deinen Warenkorb."
+"Teile deiner Auswahl waren zwischenzeitlich nicht mehr verfügbar."
 
 #: pretix/base/services/orders.py:56
 msgid ""
 "Some of the products you selected were no longer available in the quantity "
 "you selected. Please see below for details."
 msgstr ""
-"Einige der ausgewählten Produkte waren zwischenzeitlich nicht mehr in der "
-"gewünschten Anzahl verfügbar, bitte überprüfe deinen Warenkorb."
+"Teile deiner Auswahl waren zwischenzeitlich nicht mehr verfügbar."
 
 #: pretix/base/services/orders.py:58
 msgid ""
 "The price of some of the items in your cart has changed in the meantime. "
 "Please see below for details."
 msgstr ""
-"Der Preis einiger Produkte in deinem Warenkorb hat sich zwischenzeitlich "
-"geändert."
+"Der Preis von Teilen deiner Auswahl hat sich zwischenzeitlich geändert."
 
 #: pretix/base/services/orders.py:60
 msgid "An internal error occurred, please try again."
@@ -3914,7 +3910,7 @@ msgstr "Ein interner Fehler ist aufgetreten, bitte erneut versuchen."
 
 #: pretix/base/services/orders.py:61
 msgid "Your cart is empty."
-msgstr "Dein Warenkorb ist leer."
+msgstr "Du hast nichts ausgewählt."
 
 #: pretix/base/services/orders.py:62
 #, python-format
@@ -3922,9 +3918,8 @@ msgid ""
 "You cannot select more than %(max)s items of the product %(product)s. We "
 "removed the surplus items from your cart."
 msgstr ""
-"Du kannst das Produkt %(product)s höchstens %(max)s mal pro Bestellung "
-"auswählen. Wir haben die überschüssigen Produkte aus deinem Warenkorb "
-"entfernt."
+"Du kannst die Auswahl %(product)s höchstens %(max)s mal pro Anmeldung "
+"treffen. Wir haben die überschüssigen Auswahlen entfernt."
 
 #: pretix/base/services/orders.py:67
 #: pretix/base/services/orders.py:65
@@ -3936,8 +3931,7 @@ msgid ""
 "The voucher code used for one of the items in your cart is not known in our "
 "database."
 msgstr ""
-"Der Gutscheincode, der für eins der Produkte in deinem Warenkorb benutzt "
-"wurde, wurde nicht gefunden."
+"Der Gutscheincode, der für deine Auswahl benutzt wurde, wurde nicht gefunden."
 
 #: pretix/base/services/orders.py:69
 msgid ""
@@ -3945,36 +3939,32 @@ msgid ""
 "used the maximum number of times allowed. We removed this item from your "
 "cart."
 msgstr ""
-"Der Gutscheincode, der für eins der Produkte in deinem Warenkorb benutzt "
-"wurde, wurde bereits zu oft verwendet. Wir haben das entsprechende Produkt "
-"aus dem Warenkorb entfernt."
+"Der Gutscheincode, der für deine Auswahl benutzt wurde, wurde bereits "
+"zu oft verwendet. Wir haben die entsprechende Auswahl entfernt."
 
 #: pretix/base/services/orders.py:71
 msgid ""
 "The voucher code used for one of the items in your cart is expired. We "
 "removed this item from your cart."
 msgstr ""
-"Der Gutscheincode, der für eins der Produkte in deinem Warenkorb benutzt "
-"wurde, ist abgelaufen. Wir haben das entsprechende Produkt aus dem Warenkorb "
-"entfernt."
+"Der Gutscheincode, der für deine Auswahl benutzt wurde, ist abgelaufen. "
+"Wir haben deine Auswahl entfernt."
 
 #: pretix/base/services/orders.py:73
 msgid ""
 "The voucher code used for one of the items in your cart is not valid for "
 "this item. We removed this item from your cart."
 msgstr ""
-"Der Gutscheincode, der für eins der Produkte in deinem Warenkorb benutzt "
-"wurde, ist nicht für dieses Produkt gültig. Wir haben das entsprechende "
-"Produkt aus dem Warenkorb entfernt."
+"Der Gutscheincode, der für deine Auswahl benutzt wurde, ist nicht für "
+"dieses nicht gültig. Wir haben deine Auswahl entfernt."
 
 #: pretix/base/services/orders.py:75
 msgid ""
 "You need a valid voucher code to order one of the products in your cart. We "
 "removed this item from your cart."
 msgstr ""
-"Eins der Produkte in deinem Warenkorb erfordert einen gültigen Gutschein, um "
-"gekauft werden zu können. Wir haben das entsprechende Produkt aus dem "
-"Warenkorb entfernt."
+"Ein Teil deiner Auswahl erfordert einen gültigen Gutschein, um ausgewählt "
+"werden zu können. Wir haben den entsprechenden Teil entfernt."
 
 #: pretix/base/services/orders.py:77
 #: pretix/base/services/orders.py:75
@@ -3991,22 +3981,22 @@ msgstr "Die neue Frist muss in der Zukunft liegen."
 
 #: pretix/base/services/orders.py:171 pretix/base/services/orders.py:250
 msgid "This order is not pending approval."
-msgstr "Diese Bestellung wartet nicht auf Freigabe."
+msgstr "Diese Anmeldung wartet nicht auf Freigabe."
 
 #: pretix/base/services/orders.py:212
 #, python-format
 msgid "Order approved and confirmed: %(code)s"
-msgstr "Bestellung bestätigt: %(code)s"
+msgstr "Anmeldung bestätigt: %(code)s"
 
 #: pretix/base/services/orders.py:215
 #, python-format
 msgid "Order approved and awaiting payment: %(code)s"
-msgstr "Bestellung freigegeben und wartet auf Bezahlung: %(code)s"
+msgstr "Anmeldung freigegeben und wartet auf Bezahlung: %(code)s"
 
 #: pretix/base/services/orders.py:292
 #, python-format
 msgid "Order denied: %(code)s"
-msgstr "Bestellung abgelehnt: %(code)s"
+msgstr "Anmeldung abgelehnt: %(code)s"
 
 #: pretix/base/services/orders.py:326 pretix/presale/views/order.py:579
 #: pretix/presale/views/order.py:611
@@ -4019,22 +4009,22 @@ msgid ""
 "The cancellation fee cannot be higher than the payment credit of this order."
 msgstr ""
 "Die Stornogebühr darf nicht größer sein als der Betrag, der für diese "
-"Bestellung bereits bezahlt wurde."
+"Anmeldung bereits bezahlt wurde."
 
 #: pretix/base/services/orders.py:382
 #, python-format
 msgid "Order canceled: %(code)s"
-msgstr "Bestellung storniert: %(code)s"
+msgstr "Anmeldung storniert: %(code)s"
 
 #: pretix/base/services/orders.py:776
 #, python-format
 msgid "Your order is about to expire: %(code)s"
-msgstr "Deine Bestellung läuft bald ab: %(code)s"
+msgstr "Deine Anmeldung läuft bald ab: %(code)s"
 
 #: pretix/base/services/orders.py:778
 #, python-format
 msgid "Your order is pending payment: %(code)s"
-msgstr "Deine Bestellung wurde noch nicht bezahlt: %(code)s"
+msgstr "Deine Anmeldung wurde noch nicht bezahlt: %(code)s"
 
 #: pretix/base/services/orders.py:823
 #, python-format
@@ -4065,19 +4055,19 @@ msgid ""
 "This operation would leave the order empty. Please cancel the order itself "
 "instead."
 msgstr ""
-"Diese Änderung würde die Bestellung leer hinterlassen. Bitte storniere die "
-"Bestellung stattdessen."
+"Diese Änderung würde die Anmeldung leer hinterlassen. Bitte storniere die "
+"Anmeldung stattdessen."
 
 #: pretix/base/services/orders.py:841
 msgid "Only pending or paid orders can be changed."
-msgstr "Nur ausstehende oder bezahlte Bestellungen können verändert werden."
+msgstr "Nur ausstehende oder bezahlte Anmeldungen können verändert werden."
 
 #: pretix/base/services/orders.py:842
 msgid ""
 "This operation would make the order free and therefore immediately paid, "
 "however no quota is available."
 msgstr ""
-"Diese Änderung würde die Bestellung kostenlos machen und damit sofort als "
+"Diese Änderung würde die Anmeldung kostenlos machen und damit sofort als "
 "bezahlt markieren, es ist jedoch kein Kontingent verfügbar."
 
 #: pretix/base/services/orders.py:844
@@ -4102,7 +4092,7 @@ msgstr "Du musst einen Termin auswählen."
 #: pretix/base/services/orders.py:1351
 #, python-format
 msgid "Your order has been changed: %(code)s"
-msgstr "Deine Bestellung wurde geändert: %(code)s"
+msgstr "Deine Anmeldung wurde geändert: %(code)s"
 
 #: pretix/base/services/orders.py:1479
 msgid ""
@@ -4203,11 +4193,11 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"du erhältst diese Nachricht weil du einen neuen Link zu deiner Bestellung "
+"du erhältst diese Nachricht weil du einen neuen Link zu deiner Anmeldung "
 "für\n"
 "{event} angefordert hast.\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse ändern und einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4228,9 +4218,9 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"du erhältst diese Nachricht weil du einen neuen Link zu deinen Bestellungen "
+"du erhältst diese Nachricht weil du einen neuen Link zu deinen Anmeldungen "
 "für\n"
-"{event} angefordert hast. Du findest deine Bestellungen unter folgenden "
+"{event} angefordert hast. Du findest deine Anmeldungen unter folgenden "
 "Links:\n"
 "\n"
 "{orders}\n"
@@ -4254,11 +4244,11 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"wir haben deine Bestellung für {event} erfolgreich abgeschlossen. Vielen "
+"wir haben deine Anmeldung für {event} erfolgreich abgeschlossen. Vielen "
 "Dank! Da keine\n"
 "kostenpflichtigen Artikel bestellt wurden, ist keine Zahlung erforderlich.\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse ändern und einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4281,14 +4271,14 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"wir haben deine Bestellung für {event} erhalten. Da du ein Produkt bestellt "
+"wir haben deine Anmeldung für {event} erhalten. Da du ein Auswahl getroffen "
 "hast,\n"
 "das eine manuelle Freigabe vom Veranstalter erfordert, bitten wir dich um "
 "etwas\n"
-"Geduld. Wir werden dich per E-Mail über den Fortgang deiner Bestellung "
+"Geduld. Wir werden dich per E-Mail über den Fortgang deiner Anmeldung "
 "informieren.\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse ändern und einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4312,11 +4302,11 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"wir haben deine Bestellung für {event} mit einem Gesamtbetrag von\n"
+"wir haben deine Anmeldung für {event} mit einem Gesamtbetrag von\n"
 "{total_with_currency} erhalten. Bitte schließe die Bezahlung bis {date} ab.\n"
 "{payment_info}\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse einsehen und ändern:\n"
+"Du kannst deine Anmeldung unter folgender Adresse einsehen und ändern:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4337,9 +4327,9 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"deine Bestellung für {event} wurde geändert.\n"
+"deine Anmeldung für {event} wurde geändert.\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse ändern und einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4366,7 +4356,7 @@ msgstr ""
 "\n"
 "{payment_info}\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse ändern und einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4389,13 +4379,13 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"wir haben für deine Bestellung für {event} noch keine vollständige Zahlung "
+"wir haben für deine Anmeldung für {event} noch keine vollständige Zahlung "
 "erhalten.\n"
-"Bitte beachte, dass wir deine Bestellung nur garantieren können, wenn wir "
+"Bitte beachte, dass wir deine Anmeldung nur garantieren können, wenn wir "
 "das\n"
 "Geld bis zum {expire_date} erhalten.\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse einsehen und ändern:\n"
+"Du kannst deine Anmeldung unter folgender Adresse einsehen und ändern:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4464,9 +4454,9 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"deine Bestellung {code} für {event} wurde storniert.\n"
+"deine Anmeldung {code} für {event} wurde storniert.\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4491,7 +4481,7 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"wir haben deine Bestellung für {event} freigegeben und freuen uns, dich auf "
+"wir haben deine Anmeldung für {event} freigegeben und freuen uns, dich auf "
 "unserer\n"
 "Veranstaltung zu begrüßen. Bitte fahre fort, indem du bis zum {date} die\n"
 "Bezahlung abschließt.\n"
@@ -4520,11 +4510,11 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"deine Bestellung für {event} wurde leider abgelehnt.\n"
+"deine Anmeldung für {event} wurde leider abgelehnt.\n"
 "\n"
 "{comment}\n"
 "\n"
-"Du kannst deine Bestellung unter folgender Adresse einsehen:\n"
+"Du kannst deine Anmeldung unter folgender Adresse einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4543,7 +4533,7 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"du kannst deine Bestellung unter folgender Adresse ändern und einsehen:\n"
+"du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 "{url}\n"
 "\n"
 "Viele Grüße,\n"
@@ -4652,7 +4642,7 @@ msgid ""
 "logged email contents."
 msgstr ""
 "Dies entfernt alle E-Mail-Adressen und gespeicherte E-Mail-Inhalte von "
-"Bestellungen und Teilnehmer*innen."
+"Anmeldungen und Teilnehmer*innen."
 
 #: pretix/base/shredder.py:172
 msgid "This will remove all email addresses from the waiting list."
@@ -4667,7 +4657,7 @@ msgid ""
 "This will remove all attendee names from order positions, as well as logged "
 "changes to them."
 msgstr ""
-"Dies entfernt alle Teilnehmer*innennamen von Bestellungen, sowie Änderungen "
+"Dies entfernt alle Teilnehmer*innennamen von Anmeldungen, sowie Änderungen "
 "an diesen."
 
 #: pretix/base/shredder.py:236
@@ -4679,7 +4669,7 @@ msgid ""
 "This will remove all invoice addresses from orders, as well as logged "
 "changes to them."
 msgstr ""
-"Dies entfernt alle Rechnungsadressen von Bestellungen sowie deren "
+"Dies entfernt alle Rechnungsadressen von Anmeldungen sowie deren "
 "Änderungshistorie."
 
 #: pretix/base/shredder.py:263
@@ -4866,7 +4856,7 @@ msgid ""
 "You are receiving this email because you placed an order for the following "
 "event:"
 msgstr ""
-"Du erhältst diese E-Mail, weil du eine Bestellung für die folgende "
+"Du erhältst diese E-Mail, weil du eine Anmeldung für die folgende "
 "Veranstaltung getätigt hast:"
 
 #: pretix/base/templates/pretixbase/email/plainwrapper.html:27
@@ -4875,11 +4865,11 @@ msgstr "Veranstaltung:"
 
 #: pretix/base/templates/pretixbase/email/plainwrapper.html:28
 msgid "Order code:"
-msgstr "Bestellnummer:"
+msgstr "Anmeldenummer:"
 
 #: pretix/base/templates/pretixbase/email/plainwrapper.html:29
 msgid "Order date:"
-msgstr "Bestelldatum:"
+msgstr "Anmeldedatum:"
 
 #: pretix/base/templates/pretixbase/forms/widgets/reldate.html:15
 #: pretix/base/templates/pretixbase/forms/widgets/reldatetime.html:15
@@ -5107,9 +5097,9 @@ msgid ""
 "order contains tickets for multiple event dates, the earliest date will be "
 "used."
 msgstr ""
-"Das späteste Datum, zu dem Benutzer die Details ihrer Bestellung (z.B. Namen "
+"Das späteste Datum, zu dem Benutzer die Details ihrer Anmeldung (z.B. Namen "
 "oder Antworten zu Fragen) verändern können. Wenn du die Veranstaltungsreihen-"
-"Funktion nutzt und eine Bestellung Tickets für mehrere Termine enthält, wird "
+"Funktion nutzt und eine Anmeldung Tickets für mehrere Termine enthält, wird "
 "die Änderung aller Tickets nicht mehr möglich sein sobald der Zeitpunkt für "
 "einen der Termine verstrichen ist."
 
@@ -5205,7 +5195,7 @@ msgid ""
 "changing names."
 msgstr ""
 "Dies legt fest, wie pretix Menschen nach ihren Namen fragt. Eine Änderung "
-"dieser Option, wenn bereits Bestellungen existieren, kann beim Sortieren "
+"dieser Option, wenn bereits Anmeldungen existieren, kann beim Sortieren "
 "nach Namen oder Ändern von Namen zu unerwartetem Verhalten führen."
 
 #: pretix/control/forms/event.py:360
@@ -5222,12 +5212,12 @@ msgid ""
 "However, pretix will send the order confirmation only to the one primary "
 "email address, not to the per-attendee addresses."
 msgstr ""
-"Üblicherweise fragt pretix nach einer E-Mail-Adresse pro Bestellung und "
-"sendet die Bestellbestätigung an diese Adresse. Wenn du diese Option "
+"Üblicherweise fragt pretix nach einer E-Mail-Adresse pro Anmeldung und "
+"sendet die Anmeldebestätigung an diese Adresse. Wenn du diese Option "
 "aktivierst, fragt das System zusätzlich nach einzelnen E-Mail-Adressen für "
-"jedes Zutritts-Ticket in der Bestellung. Dies könnte z.B. nützlich sein, "
-"wenn du auch im Falle von Gruppenbestellungen individuelle Adressen von "
-"jeder Teilnehmer*in benötigst. pretix sendet die Bestellbestätigung trotzdem "
+"jedes Zutritts-Ticket in der Anmeldung. Dies könnte z.B. nützlich sein, "
+"wenn du auch im Falle von Gruppenanmeldungen individuelle Adressen von "
+"jeder Teilnehmer*in benötigst. pretix sendet die Anmeldebestätigung trotzdem "
 "nach wie vor nur an die primäre Adresse."
 
 #: pretix/control/forms/event.py:370
@@ -5242,7 +5232,7 @@ msgid ""
 msgstr ""
 "Erfordere, dass für jedes Zutritts-Ticket eine einzelne E-Mail-Adresse "
 "eingegeben wird. Mehr Infos findest du bei der vorherigen Option. Eine E-"
-"Mail-Adresse für die Bestellbestätigung ist immer erforderlich."
+"Mail-Adresse für die Anmeldebestätigung ist immer erforderlich."
 
 #: pretix/control/forms/event.py:378
 msgid "Ask for the order email address twice"
@@ -5257,7 +5247,7 @@ msgstr ""
 
 #: pretix/control/forms/event.py:384
 msgid "Maximum number of items per order"
-msgstr "Maximale Anzahl von Produkten pro Bestellung"
+msgstr "Maximale Anzahl von Produkten pro Anmeldung"
 
 #: pretix/control/forms/event.py:385
 msgid "Add-on products will not be counted."
@@ -5271,8 +5261,7 @@ msgstr "Reservierungszeitraum"
 msgid ""
 "The number of minutes the items in a user's cart are reserved for this user."
 msgstr ""
-"Die Dauer in Minuten, die Produkte im Warenkorb eines Benutzers reserviert "
-"werden."
+"Die Dauer in Minuten, die Auswahl eines Benutzers reserviert ist."
 
 #: pretix/control/forms/event.py:393 pretix/control/forms/event.py:1320
 msgid "Imprint URL"
@@ -5341,7 +5330,7 @@ msgstr "Frage nach {fields}, Anzeige wie {example}"
 
 #: pretix/control/forms/event.py:446
 msgid "Customers can cancel their unpaid orders"
-msgstr "Kunden können unbezahlte Bestellungen stornieren"
+msgstr "Kunden können unbezahlte Anmeldungen stornieren"
 
 #: pretix/control/forms/event.py:450 pretix/control/forms/event.py:472
 msgid "Do not allow cancellations after"
@@ -5349,7 +5338,7 @@ msgstr "Stornierungen nur erlauben bis"
 
 #: pretix/control/forms/event.py:454
 msgid "Customers can cancel their paid orders"
-msgstr "Kunden können bezahlte Bestellungen stornieren"
+msgstr "Kunden können bezahlte Anmeldungen stornieren"
 
 #: pretix/control/forms/event.py:455
 msgid ""
@@ -5383,7 +5372,7 @@ msgid ""
 "recommend 14 days. If you only use real-time payment methods, we recommend "
 "still setting two or three days to allow people to retry failed payments."
 msgstr ""
-"Anzahl an Tagen, die ein Benutzer nach Abschicken der Bestellung hat, um die "
+"Anzahl an Tagen, die ein Benutzer nach Abschicken der Anmeldung hat, um die "
 "Zahlung abzuschließen. Wenn du langsame Zahlungsmethoden wie Banküberweisung "
 "nutzt, empfehlen wir 14 Tage. Wenn du nur Echtzeit-Zahlungsmethoden wie "
 "Kreditkarte nutzen, empfehlen wir zwei oder drei Tage einzustellen, damit "
@@ -5401,7 +5390,7 @@ msgid ""
 msgstr ""
 "Das Datum, bis zu dem Zahlungseingänge akzeptiert werden. Diese Einstellung "
 "hat Vorrang vor der oben eingestellten Anzahl an Tagen. Wenn du die "
-"Veranstaltungsreihen-Funktion nutzt und eine Bestellung Tickets für mehrere "
+"Veranstaltungsreihen-Funktion nutzt und eine Anmeldung Tickets für mehrere "
 "Termine enthält, wird die Zahlung aller Tickets nicht mehr möglich sein "
 "sobald der Zeitpunkt für einen der Termine verstrichen ist."
 
@@ -5416,14 +5405,14 @@ msgid ""
 "some countries by civil law. This will not effect the last date of payments "
 "configured above."
 msgstr ""
-"Wenn diese Option aktiviert ist und die Zahlungsfrist einer Bestellung auf "
+"Wenn diese Option aktiviert ist und die Zahlungsfrist einer Anmeldung auf "
 "einem Samstag oder Sonntag liegt, wird sie auf den nächsten Montag "
 "verschoben. Dies ist in einigen Ländern rechtlich erforderlich. Dies "
 "beeinflusst nicht das oben konfigurierte letzte Zahlungsdatum."
 
 #: pretix/control/forms/event.py:500
 msgid "Automatically expire unpaid orders"
-msgstr "Unbezahlte Bestellungen automatisch ablaufen lassen"
+msgstr "Unbezahlte Anmeldungen automatisch ablaufen lassen"
 
 #: pretix/control/forms/event.py:501
 msgid ""
@@ -5431,10 +5420,10 @@ msgid ""
 "'expired' after the end of their payment deadline. This means that those "
 "tickets go back to the pool and can be ordered by other people."
 msgstr ""
-"Wenn diese Option aktiviert ist, werden alle unbezahlten Bestellungen "
+"Wenn diese Option aktiviert ist, werden alle unbezahlten Anmeldungen "
 "automatisch bei Ablauf ihres Zahlungsdatum von \"ausstehend\" auf "
 "\"abgelaufen\" umgestellt. Dies bedeutet, dass diese Tickets zurück in den "
-"Pool gelangen und wieder Kontingent für Bestellungen von anderen Benutzern "
+"Pool gelangen und wieder Kontingent für Anmeldungen von anderen Benutzern "
 "frei wird."
 
 #: pretix/control/forms/event.py:507
@@ -5447,7 +5436,7 @@ msgid ""
 "enough capacity is available. No payments will ever be accepted after the "
 "'Last date of payments' configured above."
 msgstr ""
-"Akzeptiere Zahlungen für abgelaufene Bestellungen, wenn die betreffenden "
+"Akzeptiere Zahlungen für abgelaufene Anmeldungen, wenn die betreffenden "
 "Kontingente noch nicht leer sind. Keine Bezahlungen werden nach dem oben "
 "angegebenen „letzten Zahlungsdatum“ akzeptiert."
 
@@ -5500,7 +5489,7 @@ msgstr "Diese Einstellung erzwingt die Eingabe eines Firmennamens."
 
 #: pretix/control/forms/event.py:607
 msgid "Require customer name"
-msgstr "Namen des Bestellers erfordern"
+msgstr "Anmeldung erfordert einen Namen"
 
 #: pretix/control/forms/event.py:614
 msgid "Ask for VAT ID"
@@ -5535,7 +5524,7 @@ msgid ""
 "Note that invoices will never be generated for orders that contain only free "
 "products."
 msgstr ""
-"Unabhängig von dieser Einstellung werden für Bestellungen, die nur "
+"Unabhängig von dieser Einstellung werden für Anmeldungen, die nur "
 "kostenlose Produkte enthalten, keine Rechnungen erzeugt."
 
 #: pretix/control/forms/event.py:635
@@ -5593,7 +5582,7 @@ msgstr "Automatisch auf Anfrage des Kunden"
 
 #: pretix/control/forms/event.py:662
 msgid "Automatically for all created orders"
-msgstr "Automatisch für alle neuen Bestellungen"
+msgstr "Automatisch für alle neuen Anmeldungen"
 
 #: pretix/control/forms/event.py:663
 msgid "Automatically on payment"
@@ -5602,7 +5591,7 @@ msgstr "Automatisch bei Zahlungseingang"
 #: pretix/control/forms/event.py:665
 msgid "Invoices will never be automatically generated for free orders."
 msgstr ""
-"Unabhängig von dieser Einstellung werden für Bestellungen, die nur "
+"Unabhängig von dieser Einstellung werden für Anmeldungen, die nur "
 "kostenlose Produkte enthalten, keine Rechnungen erzeugt."
 
 #: pretix/control/forms/event.py:668
@@ -5620,8 +5609,8 @@ msgid ""
 "on payment, they will be attached to the payment confirmation mail. If they "
 "are not automatically generated, they will not be attached to emails."
 msgstr ""
-"Wenn Rechnungen automatisch für alle Bestellungen erzeugt werden, werden sie "
-"an die Bestellbestätigungs-E-Mail angehängt. Wenn sie automatisch bei "
+"Wenn Rechnungen automatisch für alle Anmeldungen erzeugt werden, werden sie "
+"an die Anmeldebestätigungs-E-Mail angehängt. Wenn sie automatisch bei "
 "Zahlungseingang generiert werden, werden sie an die Zahlungsbestätigungs-E-"
 "Mail angehängt. Wenn sie nicht automatisch generiert werden, werden sie an "
 "keine E-Mail angehängt."
@@ -5649,7 +5638,7 @@ msgstr "USt-ID-Nr."
 #: pretix/control/forms/event.py:730
 msgid "e.g. With this document, we sent you the invoice for your ticket order."
 msgstr ""
-"z.B. Mit diesem Dokument erhältst die Rechnung für deine Ticketbestellung."
+"z.B. Mit diesem Dokument erhältst die Rechnung für deine Ticketanmeldung."
 
 #: pretix/control/forms/event.py:734
 msgid "Introductory text"
@@ -5860,7 +5849,7 @@ msgstr ""
 
 #: pretix/control/forms/event.py:916
 msgid "Received order"
-msgstr "Bestellung erhalten"
+msgstr "Anmeldung erhalten"
 
 #: pretix/control/forms/event.py:919
 #, python-brace-format
@@ -5873,7 +5862,7 @@ msgstr ""
 
 #: pretix/control/forms/event.py:925
 msgid "Approved order"
-msgstr "Bestätigte Bestellung"
+msgstr "Bestätigte Anmeldung"
 
 #: pretix/control/forms/event.py:928
 #, python-brace-format
@@ -5883,14 +5872,14 @@ msgid ""
 "{total_with_currency}, {total}, {currency}, {date}, {payment_info}, {url}, "
 "{invoice_name}, {invoice_company}"
 msgstr ""
-"Wird nur für kostenpflichtige Bestellungen verschickt. Für kostenlose "
-"Bestellung wird die E-Mail-Vorlage für den Bestelleingang verwendet. "
+"Wird nur für kostenpflichtige Anmeldungen verschickt. Für kostenlose "
+"Anmeldung wird die E-Mail-Vorlage für den Bestelleingang verwendet. "
 "Verfügbare Platzhalter: {event}, {total_with_currency}, {total}, {currency}, "
 "{date}, {payment_info}, {url}, {invoice_name}, {invoice_company}"
 
 #: pretix/control/forms/event.py:935
 msgid "Denied order"
-msgstr "Abgelehnte Bestellung"
+msgstr "Abgelehnte Anmeldung"
 
 #: pretix/control/forms/event.py:938
 #, python-brace-format
@@ -6067,7 +6056,7 @@ msgid ""
 "all tickets will be available if at least one of the event dates allows it."
 msgstr ""
 "Ticket-Download wird nach diesem Termin möglich. Wenn du die "
-"Veranstaltungsreihen-Funktion nutzt und eine Bestellung Tickets für mehrere "
+"Veranstaltungsreihen-Funktion nutzt und eine Anmeldung Tickets für mehrere "
 "Termine enthält, wird der Download aller Tickets möglich sein sobald der "
 "Zeitpunkt für einen der Termine erreicht ist."
 
@@ -6081,7 +6070,7 @@ msgstr "Tickets für Produkte generieren, die keinen Zutritt enthalten"
 
 #: pretix/control/forms/event.py:1126
 msgid "Offer to download tickets even before an order is paid"
-msgstr "Biete Ticket-Download bereits vor Bezahlung einer Bestellung an"
+msgstr "Biete Ticket-Download bereits vor Bezahlung einer Anmeldung an"
 
 #: pretix/control/forms/event.py:1167
 msgid "Any country"
@@ -6213,7 +6202,7 @@ msgid ""
 msgstr ""
 "Deine Teilnehmer*innen werden angewiesen, das Geld direkt auf dein Bankkonto "
 "zu überweisen. Du kannst dann deinen Kontoauszug in pretix importieren, um "
-"Zahlungen zuzuweisen, oder die Bestellungen manuell als bezahlt markieren."
+"Zahlungen zuzuweisen, oder die Anmeldungen manuell als bezahlt markieren."
 
 #: pretix/control/forms/event.py:1388
 #: pretix/control/templates/pretixcontrol/event/quick_setup.html:45
@@ -6222,7 +6211,7 @@ msgstr "Preis (optional)"
 
 #: pretix/control/forms/event.py:1393
 msgid "Free"
-msgstr "Kostenlos"
+msgstr ""
 
 #: pretix/control/forms/event.py:1398
 msgid "Quantity available"
@@ -6236,7 +6225,7 @@ msgstr "Suchen nach …"
 #: pretix/control/navigation.py:190
 #: pretix/control/templates/pretixcontrol/items/question.html:19
 msgid "All orders"
-msgstr "Alle Bestellungen"
+msgstr "Alle Anmeldungen"
 
 #: pretix/control/forms/filter.py:103 pretix/control/forms/filter.py:203
 msgid "Paid (or canceled with paid fee)"
@@ -6738,8 +6727,8 @@ msgid ""
 "want to keep them. Please always enter a gross value, tax will be calculated "
 "automatically."
 msgstr ""
-"Wenn du eine Gebühr einbehältst, werden alle Positionen dieser Bestellung "
-"einzeln storniert. Die Bestellung selbst bleibt als bezahlte Bestellung "
+"Wenn du eine Gebühr einbehältst, werden alle Positionen dieser Anmeldung "
+"einzeln storniert. Die Anmeldung selbst bleibt als bezahlte Anmeldung "
 "vorhanden und enthält nur noch die Stornogebühr. Zahlungs- und "
 "Versandgebühren werden ebenfalls storniert und müssen ggf. manuell in die "
 "Stornogebühr aufgenommen werden. Bitte gib einen Bruttobetrag ein, die "
@@ -6775,7 +6764,7 @@ msgstr "Benutzer benachrichtigen"
 msgid ""
 "Send an email to the customer notifying that their order has been changed."
 msgstr ""
-"Eine E-Mail wird verschickt um den Benutzer über die Änderung der Bestellung "
+"Eine E-Mail wird verschickt um den Benutzer über die Änderung der Anmeldung "
 "in Kenntnis zu setzen."
 
 #: pretix/control/forms/orders.py:181
@@ -6784,7 +6773,7 @@ msgstr "Überbuchen von Kontingenten bei dieser Aktion erlauben"
 
 #: pretix/control/forms/orders.py:192
 msgid "Add a new product to the order"
-msgstr "Neues Produkt zur Bestellung hinzufügen"
+msgstr "Neues Produkt zur Anmeldung hinzufügen"
 
 #: pretix/control/forms/orders.py:201
 msgid "Add-on to"
@@ -6819,7 +6808,7 @@ msgid ""
 "to the order page to the user and the user will need to download his tickets "
 "again. The old versions will be invalid."
 msgstr ""
-"Generiert die geheimen Codes der Bestellung und der Tickets neu. Bitte "
+"Generiert die geheimen Codes der Anmeldung und der Tickets neu. Bitte "
 "danach den Link neu verschicken; der User muss auch die Tickets neu "
 "herunterladen, da die alten Versionen ungültig gemacht werden."
 
@@ -6841,7 +6830,7 @@ msgstr "Nachricht"
 msgid ""
 "Cancel the order. All tickets will no longer work. This can not be reverted."
 msgstr ""
-"Storniere die komplette Bestellung. Alle Tickets funktionieren nicht mehr. "
+"Storniere die komplette Anmeldung. Alle Tickets funktionieren nicht mehr. "
 "Dies kann nicht rückgängig gemacht werden."
 
 #: pretix/control/forms/orders.py:410
@@ -6849,12 +6838,12 @@ msgid ""
 "Mark the order as pending and allow the user to pay the open amount with "
 "another payment method."
 msgstr ""
-"Markiere die Bestellung als unbezahlt und erlaube dem Nutzer, den offenen "
+"Markiere die Anmeldung als unbezahlt und erlaube dem Nutzer, den offenen "
 "Betrag mit einer anderen Zahlungsmethode zu begleichen."
 
 #: pretix/control/forms/orders.py:412
 msgid "Do nothing and keep the order as it is."
-msgstr "Tue nichts und belasse den Zustand der Bestellung wie gehabt."
+msgstr "Tue nichts und belasse den Zustand der Anmeldung wie gehabt."
 
 #: pretix/control/forms/orders.py:439
 msgid "The refund amount needs to be positive and less than {}."
@@ -7086,7 +7075,7 @@ msgstr "Ein Gutschein mit einem der eingegebenen Codes existiert bereits."
 
 #: pretix/control/logdisplay.py:30
 msgid "The order has been changed:"
-msgstr "Die Bestellung wurde geändert:"
+msgstr "Die Anmeldung wurde geändert:"
 
 #: pretix/control/logdisplay.py:38
 #, python-brace-format
@@ -7140,13 +7129,13 @@ msgstr "Ein neuer Ticket-Code für Position #{posid} wurde generiert."
 msgid ""
 "Position #{posid} ({old_item}, {old_price}) split into new order: {order}"
 msgstr ""
-"Position #{posid} ({old_item}, {old_price}) in neue Bestellung abgespalten: "
+"Position #{posid} ({old_item}, {old_price}) in neue Anmeldung abgespalten: "
 "{order}."
 
 #: pretix/control/logdisplay.py:109
 #, python-brace-format
 msgid "This order has been created by splitting the order {order}"
-msgstr "Die Bestellung wurde durch Abspaltung aus {order} erzeugt"
+msgstr "Die Anmeldung wurde durch Abspaltung aus {order} erzeugt"
 
 #: pretix/control/logdisplay.py:128 pretix/control/logdisplay.py:130
 #: pretix/control/logdisplay.py:348 pretix/control/logdisplay.py:350
@@ -7190,15 +7179,15 @@ msgstr "Der interne Kommentar wurde geändert."
 
 #: pretix/control/logdisplay.py:167
 msgid "The order details have been changed."
-msgstr "Die Bestelldetails wurden geändert."
+msgstr "Die Anmeldedetails wurden geändert."
 
 #: pretix/control/logdisplay.py:168
 msgid "The order has been marked as unpaid."
-msgstr "Die Bestellung wurde als nicht bezahlt markiert."
+msgstr "Die Anmeldung wurde als nicht bezahlt markiert."
 
 #: pretix/control/logdisplay.py:169
 msgid "The order's secret has been changed."
-msgstr "Die Ticket-Codes und der Link zur Bestell-Seite wurde geändert."
+msgstr "Die Ticket-Codes und der Link zur Anmelde-Seite wurde geändert."
 
 #: pretix/control/logdisplay.py:170
 msgid "The order's expiry date has been changed."
@@ -7206,15 +7195,15 @@ msgstr "Die Zahlungsfrist wurde geändert."
 
 #: pretix/control/logdisplay.py:171 pretix/control/views/orders.py:909
 msgid "The order has been marked as expired."
-msgstr "Die Bestellung wurde als abgelaufen markiert."
+msgstr "Die Anmeldung wurde als abgelaufen markiert."
 
 #: pretix/control/logdisplay.py:172
 msgid "The order has been marked as paid."
-msgstr "Die Bestellung wurde als bezahlt markiert."
+msgstr "Die Anmeldung wurde als bezahlt markiert."
 
 #: pretix/control/logdisplay.py:173
 msgid "The order has been refunded."
-msgstr "Die Bestellung wurde zurückerstattet."
+msgstr "Die Anmeldung wurde zurückerstattet."
 
 #: pretix/control/logdisplay.py:174 pretix/control/views/orders.py:906
 #: pretix/presale/views/order.py:624
@@ -7225,24 +7214,24 @@ msgstr "Die Anmeldung wurde storniert."
 #: pretix/control/logdisplay.py:175
 #, python-brace-format
 msgid "The test mode order {code} has been deleted."
-msgstr "Die Test-Bestellung {code} wurde gelöscht."
+msgstr "Die Test-Anmeldung {code} wurde gelöscht."
 
 #: pretix/control/logdisplay.py:176
 msgid "The order has been created."
-msgstr "Die Bestellung wurde erstellt."
+msgstr "Die Anmeldung wurde erstellt."
 
 #: pretix/control/logdisplay.py:177
 msgid "The order requires approval before it can continue to be processed."
 msgstr ""
-"Diese Bestellung erfordert eine Freigabe, bevor sie weiter verarbeitet wird."
+"Diese Anmeldung erfordert eine Freigabe, bevor sie weiter verarbeitet wird."
 
 #: pretix/control/logdisplay.py:178 pretix/control/views/orders.py:406
 msgid "The order has been approved."
-msgstr "Die Bestellung wurde freigegeben."
+msgstr "Die Anmeldung wurde freigegeben."
 
 #: pretix/control/logdisplay.py:179
 msgid "The order has been denied."
-msgstr "Die Bestellung wurde abgelehnt."
+msgstr "Die Anmeldung wurde abgelehnt."
 
 #: pretix/control/logdisplay.py:180
 #, python-brace-format
@@ -7253,7 +7242,7 @@ msgstr ""
 
 #: pretix/control/logdisplay.py:182
 msgid "The order locale has been changed."
-msgstr "Die Sprache der Bestellung wurde geändert."
+msgstr "Die Sprache der Anmeldung wurde geändert."
 
 #: pretix/control/logdisplay.py:183 pretix/control/views/orders.py:945
 #: pretix/presale/views/order.py:518
@@ -7305,7 +7294,7 @@ msgstr "Eine E-Mail wurde mit einer Download-Erinnerung wurde verschickt."
 msgid ""
 "An email has been sent with a warning that the order is about to expire."
 msgstr ""
-"Eine E-Mail wurde mit einer Warnung für das Ablaufdatum der Bestellung "
+"Eine E-Mail wurde mit einer Warnung für das Ablaufdatum der Anmeldung "
 "verschickt."
 
 #: pretix/control/logdisplay.py:197
@@ -7313,21 +7302,21 @@ msgid ""
 "An email has been sent to notify the user that the order has been canceled."
 msgstr ""
 "Eine E-Mail wurde verschickt, die den Benutzer auf die Stornierung der "
-"Bestellung hinweist."
+"Anmeldung hinweist."
 
 #: pretix/control/logdisplay.py:198
 msgid ""
 "An email has been sent to notify the user that the order has been changed."
 msgstr ""
 "Eine E-Mail wurde verschickt, die den Benutzer auf die Änderung der "
-"Bestellung hinweist."
+"Anmeldung hinweist."
 
 #: pretix/control/logdisplay.py:199
 msgid ""
 "An email has been sent to notify the user that the order has been received."
 msgstr ""
 "Eine E-Mail wurde verschickt, die den Benutzer auf den Eingang der "
-"Bestellung hinweist."
+"Anmeldung hinweist."
 
 #: pretix/control/logdisplay.py:200
 msgid ""
@@ -7341,34 +7330,34 @@ msgid ""
 "An email has been sent to notify the user that the order has been denied."
 msgstr ""
 "Eine E-Mail wurde verschickt, die den Benutzer auf die Ablehnung der "
-"Bestellung hinweist."
+"Anmeldung hinweist."
 
 #: pretix/control/logdisplay.py:202
 msgid ""
 "An email has been sent to notify the user that the order has been approved."
 msgstr ""
 "Eine E-Mail wurde verschickt, die den Benutzer auf die Freigabe der "
-"Bestellung hinweist."
+"Anmeldung hinweist."
 
 #: pretix/control/logdisplay.py:204
 msgid ""
 "An email has been sent to notify the user that the order has been received "
 "and requires payment."
 msgstr ""
-"Eine E-Mail zur Bestätigung der Bestellung wurde an den Benutzer verschickt."
+"Eine E-Mail zur Bestätigung der Anmeldung wurde an den Benutzer verschickt."
 
 #: pretix/control/logdisplay.py:205
 msgid ""
 "An email has been sent to notify the user that the order has been received "
 "and requires approval."
 msgstr ""
-"Eine E-Mail zur Bestätigung der Bestellung wurde an den Benutzer verschickt."
+"Eine E-Mail zur Bestätigung der Anmeldung wurde an den Benutzer verschickt."
 
 #: pretix/control/logdisplay.py:208
 msgid ""
 "An email with a link to the order detail page has been resent to the user."
 msgstr ""
-"Eine E-Mail mit dem Link zur Bestellseite wurde an den Benutzer verschickt."
+"Eine E-Mail mit dem Link zur Anmeldeseite wurde an den Benutzer verschickt."
 
 #: pretix/control/logdisplay.py:209
 #, python-brace-format
@@ -7393,11 +7382,11 @@ msgstr "Die Zahlung {local_id} ist fehlgeschlagen."
 #: pretix/control/logdisplay.py:213
 #, python-brace-format
 msgid "The order could not be marked as paid: {message}"
-msgstr "Die Bestellung konnte nicht als bezahlt markiert werden: {message}"
+msgstr "Die Anmeldung konnte nicht als bezahlt markiert werden: {message}"
 
 #: pretix/control/logdisplay.py:214
 msgid "The order has been overpaid."
-msgstr "Die Bestellung wurde überzahlt."
+msgstr "Die Anmeldung wurde überzahlt."
 
 #: pretix/control/logdisplay.py:215
 #, python-brace-format
@@ -7510,7 +7499,7 @@ msgstr "Der Gutschein wurde gelöscht."
 #: pretix/control/logdisplay.py:242
 #, python-brace-format
 msgid "The voucher has been redeemed in order {order_code}."
-msgstr "Der Gutschein wurde in Bestellung {order_code} eingelöst."
+msgstr "Der Gutschein wurde in Anmeldung {order_code} eingelöst."
 
 #: pretix/control/logdisplay.py:243
 msgid "The product has been created."
@@ -7985,7 +7974,7 @@ msgstr "Check-in-Listen"
 #: pretix/control/templates/pretixcontrol/search/orders.html:7
 #: pretix/control/templates/pretixcontrol/search/orders.html:9
 msgid "Order search"
-msgstr "Bestellungen durchsuchen"
+msgstr "Anmeldungen durchsuchen"
 
 #: pretix/control/navigation.py:321
 msgid "User settings"
@@ -8293,14 +8282,14 @@ msgid ""
 "to make sure they do not show up in your reports and statistics and block "
 "people from actually buying tickets."
 msgstr ""
-"Diese Veranstaltung enthält <strong>Test-Bestellungen</strong> obwohl der "
-"<strong>Testmodus ausgeschaltet ist</strong>. Du solltest diese Bestellungen "
+"Diese Veranstaltung enthält <strong>Test-Anmeldungen</strong> obwohl der "
+"<strong>Testmodus ausgeschaltet ist</strong>. Du solltest diese Anmeldungen "
 "löschen, da sie ansonsten in deinen Berichten und Statistiken auftauchen und "
 "echten Ticketkäufern Plätze wegnehmen."
 
 #: pretix/control/templates/pretixcontrol/base.html:341
 msgid "Show all test mode orders"
-msgstr "Alle Testbestellungen anzeigen"
+msgstr "Alle Testanmeldungen anzeigen"
 
 #: pretix/control/templates/pretixcontrol/base.html:349
 msgid ""
@@ -8768,11 +8757,11 @@ msgstr "Storno-Einstellungen"
 
 #: pretix/control/templates/pretixcontrol/event/cancel.html:10
 msgid "Cancellation of unpaid or free orders"
-msgstr "Stornierung von ausstehenden oder kostenlosen Bestellungen"
+msgstr "Stornierung von ausstehenden oder kostenlosen Anmeldungen"
 
 #: pretix/control/templates/pretixcontrol/event/cancel.html:15
 msgid "Cancellation of paid orders"
-msgstr "Stornierung von bezahlten Bestellungen"
+msgstr "Stornierung von bezahlten Anmeldungen"
 
 #: pretix/control/templates/pretixcontrol/event/cancel.html:23
 msgid ""
@@ -8781,7 +8770,7 @@ msgid ""
 "take manual action. However, you have currently turned off notifications for "
 "this event."
 msgstr ""
-"Wenn ein Nutzer eine bezahlte Bestellung storniert und das Geld nicht "
+"Wenn ein Nutzer eine bezahlte Anmeldung storniert und das Geld nicht "
 "automatisch zurückerstattet werden kann, musst du aktiv werden. Die "
 "entsprechenden Benachrichtigungen hast du allerdings derzeit deaktiviert."
 
@@ -8830,7 +8819,7 @@ msgstr ""
 #: pretix/control/templates/pretixcontrol/event/delete.html:42
 msgid "Your event can not be deleted as it already contains orders."
 msgstr ""
-"Diese Veranstaltung kann nicht gelöscht werden, da sie bereits Bestellungen "
+"Diese Veranstaltung kann nicht gelöscht werden, da sie bereits Anmeldungen "
 "enthält."
 
 #: pretix/control/templates/pretixcontrol/event/delete.html:45
@@ -8839,7 +8828,7 @@ msgid ""
 "pretix does not allow deleting orders once they have been placed in order to "
 "be audit-proof and trustable by financial authorities."
 msgstr ""
-"pretix erlaubt es nicht, Bestellungen zu löschen nachdem diese einmal "
+"pretix erlaubt es nicht, Anmeldungen zu löschen nachdem diese einmal "
 "angelegt wurden, um Revisionssicherheit zu gewährleisten und rechtlichen "
 "Rahmenbedingungen zu genügen."
 
@@ -8892,13 +8881,13 @@ msgid ""
 "duplicate payment attempts. You should review the cases and consider "
 "refunding the overpaid amount to the user."
 msgstr ""
-"Diese Veranstaltung enthält <strong>überzahlte Bestellungen</strong>, z.B. "
+"Diese Veranstaltung enthält <strong>überzahlte Anmeldungen</strong>, z.B. "
 "durch doppelte Zahlungsversuche. Du solltest dir diese Fälle genau anschauen "
 "und ggf. den zuviel bezahlten Betrag an den Kunden zurückerstatten."
 
 #: pretix/control/templates/pretixcontrol/event/index.html:25
 msgid "Show overpaid orders"
-msgstr "Überzahlte Bestellungen anzeigen"
+msgstr "Überzahlte Anmeldungen anzeigen"
 
 #: pretix/control/templates/pretixcontrol/event/index.html:30
 msgid ""
@@ -8917,12 +8906,12 @@ msgid ""
 "This event contains <strong>pending approvals</strong> that you should take "
 "care of."
 msgstr ""
-"Diese Veranstaltung enthält <strong>Bestellungen, die auf Freigabe warten</"
+"Diese Veranstaltung enthält <strong>Anmeldungen, die auf Freigabe warten</"
 "strong>."
 
 #: pretix/control/templates/pretixcontrol/event/index.html:43
 msgid "Show orders pending approval"
-msgstr "Alle Bestellungen ohne Freigabe"
+msgstr "Alle Anmeldungen ohne Freigabe"
 
 #: pretix/control/templates/pretixcontrol/event/index.html:48
 msgid ""
@@ -8931,15 +8920,15 @@ msgid ""
 "arrived. You should review the cases and consider either refunding the "
 "customer or creating more space."
 msgstr ""
-"Diese Veranstaltung enthält <strong>voll bezahlte Bestellungen</strong>, die "
+"Diese Veranstaltung enthält <strong>voll bezahlte Anmeldungen</strong>, die "
 "trotzdem nicht als bezahlt markiert sind. Vermutlich ging die Zahlung "
 "verspätet ein und bei Zahlungseingang war kein Kontingent mehr frei. Du "
-"solltest dir diese Fälle genau anschauen und entweder die Bestellung "
+"solltest dir diese Fälle genau anschauen und entweder die Anmeldung "
 "bestätigen oder den bezahlten Betrag an den Kunden zurückerstatten."
 
 #: pretix/control/templates/pretixcontrol/event/index.html:54
 msgid "Show affected orders"
-msgstr "Betroffene Bestellungen anzeigen"
+msgstr "Betroffene Anmeldungen anzeigen"
 
 #: pretix/control/templates/pretixcontrol/event/index.html:61
 msgid "Your attention is required to resolve the following issues"
@@ -9055,12 +9044,12 @@ msgid ""
 "Your shop is currently in test mode. All orders are not persistant and can "
 "be deleted at any point."
 msgstr ""
-"Dein Shop ist momentan im Testmodus. Alle Bestellungen werden nicht "
+"Dein Shop ist momentan im Testmodus. Alle Anmeldungen werden nicht "
 "dauerhaft getätigt sondern können jederzeit gelöscht werden."
 
 #: pretix/control/templates/pretixcontrol/event/live.html:76
 msgid "Permanently delete all orders created in test mode"
-msgstr "Alle im Testmodus erstellten Bestellungen unwiderruflich löschen"
+msgstr "Alle im Testmodus erstellten Anmeldungen unwiderruflich löschen"
 
 #: pretix/control/templates/pretixcontrol/event/live.html:81
 msgid "Disable test mode"
@@ -9076,9 +9065,9 @@ msgid ""
 "As long as the shop is in test mode, all orders that are created are marked "
 "as test orders and can be deleted again."
 msgstr ""
-"Wenn du zum Test Bestellungen tätigen willst, kannst du den Testmodus für "
+"Wenn du zum Test Anmeldungen tätigen willst, kannst du den Testmodus für "
 "deinen Shop aktivieren. Solange der Shop im Testmodus ist, werden alle "
-"Bestellungen als Testbestellungen markiert und können wieder gelöscht werden."
+"Anmeldungen als Testanmeldungen markiert und können wieder gelöscht werden."
 
 #: pretix/control/templates/pretixcontrol/event/live.html:92
 msgid ""
@@ -9086,9 +9075,9 @@ msgid ""
 "vouchers and might perform actual payments. The only difference is that you "
 "can delete test orders. Use at your own risk!"
 msgstr ""
-"Bitte beachte, dass diese Bestellungen nach wie vor von deinen Kontingenten "
+"Bitte beachte, dass diese Anmeldungen nach wie vor von deinen Kontingenten "
 "abgehen, Gutscheine verbrauchen und echte Zahlungen hervorrufen können. Der "
-"einzige Unterschied besteht darin, dass Testbestellungen wieder gelöscht "
+"einzige Unterschied besteht darin, dass Testanmeldungen wieder gelöscht "
 "werden können. Benutzung auf eigene Gefahr!"
 
 #: pretix/control/templates/pretixcontrol/event/live.html:96
@@ -9107,7 +9096,7 @@ msgid ""
 "recommend enabling test mode if your customers already know your shop, as it "
 "will confuse them."
 msgstr ""
-"Es sieht aus, als würde dein Ticketshop bereits echte Bestellungen "
+"Es sieht aus, als würde dein Ticketshop bereits echte Anmeldungen "
 "enthalten. Wir raten davon ab, den Testmodus zu aktivieren, nachdem bereits "
 "echte Kunden auf deinen Shop aufmerksam geworden sind, das führt vermutlich "
 "zu Verwirrung."
@@ -9153,15 +9142,15 @@ msgstr "E-Mail-Inhalt"
 
 #: pretix/control/templates/pretixcontrol/event/mail.html:42
 msgid "Placed order"
-msgstr "Getätigte Bestellung"
+msgstr "Getätigte Anmeldung"
 
 #: pretix/control/templates/pretixcontrol/event/mail.html:45
 msgid "Paid order"
-msgstr "Bezahlte Bestellung"
+msgstr "Bezahlte Anmeldung"
 
 #: pretix/control/templates/pretixcontrol/event/mail.html:48
 msgid "Free order"
-msgstr "Kostenlose Bestellung"
+msgstr "Kostenlose Anmeldung"
 
 #: pretix/control/templates/pretixcontrol/event/mail.html:51
 #: pretix/control/templates/pretixcontrol/order/index.html:152
@@ -9497,7 +9486,7 @@ msgid ""
 "for any existing orders."
 msgstr ""
 "Du kannst keine Steuerregel löschen, die für ein Produkt oder bei "
-"bestehenden Bestellungen im Einsatz ist."
+"bestehenden Anmeldungen im Einsatz ist."
 
 #: pretix/control/templates/pretixcontrol/event/tax_edit.html:7
 #: pretix/control/templates/pretixcontrol/event/tax_edit.html:14
@@ -9687,7 +9676,7 @@ msgid ""
 "bank transfer references as an abbreviation to reference this event."
 msgstr ""
 "Wir werden dies auch als Abkürzung für diese Veranstaltung verwenden, z.B. "
-"in Bestellnummern, Rechnungsnummern und Verwendungszwecken."
+"in Anmeldenummern, Rechnungsnummern und Verwendungszwecken."
 
 #: pretix/control/templates/pretixcontrol/events/create_basics.html:31
 msgid ""
@@ -9721,7 +9710,7 @@ msgid ""
 "order has been created."
 msgstr ""
 "Bitte beachte, dass du die Veranstaltung nicht mehr löschen kannst, sobald "
-"die ersten Bestellungen eingegangen sind."
+"die ersten Anmeldungen eingegangen sind."
 
 #: pretix/control/templates/pretixcontrol/events/index.html:8
 msgid ""
@@ -10445,11 +10434,11 @@ msgstr "Derzeit haben keine Apps Zugriff auf dein pretix-Konto."
 #: pretix/control/templates/pretixcontrol/order/approve.html:4
 #: pretix/control/templates/pretixcontrol/order/approve.html:8
 msgid "Approve order"
-msgstr "Bestellung freigeben"
+msgstr "Anmeldung freigeben"
 
 #: pretix/control/templates/pretixcontrol/order/approve.html:10
 msgid "Do you really want to approve this order?"
-msgstr "Möchten Sie diese Bestellung wirklich freigeben?"
+msgstr "Möchten Sie diese Anmeldung wirklich freigeben?"
 
 #: pretix/control/templates/pretixcontrol/order/approve.html:20
 #: pretix/control/templates/pretixcontrol/order/cancel.html:33
@@ -10464,7 +10453,7 @@ msgstr "Nein, lieber nicht"
 
 #: pretix/control/templates/pretixcontrol/order/approve.html:25
 msgid "Yes, approve order"
-msgstr "Ja, Bestellung freigeben"
+msgstr "Ja, Anmeldung freigeben"
 
 #: pretix/control/templates/pretixcontrol/order/cancel.html:5
 #: pretix/control/templates/pretixcontrol/order/cancel.html:9
@@ -10504,7 +10493,7 @@ msgstr "Ja, Anmeldung stornieren"
 #: pretix/control/templates/pretixcontrol/order/change.html:11
 #, python-format
 msgid "Change order: %(code)s"
-msgstr "Bestellung ändern: %(code)s"
+msgstr "Anmeldung ändern: %(code)s"
 
 #: pretix/control/templates/pretixcontrol/order/change.html:16
 #: pretix/control/templates/pretixcontrol/order/change_contact.html:12
@@ -10521,7 +10510,7 @@ msgstr "Bestellung ändern: %(code)s"
 #: pretix/control/templates/pretixcontrol/order/sendmail.html:10
 #, python-format
 msgid "Back to order %(order)s"
-msgstr "Zurück zur Bestellung %(order)s"
+msgstr "Zurück zur Anmeldung %(order)s"
 
 #: pretix/control/templates/pretixcontrol/order/change.html:22
 msgid ""
@@ -10531,8 +10520,8 @@ msgid ""
 "questions can be added to the order that need to be answered by the user."
 msgstr ""
 "Du kannst dieses Werkzeug nutzen um die bestellten Produkte zu ändern oder "
-"die Bestellung teilweise zu stornieren. Bitte beachte, dass das Ändern einer "
-"Bestellung verschiedene Implikationen haben kann, z.B. kann sich die "
+"die Anmeldung teilweise zu stornieren. Bitte beachte, dass das Ändern einer "
+"Anmeldung verschiedene Implikationen haben kann, z.B. kann sich die "
 "Zahlungsmittelgebühr ändern oder zusätzliche Fragen können auftreten, die "
 "vom Kunden beantwortet werden müssen."
 
@@ -10549,7 +10538,7 @@ msgid ""
 "If an invoice is attached to the order, a cancellation will be created "
 "together with a new invoice."
 msgstr ""
-"Wenn eine Rechnung für die Bestellung vorliegt, wird diese storniert und "
+"Wenn eine Rechnung für die Anmeldung vorliegt, wird diese storniert und "
 "eine neue Rechnung ausgestellt."
 
 #: pretix/control/templates/pretixcontrol/order/change.html:40
@@ -10557,8 +10546,8 @@ msgid ""
 "If you chose \"split into new order\" for multiple positions, they will be "
 "all split in one second order together, not multiple orders."
 msgstr ""
-"Wenn du \"in neue Bestellung abspalten\" für mehrere Positionen auswählst, "
-"werden diese gemeinsam in eine zweite Bestellung überführt, nicht in mehrere."
+"Wenn du \"in neue Anmeldung abspalten\" für mehrere Positionen auswählst, "
+"werden diese gemeinsam in eine zweite Anmeldung überführt, nicht in mehrere."
 
 #: pretix/control/templates/pretixcontrol/order/change.html:46
 msgid ""
@@ -10571,9 +10560,9 @@ msgstr ""
 "Bitte benutze dieses Werkzeug vorsichtig. Hier vorgenommene Änderungen "
 "können nicht rückgängig gemacht werden. Nicht alle Bedingungen (wie z.B. "
 "verpflichtende Zusatzprodukte) werden von diesem Werkzeug geprüft, es ist "
-"also möglich eine Bestellung zu erzeugen, die normal nicht möglich gewesen "
-"wäre. In vielen Fällen ist es einfacher, die Bestellung komplett zu "
-"stornieren und eine neue Bestellung aufzugeben."
+"also möglich eine Anmeldung zu erzeugen, die normal nicht möglich gewesen "
+"wäre. In vielen Fällen ist es einfacher, die Anmeldung komplett zu "
+"stornieren und eine neue Anmeldung aufzugeben."
 
 #: pretix/control/templates/pretixcontrol/order/change.html:66
 #, python-format
@@ -10626,7 +10615,7 @@ msgstr "keine Besteuerung"
 
 #: pretix/control/templates/pretixcontrol/order/change.html:138
 msgid "Split into new order"
-msgstr "In neue Bestellung abspalten"
+msgstr "In neue Anmeldung abspalten"
 
 #: pretix/control/templates/pretixcontrol/order/change.html:145
 msgid "Generate a new secret"
@@ -10695,24 +10684,24 @@ msgstr "(optional)"
 #: pretix/control/templates/pretixcontrol/order/delete.html:4
 #: pretix/control/templates/pretixcontrol/order/delete.html:8
 msgid "Delete order"
-msgstr "Bestellung löschen"
+msgstr "Anmeldung löschen"
 
 #: pretix/control/templates/pretixcontrol/order/delete.html:10
 msgid ""
 "Do you really want to delete this order? <strong>You really cannot revert "
 "this action and we can't either.</strong>"
 msgstr ""
-"Möchtest du diese Bestellung wirklich löschen? <strong>Weder du noch wir "
+"Möchtest du diese Anmeldung wirklich löschen? <strong>Weder du noch wir "
 "können diese Aktion rückgängig machen.</strong>"
 
 #: pretix/control/templates/pretixcontrol/order/delete.html:25
 msgid "Yes, delete order"
-msgstr "Ja, Bestellung löschen"
+msgstr "Ja, Anmeldung löschen"
 
 #: pretix/control/templates/pretixcontrol/order/deny.html:4
 #: pretix/control/templates/pretixcontrol/order/deny.html:8
 msgid "Deny order"
-msgstr "Bestellung ablehnen"
+msgstr "Anmeldung ablehnen"
 
 #: pretix/control/templates/pretixcontrol/order/deny.html:23
 msgid "Comment (will be sent to the user)"
@@ -10720,7 +10709,7 @@ msgstr "Kommentar (wird an den Kunden übermittelt)"
 
 #: pretix/control/templates/pretixcontrol/order/deny.html:35
 msgid "Yes, deny order"
-msgstr "Ja, Bestellung ablehnen"
+msgstr "Ja, Anmeldung ablehnen"
 
 #: pretix/control/templates/pretixcontrol/order/extend.html:5
 #: pretix/control/templates/pretixcontrol/order/extend.html:9
@@ -10732,7 +10721,7 @@ msgstr "Zahlungsfrist verändern"
 #: pretix/control/templates/pretixcontrol/order/index.html:16
 #, python-format
 msgid "Order details: %(code)s"
-msgstr "Bestellung: %(code)s"
+msgstr "Anmeldung: %(code)s"
 
 #: pretix/control/templates/pretixcontrol/order/index.html:14
 #: pretix/presale/templates/pretixpresale/event/fragment_cart.html:5
@@ -10771,14 +10760,14 @@ msgid ""
 "orders automatically. To free quota capacity, you can mark it as expired "
 "manually."
 msgstr ""
-"Die Bezahlung für diese Bestellung ist überfällig, aber du hast eingestellt, "
-"dass Bestellungen nicht automatisch ablaufen. Um freies Kontingent zu "
-"schaffen, kannst du die Bestellung manuell als abgelaufen markieren."
+"Die Bezahlung für diese Anmeldung ist überfällig, aber du hast eingestellt, "
+"dass Anmeldungen nicht automatisch ablaufen. Um freies Kontingent zu "
+"schaffen, kannst du die Anmeldung manuell als abgelaufen markieren."
 
 #: pretix/control/templates/pretixcontrol/order/index.html:96
 #, python-format
 msgid "This order is currently overpaid by %(amount)s."
-msgstr "Diese Bestellung ist derzeit um %(amount)s überzahlt."
+msgstr "Diese Anmeldung ist derzeit um %(amount)s überzahlt."
 
 #: pretix/control/templates/pretixcontrol/order/index.html:100
 #, python-format
@@ -11036,7 +11025,7 @@ msgstr "Als bezahlt markieren"
 #: pretix/control/templates/pretixcontrol/order/pay.html:20
 msgid "Do you really want to create a manual payment for this order?"
 msgstr ""
-"Möchtest du wirklich eine manuelle Zahlung für diese Bestellung verbuchen?"
+"Möchtest du wirklich eine manuelle Zahlung für diese Anmeldung verbuchen?"
 
 #: pretix/control/templates/pretixcontrol/order/pay.html:35
 msgid "Create payment"
@@ -11082,7 +11071,7 @@ msgid ""
 msgstr ""
 "Wenn das Geld bereits auf dem Rückweg ist, wird dies die Erstattung nicht "
 "aufhalten, es markiert diesen Prozess nur in pretix als abgebrochen. Die "
-"Bestellung wird dadurch auch nicht wieder aktiviert, du kannst nur eine neue "
+"Anmeldung wird dadurch auch nicht wieder aktiviert, du kannst nur eine neue "
 "Erstattungsmethode auswählen."
 
 #: pretix/control/templates/pretixcontrol/order/refund_cancel.html:32
@@ -11094,7 +11083,7 @@ msgstr "Ja, Erstattung abbrechen"
 #: pretix/control/templates/pretixcontrol/order/refund_start.html:5
 #: pretix/control/templates/pretixcontrol/order/refund_start.html:9
 msgid "Refund order"
-msgstr "Bestellung erstatten"
+msgstr "Anmeldung erstatten"
 
 #: pretix/control/templates/pretixcontrol/order/refund_choose.html:21
 msgid "How should the refund be sent?"
@@ -11127,7 +11116,7 @@ msgstr "Diese Zahlungsmethode unterstützt keine automatische Erstattung."
 
 #: pretix/control/templates/pretixcontrol/order/refund_choose.html:70
 msgid "Transfer to other order"
-msgstr "Mit anderer Bestellung verrechnen"
+msgstr "Mit anderer Anmeldung verrechnen"
 
 #: pretix/control/templates/pretixcontrol/order/refund_choose.html:73
 msgctxt "amount_label"
@@ -11137,7 +11126,7 @@ msgstr "Verrechne"
 #: pretix/control/templates/pretixcontrol/order/refund_choose.html:81
 msgctxt "order_label"
 msgid "to"
-msgstr "mit Bestellung"
+msgstr "mit Anmeldung"
 
 #: pretix/control/templates/pretixcontrol/order/refund_choose.html:90
 msgid "Manual refund"
@@ -11194,25 +11183,25 @@ msgid ""
 msgstr ""
 "Uns wurde mitgeteilt, dass <strong>%(amount)s</strong> über <strong>"
 "%(method)s</strong> erstattet wurden. Wenn diese Erstattung verarbeitet "
-"wird, wird die Bestellung einen ausstehenden Betrag von <strong>%(pending)s</"
-"strong> haben. Der Gesamtbetrag der Bestellung ist <strong>%(total)s</"
+"wird, wird die Anmeldung einen ausstehenden Betrag von <strong>%(pending)s</"
+"strong> haben. Der Gesamtbetrag der Anmeldung ist <strong>%(total)s</"
 "strong>."
 
 #: pretix/control/templates/pretixcontrol/order/refund_process.html:29
 msgid "What should happen to the ticket order?"
-msgstr "Was soll mit der Ticketbestellung passieren?"
+msgstr "Was soll mit der Ticketanmeldung passieren?"
 
 #: pretix/control/templates/pretixcontrol/order/refund_process.html:36
 msgid ""
 "Mark the order as unpaid and allow the customer to pay again with another "
 "payment method."
 msgstr ""
-"Bestellung als unbezahlt markieren und dem Nutzer die Zahlung mit anderer "
+"Anmeldung als unbezahlt markieren und dem Nutzer die Zahlung mit anderer "
 "Zahlungsmethode erlauben."
 
 #: pretix/control/templates/pretixcontrol/order/refund_process.html:41
 msgid "Cancel the order irrevocably."
-msgstr "Bestellung unwiderruflich stornieren."
+msgstr "Anmeldung unwiderruflich stornieren."
 
 #: pretix/control/templates/pretixcontrol/order/refund_start.html:20
 msgid "How much do you want to refund?"
@@ -11228,7 +11217,7 @@ msgstr "Nur diesen Betrag erstatten:"
 
 #: pretix/control/templates/pretixcontrol/order/refund_start.html:40
 msgid "What should happen to the order?"
-msgstr "Was soll mit der Bestellung geschehen?"
+msgstr "Was soll mit der Anmeldung geschehen?"
 
 #: pretix/control/templates/pretixcontrol/order/sendmail.html:4
 #: pretix/control/templates/pretixcontrol/order/sendmail.html:7
@@ -11325,8 +11314,8 @@ msgstr "Summe über alle Seiten"
 #, python-format
 msgid "1 order"
 msgid_plural "%(s)s orders"
-msgstr[0] "1 Bestellung"
-msgstr[1] "%(s)s Bestellungen"
+msgstr[0] "1 Anmeldung"
+msgstr[1] "%(s)s Anmeldungen"
 
 #: pretix/control/templates/pretixcontrol/orders/overview.html:4
 #: pretix/control/templates/pretixcontrol/orders/overview.html:14
@@ -11367,8 +11356,8 @@ msgid ""
 "positions within valid orders."
 msgstr ""
 "Wenn du Links in dieser Spalte anklickst, findest du nur vollständig "
-"stornierte Bestellungen, während die Zahlen auch einzeln stornierte "
-"Positionen innerhalb gültiger Bestellungen beinhalten."
+"stornierte Anmeldungen, während die Zahlen auch einzeln stornierte "
+"Positionen innerhalb gültiger Anmeldungen beinhalten."
 
 #: pretix/control/templates/pretixcontrol/orders/refunds.html:31
 msgid "No refunds are currently open."
@@ -11404,7 +11393,7 @@ msgid ""
 "This organizer account can not be deleted as it already contains orders, "
 "invoices, or devices."
 msgstr ""
-"Dieser Veranstalter kann nicht gelöscht werden, da er bereits Bestellungen, "
+"Dieser Veranstalter kann nicht gelöscht werden, da er bereits Anmeldungen, "
 "Rechnungen oder Geräte erstellt hat."
 
 #: pretix/control/templates/pretixcontrol/organizers/detail.html:6
@@ -11997,7 +11986,7 @@ msgid ""
 "We couldn't find any orders that you have access to and that match your "
 "search query."
 msgstr ""
-"Wir konnten keine Bestellungen finden, zu denen du Zugriff hast, und auf die "
+"Wir konnten keine Anmeldungen finden, zu denen du Zugriff hast, und auf die "
 "deine Suchbegriffe passen."
 
 #: pretix/control/templates/pretixcontrol/select2_widget.html:9
@@ -12083,8 +12072,8 @@ msgid ""
 "Using this will not remove the orders for your event, it just scrubs them of "
 "data that can be linked to individual persons."
 msgstr ""
-"Die Nutzung dieser Funktion löscht keine Bestellungen, sie entfernt nur "
-"solche Daten von den Bestellungen, die einzelnen Personen zugeordnet werden "
+"Die Nutzung dieser Funktion löscht keine Anmeldungen, sie entfernt nur "
+"solche Daten von den Anmeldungen, die einzelnen Personen zugeordnet werden "
 "können."
 
 #: pretix/control/templates/pretixcontrol/shredder/index.html:26
@@ -12217,7 +12206,7 @@ msgid ""
 "The following dates can't be deleted as they already have orders, but will "
 "be disabled instead."
 msgstr ""
-"Die folgenden Termine können nicht gelöscht werden, da bereits Bestellungen "
+"Die folgenden Termine können nicht gelöscht werden, da bereits Anmeldungen "
 "vorliegen, aber werden stattdessen deaktiviert."
 
 #: pretix/control/templates/pretixcontrol/subevents/detail.html:9
@@ -12776,7 +12765,7 @@ msgstr ""
 #: pretix/control/templates/pretixcontrol/vouchers/detail.html:15
 #, python-format
 msgid "Order %(code)s"
-msgstr "Bestellung %(code)s"
+msgstr "Anmeldung %(code)s"
 
 #: pretix/control/templates/pretixcontrol/vouchers/detail.html:32
 msgid "Voucher link"
@@ -13150,7 +13139,7 @@ msgstr "Das ausgewählte List wurde gelöscht."
 
 #: pretix/control/views/dashboards.py:74
 msgid "Attendees (ordered)"
-msgstr "Teilnehmer (bestellt)"
+msgstr "Teilnehmer (angemeldet)"
 
 #: pretix/control/views/dashboards.py:83
 msgid "Attendees (paid)"
@@ -13255,8 +13244,8 @@ msgstr "Bald"
 #, python-brace-format
 msgid "{num} order"
 msgid_plural "{num} orders"
-msgstr[0] "{num} Bestellung"
-msgstr[1] "{num} Bestellungen"
+msgstr[0] "{num} Anmeldung"
+msgstr[1] "{num} Anmeldungen"
 
 #: pretix/control/views/event.py:283
 msgid ""
@@ -13350,7 +13339,7 @@ msgid ""
 "An order could not be deleted as some constraints (e.g. data created by plug-"
 "ins) do not allow it."
 msgstr ""
-"Diese Bestellung konnte nicht gelöscht werden, da einige Bedingungen (z.B. "
+"Diese Anmeldung konnte nicht gelöscht werden, da einige Bedingungen (z.B. "
 "von Plugins erstellte Daten) es nicht erlauben."
 
 #: pretix/control/views/event.py:907
@@ -13583,23 +13572,23 @@ msgstr "Der Ticket-Download ist für diese Auswahl nicht freigeschaltet."
 
 #: pretix/control/views/orders.py:423
 msgid "The order has been deleted."
-msgstr "Die Bestellung wurde gelöscht."
+msgstr "Die Anmeldung wurde gelöscht."
 
 #: pretix/control/views/orders.py:429
 msgid ""
 "The order could not be deleted as some constraints (e.g. data created by "
 "plug-ins) do not allow it."
 msgstr ""
-"Diese Bestellung konnte nicht gelöscht werden, da einige Bedingungen (z.B. "
+"Diese Anmeldung konnte nicht gelöscht werden, da einige Bedingungen (z.B. "
 "von Plugins erstellte Daten) es nicht erlauben."
 
 #: pretix/control/views/orders.py:437
 msgid "Only orders created in test mode can be deleted."
-msgstr "Nur im Testmodus erstellte Bestellungen können wieder gelöscht werden."
+msgstr "Nur im Testmodus erstellte Anmeldungen können wieder gelöscht werden."
 
 #: pretix/control/views/orders.py:456
 msgid "The order has been denied and is therefore now canceled."
-msgstr "Die Bestellung wurde abgelehnt und daher storniert."
+msgstr "Die Anmeldung wurde abgelehnt und daher storniert."
 
 #: pretix/control/views/orders.py:481
 msgid "This payment has been canceled."
@@ -13696,7 +13685,7 @@ msgid ""
 "The order has been marked as paid, but we were unable to send a confirmation "
 "mail."
 msgstr ""
-"Die Bestellung wurde als bezahlt markiert, aber die Bestätigungsmail konnte "
+"Die Anmeldung wurde als bezahlt markiert, aber die Bestätigungsmail konnte "
 "nicht verschickt werden."
 
 #: pretix/control/views/orders.py:888
@@ -13708,7 +13697,7 @@ msgid ""
 "The order has been canceled. You can now select how you want to transfer the "
 "money back to the user."
 msgstr ""
-"Die Bestellung wurde als erstattet markiert. Du kannst nun auswählen, wie du "
+"Die Anmeldung wurde als erstattet markiert. Du kannst nun auswählen, wie du "
 "das Geld zurückerstatten möchtest."
 
 #: pretix/control/views/orders.py:959 pretix/control/views/orders.py:963
@@ -13785,17 +13774,17 @@ msgid ""
 "We were not able to process the request completely as the server was too "
 "busy."
 msgstr ""
-"Wir konnten deine Bestellung nicht durchführen, da der Server zu beschäftigt "
+"Wir konnten deine Anmeldung nicht durchführen, da der Server zu beschäftigt "
 "war."
 
 #: pretix/control/views/orders.py:1139
 msgid "This action is only allowed for pending orders."
-msgstr "Diese Aktion ist nur für unbezahlte Bestellungen möglich."
+msgstr "Diese Aktion ist nur für unbezahlte Anmeldungen möglich."
 
 #: pretix/control/views/orders.py:1167
 msgid "This action is only allowed for pending or paid orders."
 msgstr ""
-"Dieser Aktion ist nur für ausstehende und bezahlte Bestellungen möglich."
+"Dieser Aktion ist nur für ausstehende und bezahlte Anmeldungen möglich."
 
 #: pretix/control/views/orders.py:1280
 msgid "An error occurred. Please see the details below."
@@ -13803,12 +13792,12 @@ msgstr "Ein Fehler ist aufgetreten, bitte schaue weiter unten für Details."
 
 #: pretix/control/views/orders.py:1288
 msgid "The order has been changed and the user has been notified."
-msgstr "Die Bestellung wurde geändert und der Kunde benachrichtigt."
+msgstr "Die Anmeldung wurde geändert und der Kunde benachrichtigt."
 
 #: pretix/control/views/orders.py:1290 pretix/control/views/orders.py:1372
 #: pretix/control/views/orders.py:1408
 msgid "The order has been changed."
-msgstr "Die Bestellung wurde geändert."
+msgstr "Die Anmeldung wurde geändert."
 
 #: pretix/control/views/orders.py:1306 pretix/presale/checkoutflow.py:387
 #: pretix/presale/views/order.py:532
@@ -13851,7 +13840,7 @@ msgstr ""
 
 #: pretix/control/views/orders.py:1604
 msgid "There is no order with the given order code."
-msgstr "Es existiert keine Bestellung mit der eingegebenen Bestellnummer."
+msgstr "Es existiert keine Anmeldung mit der eingegebenen Anmeldenummer."
 
 #: pretix/control/views/orders.py:1659
 msgid "The selected exporter was not found."
@@ -14004,7 +13993,7 @@ msgstr "Der ausgewählte Termin existiert nicht."
 msgctxt "subevent"
 msgid "A date can not be deleted if orders already have been placed."
 msgstr ""
-"Der Termin kann nicht gelöscht werden, da es bereits Bestellungen dafür gibt."
+"Der Termin kann nicht gelöscht werden, da es bereits Anmeldungen dafür gibt."
 
 #: pretix/control/views/subevents.py:124
 msgctxt "subevent"
@@ -14265,7 +14254,7 @@ msgstr "Teilnehmer-Badges"
 #: pretix/plugins/badges/exporters.py:98
 #: pretix/plugins/ticketoutputpdf/exporters.py:32
 msgid "Include pending orders"
-msgstr "Bestellungen mit ausstehender Zahlung mit einschließen"
+msgstr "Anmeldungen mit ausstehender Zahlung mit einschließen"
 
 #: pretix/plugins/badges/exporters.py:103
 #: pretix/plugins/checkinlists/exporters.py:49
@@ -14501,7 +14490,7 @@ msgstr "Bankdaten importieren"
 #: pretix/plugins/banktransfer/tasks.py:49
 #, python-format
 msgid "Your order received an incomplete payment: %(code)s"
-msgstr "Deine Bestellung wurde unvollständig bezahlt: %(code)s"
+msgstr "Deine Anmeldung wurde unvollständig bezahlt: %(code)s"
 
 #: pretix/plugins/banktransfer/tasks.py:93
 #: pretix/plugins/banktransfer/views.py:55
@@ -14513,7 +14502,7 @@ msgid ""
 "After completing your purchase, we will ask you to transfer the money to the "
 "following bank account, using a personal reference code:"
 msgstr ""
-"Nach Abschluss der Bestellung werden wir dich auffordern, das Geld unter "
+"Nach Abschluss der Anmeldung werden wir dich auffordern, das Geld unter "
 "Verwendung eines persönlich generierten Verwendungszwecks auf das folgende "
 "Bankkonto zu überweisen:"
 
@@ -14522,7 +14511,7 @@ msgid ""
 "We will assign you a personal reference code to use after you completed the "
 "order."
 msgstr ""
-"Wir werden dir nach Absenden der Bestellung einen persönlichen "
+"Wir werden dir nach Absenden der Anmeldung einen persönlichen "
 "Verwendungszweck zuweisen."
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/control.html:5
@@ -14588,7 +14577,7 @@ msgid ""
 msgstr ""
 "In den Zahlungseinstellungen dieser Veranstaltung ist der %(date)s als "
 "letztes Zahlungsdatum eingestellt. Auf dieser Seite können daher keine "
-"Bestellungen mehr als bezahlt markiert werden."
+"Anmeldungen mehr als bezahlt markiert werden."
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/import_form.html:16
 msgid "Upload a new file"
@@ -14682,7 +14671,7 @@ msgstr "Dein Import enthielt keine neuen Überweisungen."
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/job_detail.html:30
 msgid "Orders marked as paid"
-msgstr "Bestellung als bezahlt markiert"
+msgstr "Anmeldung als bezahlt markiert"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/job_detail.html:34
 msgid "Invalid payments"
@@ -14745,7 +14734,7 @@ msgstr "Verwerfen"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:37
 msgid "Assign to order"
-msgstr "Bestellung zuweisen"
+msgstr "Anmeldung zuweisen"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:48
 msgid "Retry"
@@ -14757,11 +14746,11 @@ msgstr "Kommentar:"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:75
 msgid "No order code detected"
-msgstr "Keine Bestellnummer erkannt"
+msgstr "Keine Anmeldenummer erkannt"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:77
 msgid "Invalid for this order"
-msgstr "Ungültig für diese Bestellung"
+msgstr "Ungültig für diese Anmeldung"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:79
 msgid "Error while processing"
@@ -14769,15 +14758,15 @@ msgstr "Fehler beim Verarbeiten"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:81
 msgid "The order is already marked as paid"
-msgstr "Die Bestellung ist bereits als bezahlt markiert"
+msgstr "Die Anmeldung ist bereits als bezahlt markiert"
 
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:83
 msgid "Order already paid"
-msgstr "Bestellung ist bereits bezahlt"
+msgstr "Anmeldung ist bereits bezahlt"
 
 #: pretix/plugins/banktransfer/views.py:50
 msgid "The order is already marked as paid."
-msgstr "Die Bestellung ist bereits als bezahlt markiert."
+msgstr "Die Anmeldung ist bereits als bezahlt markiert."
 
 #: pretix/plugins/banktransfer/views.py:82
 msgid "Problem sending email."
@@ -14785,7 +14774,7 @@ msgstr "Problem beim E-Mail-Versand."
 
 #: pretix/plugins/banktransfer/views.py:104
 msgid "Unknown order code"
-msgstr "Unbekannte Bestellnummer"
+msgstr "Unbekannte Anmeldenummer"
 
 #: pretix/plugins/banktransfer/views.py:282
 msgid "All unresolved transactions have been discarded."
@@ -14935,7 +14924,7 @@ msgid ""
 "automatically cancel orders when payments are refunded externally."
 msgstr ""
 "Bitte konfiguriere einen PayPal-Webhook zum folgenden Endpunkt, damit "
-"Bestellungen automatisch als storniert markiert werden, wenn die Zahlung "
+"Anmeldungen automatisch als storniert markiert werden, wenn die Zahlung "
 "zurückerstattet wird."
 
 #: pretix/plugins/paypal/payment.py:249 pretix/plugins/paypal/payment.py:264
@@ -15011,7 +15000,7 @@ msgid ""
 "has already been paid by other means. Please double check and refund the "
 "money via PayPal's interface."
 msgstr ""
-"Die PayPal-Transaktion %(payment)s war erfolgreich, aber die Bestellung "
+"Die PayPal-Transaktion %(payment)s war erfolgreich, aber die Anmeldung "
 "%(order)s wurde bereits mit einer anderen Methode bezahlt. Bitte kontaktiere "
 "Sie den Kunden und überweise das Geld über PayPals Oberfläche zurück."
 
@@ -15023,7 +15012,7 @@ msgid ""
 "could not be accepted. Please contact the user and refund the money via "
 "PayPal's interface."
 msgstr ""
-"Die PayPal-Transaktion %(payment)s war erfolgreich, aber die Bestellung "
+"Die PayPal-Transaktion %(payment)s war erfolgreich, aber die Anmeldung "
 "%(order)s war abgelaufen und das Produkt wurde während der Transaktion "
 "ausverkauft. Die Zahlung konnte daher nicht akzeptiert werden. Bitte "
 "kontaktiere den Kunden und überweise das Geld über PayPals Oberfläche zurück."
@@ -15035,7 +15024,7 @@ msgid ""
 "Do you want to mark the matching order (%(order)s) as refunded?"
 msgstr ""
 "PayPal hat gemeldet, dass die Zahlung %(payment)s erstattet oder storniert "
-"wurde. Soll die passende Bestellung (%(order)s) als erstattet markiert "
+"wurde. Soll die passende Anmeldung (%(order)s) als erstattet markiert "
 "werden?"
 
 #: pretix/plugins/paypal/templates/pretixplugins/paypal/checkout_payment_confirm.html:3
@@ -15043,7 +15032,7 @@ msgid ""
 "The total amount listed above will be withdrawn from your PayPal account "
 "after the confirmation of your purchase."
 msgstr ""
-"Der obige Gesamtbetrag wird nach der Bestätigung Ihrer Bestellung von deinem "
+"Der obige Gesamtbetrag wird nach der Bestätigung Ihrer Anmeldung von deinem "
 "PayPal-Account abgezogen."
 
 #: pretix/plugins/paypal/templates/pretixplugins/paypal/checkout_payment_form.html:3
@@ -15054,7 +15043,7 @@ msgid ""
 msgstr ""
 "Nach dem Klick auf „Fortfahren“ werden wir dich zu PayPal weiterleiten, um "
 "deine Zahlungsdaten einzugeben. Du wirst danach wieder hierher "
-"zurückgeleitet, um deine Bestellung zu bestätigen."
+"zurückgeleitet, um deine Anmeldung zu bestätigen."
 
 #: pretix/plugins/paypal/templates/pretixplugins/paypal/control.html:9
 msgid "Last update"
@@ -15312,8 +15301,8 @@ msgid ""
 "Test mode orders will only be scanned if you scan online. If you scan in "
 "asynchronous mode, test mode orders won't be there."
 msgstr ""
-"Testbestellungen können nur gescannt werden, wenn du online scannst. Im "
-"asynchronen Modus wirst du Testbestellungen nicht finden."
+"Testanmeldungen können nur gescannt werden, wenn du online scannst. Im "
+"asynchronen Modus wirst du Testanmeldungen nicht finden."
 
 #: pretix/plugins/pretixdroid/views.py:46
 #: pretix/plugins/pretixdroid/views.py:109
@@ -15346,12 +15335,12 @@ msgstr "Erstellt: %s"
 
 #: pretix/plugins/reports/exporters.py:151
 msgid "Order overview (PDF)"
-msgstr "Bestellübersicht (PDF)"
+msgstr "Anmeldeübersicht (PDF)"
 
 #: pretix/plugins/reports/exporters.py:190
 #: pretix/plugins/statistics/templates/pretixplugins/statistics/index.html:56
 msgid "Orders by product"
-msgstr "Bestellungen nach Produkt"
+msgstr "Anmeldungen nach Produkt"
 
 #: pretix/plugins/reports/exporters.py:210
 #: pretix/plugins/reports/exporters.py:211
@@ -15363,12 +15352,12 @@ msgstr "#"
 
 #: pretix/plugins/reports/exporters.py:281
 msgid "List of orders with taxes (PDF)"
-msgstr "Liste der Bestellungen mit Steuern (PDF)"
+msgstr "Liste der Anmeldungen mit Steuern (PDF)"
 
 #: pretix/plugins/reports/exporters.py:358
 #, python-brace-format
 msgid "Orders by tax rate ({currency})"
-msgstr "Bestellungen nach Steuersatz ({currency})"
+msgstr "Anmeldungen nach Steuersatz ({currency})"
 
 #: pretix/plugins/reports/exporters.py:367
 msgid "Gross"
@@ -15404,7 +15393,7 @@ msgstr "Zahlung ausstehend aber überfällig"
 
 #: pretix/plugins/sendmail/forms.py:57
 msgid "Send to customers with order status"
-msgstr "An Kunden mit Bestellstatus"
+msgstr "An Kunden mit Anmeldestatus"
 
 #: pretix/plugins/sendmail/signals.py:48
 msgid "Email was sent"
@@ -15412,11 +15401,11 @@ msgstr "E-Mail wurde verschickt"
 
 #: pretix/plugins/sendmail/signals.py:49
 msgid "The order received a mass email."
-msgstr "Die Bestellung hat eine Rundmail erhalten."
+msgstr "Die Anmeldung hat eine Rundmail erhalten."
 
 #: pretix/plugins/sendmail/templates/pretixplugins/sendmail/history.html:19
 msgid "Sent to orders:"
-msgstr "An Bestellungen:"
+msgstr "An Anmeldungen:"
 
 #: pretix/plugins/sendmail/templates/pretixplugins/sendmail/history.html:38
 msgid "Send a new email based on this"
@@ -15429,7 +15418,7 @@ msgstr "Ungültige Log-ID übergeben"
 #: pretix/plugins/sendmail/views.py:85
 msgid "There are no orders matching this selection."
 msgstr ""
-"Es existiert keine Bestellung, die zu den eingegebenen Kriterien passt."
+"Es existiert keine Anmeldung, die zu den eingegebenen Kriterien passt."
 
 #: pretix/plugins/sendmail/views.py:103
 msgid "Sample Company LLC"
@@ -15458,14 +15447,14 @@ msgstr "Dieses Plugin zeigt verschiedene Statistiken an."
 
 #: pretix/plugins/statistics/templates/pretixplugins/statistics/index.html:17
 msgid "Orders by day"
-msgstr "Bestellungen nach Datum"
+msgstr "Anmeldungen nach Datum"
 
 #: pretix/plugins/statistics/templates/pretixplugins/statistics/index.html:23
 msgid ""
 "Orders paid in multiple payments are shown with the date of their last "
 "payment."
 msgstr ""
-"Bestellungen, die in mehreren Zahlungen bezahlt wurden, werden mit dem Datum "
+"Anmeldungen, die in mehreren Zahlungen bezahlt wurden, werden mit dem Datum "
 "ihrer letzten Zahlung angezeigt."
 
 #: pretix/plugins/statistics/templates/pretixplugins/statistics/index.html:32
@@ -15477,7 +15466,7 @@ msgid ""
 "Only fully paid orders are counted. Orders paid in multiple payments are "
 "shown with the date of their last payment."
 msgstr ""
-"Nur vollständig bezahlte Bestellungen sind gezählt. Bestellungen, die in "
+"Nur vollständig bezahlte Anmeldungen sind gezählt. Anmeldungen, die in "
 "mehreren Zahlungen bezahlt wurden, werden mit dem Datum ihrer letzten "
 "Zahlung angezeigt."
 
@@ -15487,7 +15476,7 @@ msgid ""
 "soon as the first orders are submitted!"
 msgstr ""
 "Wir zeigen dir hier gleich eine Menge Statistiken – sobald die ersten "
-"Bestellungen eingegangen sind!"
+"Anmeldungen eingegangen sind!"
 
 #: pretix/plugins/stripe/__init__.py:10 pretix/plugins/stripe/__init__.py:13
 #: pretix/plugins/stripe/payment.py:43
@@ -15533,7 +15522,7 @@ msgid ""
 "asynchronous payment methods like SOFORT."
 msgstr ""
 "Bitte konfiguriere einen <a href=\"https://dashboard.stripe.com/account/"
-"webhooks\">Stripe Webhook</a> zum folgenden Endpunkt, damit Bestellungen "
+"webhooks\">Stripe Webhook</a> zum folgenden Endpunkt, damit Anmeldungen "
 "automatisch als storniert markiert werden, wenn die Zahlung zurückerstattet "
 "wird und zur Verarbeitung asynchroner Zahlungsmethoden wie SOFORT."
 
@@ -15862,7 +15851,7 @@ msgid ""
 "check and refund the money via Stripe's interface."
 msgstr ""
 "Die Stripe-Zahlung <a %(stripe_href)s>%(charge)s</a> war erfolgreich, aber "
-"die Bestellung %(order)s wurde bereits mit einer anderen Methode bezahlt. "
+"die Anmeldung %(order)s wurde bereits mit einer anderen Methode bezahlt. "
 "Bitte kontaktiere den Kunden und überweise das Geld über Stripes Oberfläche "
 "zurück."
 
@@ -15875,7 +15864,7 @@ msgid ""
 "refund the money via Stripe's interface."
 msgstr ""
 "Die Stripe-Zahlung <a %(stripe_href)s>%(charge)s</a> war erfolgreich, aber "
-"die Bestellung %(order)s war abgelaufen und das Produkt wurde während der "
+"die Anmeldung %(order)s war abgelaufen und das Produkt wurde während der "
 "Transaktion ausverkauft. Die Zahlung konnte daher nicht akzeptiert werden. "
 "Bitte kontaktiere den Kunden und überweise das Geld über Stripes Oberfläche "
 "zurück."
@@ -15888,7 +15877,7 @@ msgid ""
 "refunded?"
 msgstr ""
 "Stripe hat gemeldet, dass die Zahlung <a %(stripe_href)s>%(charge)s</a> "
-"erstattet oder storniert wurde. Soll die passende Bestellung (%(order)s) als "
+"erstattet oder storniert wurde. Soll die passende Anmeldung (%(order)s) als "
 "erstattet markiert werden?"
 
 #: pretix/plugins/stripe/templates/pretixplugins/stripe/checkout_payment_confirm.html:4
@@ -15914,7 +15903,7 @@ msgid ""
 msgstr ""
 "Nach dem Klick auf „Fortfahren“ wirst du zum Zahlungsdienstleister "
 "weitergeleitet, um deine Zahlungsdaten einzugeben. Du wirst danach wieder "
-"hierher zurückgeleitet, um deine Bestellung zu bestätigen."
+"hierher zurückgeleitet, um deine Anmeldung zu bestätigen."
 
 #: pretix/plugins/stripe/templates/pretixplugins/stripe/checkout_payment_form.html:9
 #: pretix/plugins/stripe/templates/pretixplugins/stripe/checkout_payment_form_stripe_checkout.html:6
@@ -16429,7 +16418,7 @@ msgstr "Deine Auswahl ist nicht mehr für dich reserviert."
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:6
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:8
 msgid "Review order"
-msgstr "Bestellung prüfen"
+msgstr "Anmeldung prüfen"
 
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:10
 msgid "Please review the details below and confirm your order."
@@ -16735,7 +16724,7 @@ msgstr "Minimale Menge: %(num)s"
 #: pretix/presale/templates/pretixpresale/event/voucher.html:203
 msgctxt "price"
 msgid "FREE"
-msgstr "GRATIS"
+msgstr ""
 
 #: pretix/presale/templates/pretixpresale/event/index.html:248
 msgid "Show variants"
@@ -16801,7 +16790,7 @@ msgstr "Anzahl an %(item)s"
 #: pretix/presale/templates/pretixpresale/event/voucher.html:269
 #: pretix/presale/templates/pretixpresale/event/index.html:464,+pretix/presale/templates/pretixpresale/event/voucher.html:269
 msgid "Add to cart"
-msgstr "Zur Auswahl hinzufügen"
+msgstr "Auswählen"
 
 #: pretix/presale/templates/pretixpresale/event/index.html:476
 msgid "Redeem a voucher"
@@ -17110,8 +17099,7 @@ msgid ""
 "You entered a voucher code that allows you to buy one of the following "
 "products at the specified price:"
 msgstr ""
-"Du hast einen Gutscheincode eingegeben, der den Kauf eines der folgenden "
-"Produkte zum angegebenen Preis ermöglicht:"
+"Du hast einen Gutscheincode eingegeben, der die folgende Auswahl ermöglicht:"
 
 #: pretix/presale/templates/pretixpresale/event/voucher.html:67
 #, python-format
@@ -17497,17 +17485,17 @@ msgstr "Schreibzugriff"
 #~ msgstr "Alle Produkte"
 
 #~ msgid "List of orders"
-#~ msgstr "Liste der Bestellungen"
+#~ msgstr "Liste der Anmeldungen"
 
 #~ msgid "Allow users to cancel unpaid orders"
-#~ msgstr "Stornieren unbezahlter Bestellungen erlauben"
+#~ msgstr "Stornieren unbezahlter Anmeldungen erlauben"
 
 #~ msgid ""
 #~ "If checked, users can cancel orders by themselves as long as they are not "
 #~ "yet paid."
 #~ msgstr ""
 #~ "Wenn diese Option aktiviert ist, können Teilnehmer*innen selbstständig "
-#~ "Bestellungen stornieren solange sie nicht bezahlt wurden."
+#~ "Anmeldungen stornieren solange sie nicht bezahlt wurden."
 
 #~ msgid "Sales overview"
 #~ msgstr "Verkaufsübersicht"
@@ -17541,32 +17529,32 @@ msgstr "Schreibzugriff"
 #~ "orders at all times, regardless of this setting"
 #~ msgstr ""
 #~ "Wenn diese Option aktiv ist und die allgemeinen Einstellungen es "
-#~ "erlauben, können Bestellungen, die dieses Produkt enthalten, vom Nutzer "
+#~ "erlauben, können Anmeldungen, die dieses Produkt enthalten, vom Nutzer "
 #~ "storniert werden solange sie noch nicht bezahlt sind. Benutzer können "
-#~ "nicht selbstständig bereits bezahlte Bestellungen stornieren und du "
-#~ "kannst jederzeit Bestellungen stornieren, unabhängig von dieser "
+#~ "nicht selbstständig bereits bezahlte Anmeldungen stornieren und du "
+#~ "kannst jederzeit Anmeldungen stornieren, unabhängig von dieser "
 #~ "Einstellung."
 
 #~ msgid "Order refunded"
-#~ msgstr "Bestellung zurückerstattet"
+#~ msgstr "Anmeldung zurückerstattet"
 
 #~ msgid "refunded"
 #~ msgstr "erstattet"
 
 #~ msgid "Order {order.code} has been refunded."
-#~ msgstr "Die Bestellung {order.code} wurde zurückerstattet."
+#~ msgstr "Die Anmeldung {order.code} wurde zurückerstattet."
 
 #~ msgid "Remove from order"
-#~ msgstr "Von Bestellung entfernen"
+#~ msgstr "Von Anmeldung entfernen"
 
 #~ msgid "The order has already been refunded."
-#~ msgstr "Die Bestellung wurde bereits zurückerstattet."
+#~ msgstr "Die Anmeldung wurde bereits zurückerstattet."
 
 #~ msgid "Visible in public lists"
 #~ msgstr "Öffentlich sichtbar"
 
 #~ msgid "Do you really want to mark this order as paid?"
-#~ msgstr "Möchtest du diese Bestellung wirklich als bezahlt markieren?"
+#~ msgstr "Möchtest du diese Anmeldung wirklich als bezahlt markieren?"
 
 #~ msgid "Check-in list (CSV)"
 #~ msgstr "Check-in-Liste (CSV)"
@@ -17659,26 +17647,26 @@ msgstr "Schreibzugriff"
 #~ "Name der Bank: Professional Banking Institute Ltd., London"
 
 #~ msgid "Order is not paid."
-#~ msgstr "Die Bestellung ist nicht bezahlt."
+#~ msgstr "Die Anmeldung ist nicht bezahlt."
 
 #~ msgid "Mark as not paid"
 #~ msgstr "Als nicht bezahlt markieren"
 
 #~ msgid "The order has been marked as not paid."
-#~ msgstr "Die Bestellung wurde als unbezahlt markiert."
+#~ msgstr "Die Anmeldung wurde als unbezahlt markiert."
 
 #~ msgid "We are unable to find a user matching the data you provided."
 #~ msgstr ""
 #~ "Wir konnten keinen Benutzer finden, der zu den eingegebenen Daten passt."
 
 #~ msgid "You cannot change a free order to a paid order."
-#~ msgstr "Du kannst eine kostenlose Bestellung nicht kostenpflichtig machen."
+#~ msgstr "Du kannst eine kostenlose Anmeldung nicht kostenpflichtig machen."
 
 #~ msgid "Payment type"
 #~ msgstr "Zahlungsart"
 
 #~ msgid "Payment state was manually modified"
-#~ msgstr "Der Bestellungsstatus wurde manuell verändert"
+#~ msgstr "Der Anmeldungsstatus wurde manuell verändert"
 
 #~ msgid "Payment provider: %s"
 #~ msgstr "Zahlungsanbieter: %s"
@@ -17691,19 +17679,19 @@ msgstr "Schreibzugriff"
 #~ "manuell zurück."
 
 #~ msgid "The order has been marked as refunded."
-#~ msgstr "Die Bestellung wurde als zurückerstattet markiert."
+#~ msgstr "Die Anmeldung wurde als zurückerstattet markiert."
 
 #~ msgid ""
 #~ "Currently, paid orders can only be changed in a way that does not change "
 #~ "the total price of the order as partial payments or refunds are not yet "
 #~ "supported."
 #~ msgstr ""
-#~ "Derzeit können bereits bezahlte Bestellungen nur verändert werden, wenn "
-#~ "die Gesamtsumme der Bestellung dabei gleich bleibt, da Teil-Erstattungen "
+#~ "Derzeit können bereits bezahlte Anmeldungen nur verändert werden, wenn "
+#~ "die Gesamtsumme der Anmeldung dabei gleich bleibt, da Teil-Erstattungen "
 #~ "und Teil-Nachzahlungen noch nicht unterstützt werden."
 
 #~ msgid "The payment state of this order was manually modified."
-#~ msgstr "Der Status dieser Bestellung wurde manuell verändert."
+#~ msgstr "Der Status dieser Anmeldung wurde manuell verändert."
 
 #~ msgid "The payment has to be completed before %(date)s."
 #~ msgstr "Die Zahlung muss bis zum %(date)s abgeschlossen sein."
@@ -17711,7 +17699,7 @@ msgstr "Schreibzugriff"
 #~ msgid ""
 #~ "Do you really want to refund this order? You cannot revert this action."
 #~ msgstr ""
-#~ "Möchtest du diese Bestellung wirklich zurückerstatten? Du kannst diese "
+#~ "Möchtest du diese Anmeldung wirklich zurückerstatten? Du kannst diese "
 #~ "Aktion nicht rückgängig machen."
 
 #~ msgid "PDF Ticket Editor"
@@ -17721,11 +17709,11 @@ msgstr "Schreibzugriff"
 #~ "This order was paid using a payment provider plugin that is now disabled "
 #~ "or uninstalled."
 #~ msgstr ""
-#~ "Diese Bestellung wurde mit einem Zahlungsplugin bezahlt, das nun "
+#~ "Diese Anmeldung wurde mit einem Zahlungsplugin bezahlt, das nun "
 #~ "deaktiviert oder deinstalliert ist."
 
 #~ msgid "This order is not assigned to a known payment provider."
-#~ msgstr "Die Bestellung ist keiner bekannten Zahlungsmethode zugeordnet."
+#~ msgstr "Die Anmeldung ist keiner bekannten Zahlungsmethode zugeordnet."
 
 #~ msgid "This order has been paid via bank transfer."
 #~ msgstr "Diese Bezahlung wurde per Banküberweisung bezahlt."
@@ -17736,18 +17724,18 @@ msgstr "Schreibzugriff"
 
 #~ msgid "This order has been paid via bank transfer and marked as refunded."
 #~ msgstr ""
-#~ "Diese Bestellung wurde per Banküberweisung bezahlt und ist als "
+#~ "Diese Anmeldung wurde per Banküberweisung bezahlt und ist als "
 #~ "zurückerstattet markiert."
 
 #~ msgid ""
 #~ "This order has been planned to be paid via bank transfer, but no payment "
 #~ "has been received yet."
 #~ msgstr ""
-#~ "Diese Bestellung soll per Banküberweisung bezahlt werden, aber noch ist "
+#~ "Diese Anmeldung soll per Banküberweisung bezahlt werden, aber noch ist "
 #~ "keine Zahlung eingegangen."
 
 #~ msgid "This order has been paid manually."
-#~ msgstr "Diese Bestellung wurde manuell bezahlt."
+#~ msgstr "Diese Anmeldung wurde manuell bezahlt."
 
 #~ msgid ""
 #~ "This order has been planned to be paid manually, but is not marked as "
@@ -17789,13 +17777,13 @@ msgstr "Schreibzugriff"
 #~ "Es wird kein Download angeboten."
 
 #~ msgid "Yes, mark order as refunded"
-#~ msgstr "Die Bestellung als zurückerstattet markieren"
+#~ msgstr "Die Anmeldung als zurückerstattet markieren"
 
 #~ msgid "This action cannot be undone."
 #~ msgstr "Diese Aktion kann nicht rückgängig gemacht werden."
 
 #~ msgid "This order has been paid via PayPal."
-#~ msgstr "Diese Bestellung wurde über PayPal bezahlt."
+#~ msgstr "Diese Anmeldung wurde über PayPal bezahlt."
 
 #~ msgid ""
 #~ "This order has been planned to be paid via PayPal and has been marked as "
@@ -17813,14 +17801,14 @@ msgstr "Schreibzugriff"
 
 #~ msgid "The order cannot be marked as refunded as it is not marked as paid!"
 #~ msgstr ""
-#~ "Die Bestellung kann nicht als erstattet markiert werden, da sie nicht als "
+#~ "Die Anmeldung kann nicht als erstattet markiert werden, da sie nicht als "
 #~ "bezahlt markiert ist."
 
 #~ msgid ""
 #~ "The order has been marked as refunded and the issue has been marked as "
 #~ "resolved!"
 #~ msgstr ""
-#~ "Die Bestellung wurde als erstattet und das Problem als gelöst markiert."
+#~ "Die Anmeldung wurde als erstattet und das Problem als gelöst markiert."
 
 #~ msgid "Automatically refund charge with Stripe"
 #~ msgstr "Automatisch über Stripe zurückbuchen"
@@ -17835,27 +17823,27 @@ msgstr "Schreibzugriff"
 #~ msgstr "Stripe-Zahlungsverlauf"
 
 #~ msgid "This order has been paid with %(method)s."
-#~ msgstr "Diese Bestellung wurde mit %(method)s bezahlt."
+#~ msgstr "Diese Anmeldung wurde mit %(method)s bezahlt."
 
 #~ msgid ""
 #~ "This order has been planned to be paid with %(method)s and has been "
 #~ "marked as refunded."
 #~ msgstr ""
-#~ "Diese Bestellung sollte mit %(method)s bezahlt werden und ist als "
+#~ "Diese Anmeldung sollte mit %(method)s bezahlt werden und ist als "
 #~ "erstattet markiert."
 
 #~ msgid ""
 #~ "This order has been planned to be paid with %(method)s, but the payment "
 #~ "has not yet been completed."
 #~ msgstr ""
-#~ "Diese Bestellung soll mit %(method)s bezahlt werden, aber die Bezahlung "
+#~ "Diese Anmeldung soll mit %(method)s bezahlt werden, aber die Bezahlung "
 #~ "wurde noch nicht abgeschlossen."
 
 #~ msgid ""
 #~ "This order has been planned to be paid via Stripe, but the payment has "
 #~ "not yet been completed."
 #~ msgstr ""
-#~ "Diese Bestellung soll per Stripe bezahlt werden, aber die Bezahlung wurde "
+#~ "Diese Anmeldung soll per Stripe bezahlt werden, aber die Bezahlung wurde "
 #~ "noch nicht abgeschlossen."
 
 #~ msgid "Use different payment method"
@@ -17919,7 +17907,7 @@ msgstr "Schreibzugriff"
 #~ "The number of days after placing an order the user has to pay to preserve "
 #~ "their reservation."
 #~ msgstr ""
-#~ "Die Anzahl von Tagen, die ein Käufer zum Bezahlen seiner Bestellung hat."
+#~ "Die Anzahl von Tagen, die ein Käufer zum Bezahlen seiner Anmeldung hat."
 
 #~ msgid ""
 #~ "Updating add-ons via PATCH/PUT is not supported. Please use the dedicated "
@@ -18286,11 +18274,11 @@ msgstr "Schreibzugriff"
 #~ msgstr ""
 #~ "Wenn diese Option aktiviert ist, wird für alle Produkte, die Zutritt zur "
 #~ "Veranstaltung erlauben, eine E-Mail-Adresse erfragt. Wichtig: Egal, ob "
-#~ "diese Option eingestellt ist oder nicht, wird für jede Bestellung nach "
-#~ "einer E-Mail-Adresse des Bestellers gefragt. Die Bestellbestätigung "
+#~ "diese Option eingestellt ist oder nicht, wird für jede Anmeldung nach "
+#~ "einer E-Mail-Adresse des Bestellers gefragt. Die Anmeldebestätigung "
 #~ "inklusive des Links zur Bestellseite wird immer nur an diese Adresse "
 #~ "geschickt. Aktiviere diese Option nur, wenn du zusätzlich von jedem "
-#~ "Teilnehmer (z.B. im Falle einer Gruppenbestellung) einzelne E-Mail-"
+#~ "Teilnehmer (z.B. im Falle einer Gruppenanmeldung) einzelne E-Mail-"
 #~ "Adressen erfragen willst."
 
 #~ msgid "Require attendee e-mails"
@@ -18315,7 +18303,7 @@ msgstr "Schreibzugriff"
 #~ "If you deactivate this, an order including this product might not be "
 #~ "canceled by the user. It may still be canceled by you."
 #~ msgstr ""
-#~ "Wenn du dies deaktivierst, kann eine Bestellung die dieses Produkt "
+#~ "Wenn du dies deaktivierst, kann eine Anmeldung die dieses Produkt "
 #~ "enthält nicht vom Kunden storniert werden. Sie kann immer noch von dir "
 #~ "storniert werden."
 
@@ -18423,7 +18411,7 @@ msgstr "Schreibzugriff"
 #~ "Not all of the selected orders could be marked as paid as some of them "
 #~ "have expired and the selected items are sold out."
 #~ msgstr ""
-#~ "Nicht alle ausgewählten Bestellungen konnten als bezahlt markiert werden, "
+#~ "Nicht alle ausgewählten Anmeldungen konnten als bezahlt markiert werden, "
 #~ "weil manche von ihnen nach Ablauf der Zahlungsfrist kamen und die "
 #~ "betreffenden Produkte ausverkauft sind."
 
@@ -18434,7 +18422,7 @@ msgstr "Schreibzugriff"
 #~ msgstr "Falscher Betrag. Erwartet: %s"
 
 #~ msgid "Changed order"
-#~ msgstr "Bestellung verändert"
+#~ msgstr "Anmeldung verändert"
 
 #~ msgid "Total orders"
 #~ msgstr "bestellt"
@@ -18517,7 +18505,7 @@ msgstr "Schreibzugriff"
 #~ "\n"
 #~ "wir haben deine Zahlung für %(event)s erfolgreich erhalten. Vielen Dank!\n"
 #~ "\n"
-#~ "Du kannst deine Bestellung unter folgender Adresse ändern und einsehen:\n"
+#~ "Du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 #~ "%(url)s\n"
 #~ "\n"
 #~ "Viele Grüße,\n"
@@ -18539,12 +18527,12 @@ msgstr "Schreibzugriff"
 #~ msgstr ""
 #~ "Hallo,\n"
 #~ "\n"
-#~ "wir haben IhredeineBestellung für %(event)s mit einem Gesamtbetrag von\n"
+#~ "wir haben Ihredeineanmeldung für %(event)s mit einem Gesamtbetrag von\n"
 #~ "%(total)s %(currency)s erhalten. Bitte schließe die Bezahlung bis "
 #~ "%(date)s ab.\n"
 #~ "%(payment_info)s\n"
 #~ "\n"
-#~ "Du kannst deine Bestellung unter folgender Adresse einsehen und ändern:\n"
+#~ "Du kannst deine Anmeldung unter folgender Adresse einsehen und ändern:\n"
 #~ "%(url)s\n"
 #~ "\n"
 #~ "Viele Grüße,\n"
