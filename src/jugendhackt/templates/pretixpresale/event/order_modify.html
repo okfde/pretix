@@ -2,11 +2,11 @@
 {% load i18n %}
 {% load bootstrap3 %}
 {% load rich_text %}
-{% block title %}{% trans "Anmeldung bearbeiten" %}{% endblock %}
+{% block title %}{% trans "Modify order" %}{% endblock %}
 {% block content %}
     <h2>
         {% blocktrans trimmed with code=order.code %}
-            Anmeldung bearbeiten: {{ code }}
+            Modify order: {{ code }}
         {% endblocktrans %}
     </h2>
     <form class="form-horizontal" method="post" enctype="multipart/form-data">

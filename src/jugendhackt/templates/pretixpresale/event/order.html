@@ -4,25 +4,25 @@
 {% load eventsignal %}
 {% load money %}
 {% load eventurl %}
-{% block title %}{% trans "Anmeldebestätigung" %}{% endblock %}
+{% block title %}{% trans "Order details" %}{% endblock %}
 {% block content %}
     {% if "thanks" in request.GET or "paid" in request.GET %}
         <div class="thank-you">
             <span class="fa fa-check-circle"></span>
 
-            <h2>{% trans "Fertig!" %}</h2>
+            <h2>{% trans "Thank you!" %}</h2>
             {% if order.status != 'p' %}
                 <p>
-                  {% trans "Deine Anmeldung war erfolgreich." %}<br><br>
-                  {% if order.require_approval %}
-                  <strong>
-                    {% trans "Deine Anmeldung muss durch die Organisator*innen bestätigt werden!" %}
-                  </strong><br>
-                  {% blocktrans trimmed %}
-                  Deine Anmeldung bedeutet nicht automatisch, dass du einen Platz als Teilnehmer*in bekommst.
-                  Wir schicken dir eine Email sobald wir dir einen festen Platz geben können.
-                  {% endblocktrans %}
-                  {% endif %}
+                    {% trans "Your order has been placed successfully. See below for details." %}<br>
+                    {% if order.require_approval %}
+                        <strong>
+                            {% trans "Please note that we still await approval by the event organizer before you can pay and complete this order." %}
+                        </strong>
+                    {% else %}
+                        <strong>
+                            {% trans "Please note that we still await your payment to complete the process." %}
+                        </strong>
+                    {% endif %}
                 </p>
             {% elif order.total == 0 %}
                 <p>{% trans "Your order has been processed successfully! See below for details." %}</p>
@@ -30,12 +30,11 @@
                 <p>{% trans "We successfully received your payment. See below for details." %}</p>
             {% endif %}
             <p class="iframe-hidden">{% blocktrans trimmed %}
-              Bitte bookmarke oder speichere diesen Link um dir deine Anmeldedaten und Status
-              später ansehen zu können. Wir schicken dir den Link auch per Email zu.
+                Please bookmark or save the link to this exact page if you want to access your order later. We also sent you an email containing the link to the address you specified.
             {% endblocktrans %}</p>
-            <p class="iframe-only">{% blocktrans trimmed %}\
-              Bitte bookmarke oder speichere diesen Link um dir deine Anmeldedaten und Status
-              später ansehen zu können. Wir schicken dir den Link auch per Email zu.
+            <p class="iframe-only">{% blocktrans trimmed %}
+                Please save the following link if you want to access your order later. We
+                also sent you an email containing the link to the address you specified.
             {% endblocktrans %}<br>
                 <code>{{ url }}</code></p>
             <div class="clearfix"></div>
@@ -43,7 +42,7 @@
     {% endif %}
     <h2>
         {% blocktrans trimmed with code=order.code %}
-            Dein Anmeldungscode: {{ code }}
+            Your order: {{ code }}
         {% endblocktrans %}
         {% if order.testmode %}
             <span class="label label-warning">{% trans "TEST MODE" %}</span>
@@ -124,7 +123,7 @@
                 </div>
             {% endif %}
             <h3 class="panel-title">
-                {% trans "Deine Anmeldedaten" %}
+                {% trans "Ordered items" %}
             </h3>
         </div>
         <div class="panel-body">
@@ -174,14 +173,60 @@
                 </div>
             </div>
         {% endif %}
-
+        {% if invoice_address_asked or request.event.settings.invoice_name_required %}
+            <div class="col-xs-12 {% if invoices or can_generate_invoice %}col-md-6{% endif %}">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        {% if order.can_modify_answers %}
+                            <div class="pull-right">
+                                <a href="{% eventurl event "presale:event.order.modify" secret=order.secret order=order.code %}">
+                                    <span class="fa fa-edit"></span>
+                                    {% trans "Change details" %}
+                                </a>
+                            </div>
+                        {% endif %}
+                        <h3 class="panel-title">
+                            {% if request.event.settings.invoice_address_asked %}
+                                {% trans "Invoice information" %}
+                            {% else %}
+                                {% trans "Contact information" %}
+                            {% endif %}
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            {% if invoice_address_asked %}
+                                <dt>{% trans "Company" %}</dt>
+                                <dd>{{ order.invoice_address.company }}</dd>
+                            {% endif %}
+                            <dt>{% trans "Name" %}</dt>
+                            <dd>{{ order.invoice_address.name }}</dd>
+                            {% if invoice_address_asked %}
+                                <dt>{% trans "Address" %}</dt>
+                                <dd>{{ order.invoice_address.street|linebreaksbr }}</dd>
+                                <dt>{% trans "ZIP code and city" %}</dt>
+                                <dd>{{ order.invoice_address.zipcode }} {{ order.invoice_address.city }}</dd>
+                                <dt>{% trans "Country" %}</dt>
+                                <dd>{{ order.invoice_address.country.name|default:order.invoice_address.country_old }}</dd>
+                                {% if request.event.settings.invoice_address_vatid %}
+                                    <dt>{% trans "VAT ID" %}</dt>
+                                    <dd>{{ order.invoice_address.vat_id }}</dd>
+                                {% endif %}
+                                <dt>{% trans "Internal Reference" %}</dt>
+                                <dd>{{ order.invoice_address.internal_reference }}</dd>
+                            {% endif %}
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
         <div class="clearfix"></div>
     </div>
     {% if order.cancel_allowed and order.user_cancel_allowed %}
         <div class="panel panel-primary panel-cancellation">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    {% trans "Anmeldung zurück nehmen" context "action" %}
+                    {% trans "Cancellation" context "action" %}
                 </h3>
             </div>
             <div class="panel-body">
@@ -189,14 +234,15 @@
                     {% if order.user_cancel_fee %}
                         <p>
                             {% blocktrans trimmed with fee=order.user_cancel_fee|money:request.event.currency %}
-                                Du kannst deine Anmeldung zurückziehen.
+                                You can cancel this order. In this case, a cancellation fee of <strong>{{ fee }}</strong>
+                                will be kept and you will receive a refund of the remainder to your original payment method.
                             {% endblocktrans %}
                             {% trans "This will invalidate all of your tickets." %}
                         </p>
                     {% else %}
                         <p>
                             {% blocktrans trimmed %}
-                          Du kannst deine Anmeldung zurückziehen.
+                                You can cancel this order and receive a full refund to your original payment method.
                             {% endblocktrans %}
                             {% trans "This will invalidate all of your tickets." %}
                         </p>
@@ -209,14 +255,14 @@
                 {% else %}
                     <p>
                         {% blocktrans trimmed %}
-                      Du kannst deine Anmeldung zurückziehen.
+                            You can cancel this order using the following button.
                         {% endblocktrans %}
                         {% trans "This will invalidate all of your tickets." %}
                     </p>
                     <a href="{% eventurl event 'presale:event.order.cancel' secret=order.secret order=order.code %}"
                         class="btn btn-danger">
                         <span class="fa fa-remove"></span>
-                        {% trans "Anmeldung zurück nehmen" %}
+                        {% trans "Cancel order" %}
                     </a>
                 {% endif %}
             </div>

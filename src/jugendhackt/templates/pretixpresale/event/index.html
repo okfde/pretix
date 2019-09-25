@@ -6,7 +6,7 @@
 {% load thumb %}
 {% load eventsignal %}
 {% load rich_text %}
-{% block title %}{% trans "Anmeldung" %}{% endblock %}
+{% block title %}{% trans "Presale" %}{% endblock %}
 
 {% block custom_header %}
     {{ block.super }}
@@ -34,13 +34,13 @@
             <summary class="panel-heading">
                 <h3 class="panel-title">
                     <span>
-                        <strong>{% trans "Deine Anmeldung" %}</strong>
+                        <strong>{% trans "Your cart" %}</strong>
                     </span>
                     <span>
                         <strong id="cart-deadline-short" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
                             {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
                             {% else %}
-                                {% trans "Anmeldung zurück gesetzt" %}
+                                {% trans "Cart expired" %}
                             {% endif %}
                         </strong>
                         <i class="fa fa-angle-down collapse-indicator"></i>
@@ -50,31 +50,30 @@
             <div>
                 <div class="panel-body">
                     {% include "pretixpresale/event/fragment_cart.html" with cart=cart event=request.event editable=True %}
-                      <em>
+                    <em id="cart-deadline" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
                         {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
-                        {% blocktrans trimmed with minutes=cart.minutes_left %}
-                        Bitte schließe deine Anmeldung innerhalb von {{ minutes}} Minuten ab.
-                        Sonst setzen wir sie zurück.
-                        {% endblocktrans %}
+                            {% blocktrans trimmed with minutes=cart.minutes_left %}
+                                The items in your cart are reserved for you for {{ minutes }} minutes.
+                            {% endblocktrans %}
                         {% else %}
-                        {% trans "Deine Anmeldung wurde zurück gesetzt. Bitte fange noch einmal am Anfang an." %}
+                            {% trans "The items in your cart are no longer reserved for you." %}
                         {% endif %}
-                      </em>
+                    </em>
                     <div class="row checkout-button-row">
                         <div class="col-md-4 col-xs-12 hidden-xs">
                             <form method="post" data-asynctask action="{% eventurl request.event "presale:event.cart.clear" cart_namespace=cart_namespace %}">
                                 {% csrf_token %}
                                 <button class="btn btn-block btn-default btn-lg" type="submit">
-                                    <i class="fa fa-close"></i> {% trans "Anmeldung abbrechen" %}</button>
+                                    <i class="fa fa-close"></i> {% trans "Empty cart" %}</button>
                             </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4 col-xs-12">
                             <a class="btn btn-block btn-primary btn-lg"
                                     href="{% eventurl request.event "presale:event.checkout.start" cart_namespace=cart_namespace  %}">
                                 {% if has_addon_choices or cart.total == 0 %}
-                                    {% trans "Anmeldung fortsetzen" %}
+                                    {% trans "Continue" %}
                                 {% else %}
-                                    {% trans "Anmeldung fortsetzen" %}
+                                    {% trans "Proceed with checkout" %}
                                 {% endif %}
                             </a>
                         </div>
@@ -82,7 +81,7 @@
                             <form method="post" data-asynctask action="{% eventurl request.event "presale:event.cart.clear" cart_namespace=cart_namespace %}">
                                 {% csrf_token %}
                                 <button class="btn btn-block btn-default btn-lg" type="submit">
-                                    <i class="fa fa-close"></i> {% trans "Anmeldung abbrechen" %}</button>
+                                    <i class="fa fa-close"></i> {% trans "Empty cart" %}</button>
                             </form>
                         </div>
                         <div class="clearfix"></div>
@@ -93,7 +92,7 @@
     {% endif %}
 
     {% if show_dates %}
-        {% if subevent %}
+        {% if subevent and "year" not in request.GET %}
             {% if show_cart %}
                 <a class="subevent-toggle btn btn-primary btn-block btn-lg">
                     {% trans "Add tickets for a different date" %}
@@ -213,18 +212,25 @@
 
         {% if ev.presale_is_running or event.settings.show_items_outside_presale_period %}
             <form method="post" data-asynctask
-                    data-asynctask-headline="{% trans "Wir starten deine Anmeldung!" %}"
-                    data-asynctask-text="{% blocktrans with time=event.settings.reservation_time %}Sobald du mit der Anmeldung beginnst, hast du {{ time }} Minuten um sie abzuschließen. Danach setzen wir sie zurück und du musst von vorne beginnen.{% endblocktrans %}"
+                    data-asynctask-headline="{% trans "We're now trying to reserve this for you!" %}"
+                    data-asynctask-text="{% blocktrans with time=event.settings.reservation_time %}Once the items are in your cart, you will have {{ time }} minutes to complete your purchase.{% endblocktrans %}"
                     action="{% eventurl request.event "presale:event.cart.add" cart_namespace=cart_namespace %}?next={{ cart_redirect|urlencode }}">
                 {% csrf_token %}
-              <input type="hidden" name="subevent" value="{{ subevent.id|default_if_none:"" }}" />
+                <input type="hidden" name="subevent" value="{{ subevent.id|default_if_none:"" }}" />
+                {% if ev.seating_plan_id %}
+                    {% if event.has_subevents %}
+                        {% eventsignal event "pretix.presale.signals.render_seating_plan" request=request subevent=subevent %}
+                    {% else %}
+                        {% eventsignal event "pretix.presale.signals.render_seating_plan" request=request %}
+                    {% endif %}
+                {% endif %}
                 {% include "pretixpresale/event/fragment_product_list.html" %}
                 {% if ev.presale_is_running and display_add_to_cart %}
                     <section class="front-page">
                         <div class="row-fluid">
                             <div class="col-md-4 col-md-offset-8 col-xs-12">
                                 <button class="btn btn-block btn-primary btn-lg" type="submit" id="btn-add-to-cart">
-                                    <i class=""></i> {% trans "Jetzt anmelden" %}
+                                    {% trans "Add to cart" %}
                                 </button>
                             </div>
                             <div class="clearfix"></div>
@@ -265,20 +271,20 @@
     {% if not cart_namespace %}
         {% eventsignal event "pretix.presale.signals.front_page_bottom" %}
         <section class="front-page">
-            <h3>{% trans "Du hast dich schon angemeldet?" %}</h3>
+            <h3>{% trans "If you already ordered a ticket" %}</h3>
             <div>
                 <div class="col-md-8 col-xs-12">
                     <p>
-                      {% blocktrans trimmed %}
-                         Du willst dir Status der Anmeldung ansehen oder Angaben verändern?
-                         Oder du hast den Link zu deiner Anmeldung verloren?
-                         Klicke auf 'Link erneut senden' und wir schicken dir den Link zu deiner Anmeldung erneut zu.
+                        {% blocktrans trimmed %}
+                            If you want to see or change the status and details of your order, click on the link in one of the
+                            emails we sent you during the order process. If you cannot find the link, click on the
+                            following button to request the link to your order to be sent to you again.
                         {% endblocktrans %}
                     </p>
                 </div>
                 <div class="col-md-4 col-xs-12 text-right">
                     <a class="btn btn-block btn-primary" href="{% eventurl event "presale:event.resend_link" %}">
-                        {% trans "Anmeldelink erneut verschicken" %}
+                        {% trans "Resend order links" %}
                     </a>
                 </div>
                 <div class="clearfix"></div>

@@ -9,10 +9,9 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-16 11:35+0000\n"
 "PO-Revision-Date: 2019-04-11 00:00+0000\n"
-"Last-Translator: Martin Gross <martin@pc-coholic.de>\n"
-"Language-Team: German (informal) <https://translate.pretix.eu/projects/"
-"pretix/pretix/de_Informal/>\n"
-"Language: de_Informal\n"
+"Last-Translator: \n"
+"Language-Team: German (Jugend hackt)"
+"Language: de_jugendhackt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,14 +29,14 @@ msgstr "Shop deaktiviert"
 #: pretix/control/templates/pretixcontrol/events/index.html:126
 #: pretix/control/templates/pretixcontrol/subevents/index.html:115
 msgid "Presale over"
-msgstr "Verkauf vorüber"
+msgstr "Anmeldung vorüber"
 
 #: htmlcov/pretix_control_views_dashboards_py.html:902
 #: pretix/control/forms/filter.py:372 pretix/control/forms/filter.py:507
 #: pretix/control/templates/pretixcontrol/events/index.html:128
 #: pretix/control/templates/pretixcontrol/subevents/index.html:117
 msgid "Presale not started"
-msgstr "noch nicht gestartet"
+msgstr "Anmeldung noch nicht gestartet"
 
 #: htmlcov/pretix_control_views_dashboards_py.html:904
 #: pretix/control/templates/pretixcontrol/events/index.html:130
@@ -823,7 +822,6 @@ msgstr "Rechnungsnummer"
 #: pretix/presale/templates/pretixpresale/organizers/index.html:47
 #: pretix/base/exporters/orderlist.py:479,+pretix/base/exporters/orderlist.py:568,+pretix/base/models/items.py:912,+pretix/base/models/orders.py:143,+pretix/base/models/orders.py:1810,+pretix/control/forms/filter.py:378,+pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/import_assign.html:17,+pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:11,+pretix/presale/templates/pretixpresale/organizers/index.html:47
 #: pretix/base/models/checkin.py:16,+pretix/base/models/items.py:1182,+pretix/base/models/orders.py:909,+pretix/base/models/vouchers.py:92,+pretix/base/models/waitinglist.py:33,+pretix/control/forms/checkin.py:24,+pretix/control/forms/event.py:1206,+pretix/control/forms/filter.py:187,+pretix/control/forms/filter.py:789,+pretix/control/forms/item.py:144,+pretix/control/forms/orders.py:212,+pretix/control/forms/orders.py:257,+pretix/control/forms/vouchers.py:70,+pretix/control/templates/pretixcontrol/checkin/lists.html:61,+pretix/control/templates/pretixcontrol/items/quotas.html:47,+pretix/control/templates/pretixcontrol/subevents/bulk.html:7,+pretix/control/templates/pretixcontrol/subevents/detail.html:6,+pretix/control/templates/pretixcontrol/subevents/detail.html:11,+pretix/control/templates/pretixcontrol/vouchers/index.html:104,+pretix/control/templates/pretixcontrol/waitinglist/index.html:133,+pretix/control/views/waitinglist.py:203,+pretix/plugins/checkinlists/exporters.py:316,+pretix/plugins/reports/exporters.py:271,+pretix/plugins/sendmail/forms.py:79,+pretix/presale/templates/pretixpresale/event/checkout_questions.html:92
-#, fuzzy
 msgid "Date"
 msgstr "Termin"
 
@@ -934,9 +932,8 @@ msgstr "Gesamtbetrag (ohne Steuern)"
 #: pretix/base/exporters/orderlist.py:610
 #: pretix/base/invoice.py:425,+pretix/control/templates/pretixcontrol/order/index.html:163,+pretix/presale/templates/pretixpresale/event/order.html:174
 #: pretix/control/navigation.py:92,+pretix/presale/templates/pretixpresale/event/order.html:255
-#, fuzzy
 msgid "Cancellation"
-msgstr "Stornierung"
+msgstr "Anmeldung zurück nehmen"
 
 #: pretix/base/exporters/orderlist.py:531
 #: pretix/base/exporters/orderlist.py:610
@@ -4244,9 +4241,7 @@ msgid ""
 msgstr ""
 "Hallo,\n"
 "\n"
-"wir haben deine Anmeldung für {event} erfolgreich abgeschlossen. Vielen "
-"Dank! Da keine\n"
-"kostenpflichtigen Artikel bestellt wurden, ist keine Zahlung erforderlich.\n"
+"wir haben deine Anmeldung für {event} erfolgreich abgeschlossen. Vielen Dank!.\n"
 "\n"
 "Du kannst deine Anmeldung unter folgender Adresse ändern und einsehen:\n"
 "{url}\n"
@@ -4630,7 +4625,7 @@ msgstr ""
 #: pretix/base/shredder.py:43
 msgid "Your ticket shop needs to be offline to use this feature."
 msgstr ""
-"Der Ticketshop muss abgeschaltet sein, damit diese Funktion bereit steht."
+"Das Anmeldesystem muss abgeschaltet sein, damit diese Funktion bereit steht."
 
 #: pretix/base/shredder.py:125
 msgid "E-mails"
@@ -5507,7 +5502,6 @@ msgid "Ask for beneficiary"
 msgstr "Nach abweichendem Leistungsempfänger fragen"
 
 #: pretix/control/forms/event.py:625
-#, fuzzy
 #| msgid ""
 #| "Does only work if an invoice address is asked for. VAT ID is not required."
 msgid "Do not ask for invoice address if an order is free"
@@ -5653,7 +5647,7 @@ msgid ""
 "e.g. Thank you for your purchase! You can find more information on the event "
 "at ..."
 msgstr ""
-"z.B. Vielen Dank für deinen Ticketkauf! Du findest mehr Informationen zur "
+"z.B. Vielen Dank für deine Anmeldung! Du findest mehr Informationen zur "
 "Veranstaltung unter …"
 
 #: pretix/control/forms/event.py:746
@@ -6258,7 +6252,7 @@ msgstr "ausstehend oder bezahlt"
 #: pretix/presale/templates/pretixpresale/event/fragment_order_status.html:16
 #: pretix/control/forms/filter.py:107,+pretix/control/forms/filter.py:207,+pretix/control/forms/filter.py:759,+pretix/control/templates/pretixcontrol/items/question.html:24,+pretix/control/templates/pretixcontrol/orders/fragment_order_status.html:16,+pretix/control/templates/pretixcontrol/orders/overview.html:34,+pretix/plugins/reports/exporters.py:202,+pretix/presale/templates/pretixpresale/event/fragment_order_status.html:16
 msgid "Expired"
-msgstr "abgelaufen"
+msgstr "Abgelaufen"
 
 #: pretix/control/forms/filter.py:108 pretix/control/forms/filter.py:208
 #: pretix/control/templates/pretixcontrol/items/question.html:25
@@ -7879,7 +7873,6 @@ msgstr "Allgemeines"
 #: pretix/presale/templates/pretixpresale/event/order.html:57
 #: pretix/control/navigation.py:36,+pretix/control/templates/pretixcontrol/event/quick_setup.html:151,+pretix/control/templates/pretixcontrol/order/index.html:523,+pretix/presale/templates/pretixpresale/event/checkout_confirm.html:65,+pretix/presale/templates/pretixpresale/event/order.html:57
 #: pretix/presale/checkoutflow.py:481
-#, fuzzy
 msgid "Payment"
 msgstr "Zahlung"
 
@@ -7907,7 +7900,7 @@ msgstr "Rechnungswesen"
 #: pretix/presale/templates/pretixpresale/event/order.html:255
 msgctxt "action"
 msgid "Cancellation"
-msgstr "Stornierung"
+msgstr "Anmeldung zurück nehmen"
 
 #: pretix/control/navigation.py:100
 #: pretix/control/templates/pretixcontrol/event/widget.html:8
@@ -10463,7 +10456,7 @@ msgstr "Ja, Anmeldung freigeben"
 #: pretix/presale/templates/pretixpresale/event/order_cancel.html:5
 #: pretix/control/templates/pretixcontrol/order/cancel.html:5,+pretix/control/templates/pretixcontrol/order/cancel.html:9,+pretix/control/templates/pretixcontrol/order/index.html:60,+pretix/presale/templates/pretixpresale/event/order.html:280,+pretix/presale/templates/pretixpresale/event/order.html:292,+pretix/presale/templates/pretixpresale/event/order_cancel.html:5
 msgid "Cancel order"
-msgstr "Stornieren"
+msgstr "Anmeldung zurückziehen"
 
 #: pretix/control/templates/pretixcontrol/order/cancel.html:11
 #: pretix/control/templates/pretixcontrol/order/deny.html:10
@@ -10822,13 +10815,13 @@ msgstr "Details bearbeiten"
 
 #: pretix/control/templates/pretixcontrol/order/index.html:232
 msgid "Change products"
-msgstr "Produkte bearbeiten"
+msgstr "Anmeldedaten bearbeiten"
 
 #: pretix/control/templates/pretixcontrol/order/index.html:237
 #: pretix/presale/templates/pretixpresale/event/order.html:152
 #: pretix/control/templates/pretixcontrol/order/index.html:237,+pretix/presale/templates/pretixpresale/event/order.html:152
 msgid "Ordered items"
-msgstr "Ausgewählte Anmeldung"
+msgstr "Deine Anmeldedaten"
 
 #: pretix/control/templates/pretixcontrol/order/index.html:255
 #, python-format
@@ -11257,7 +11250,7 @@ msgstr "Exportieren"
 #: pretix/presale/templates/pretixpresale/event/fragment_order_status.html:11
 #: pretix/control/templates/pretixcontrol/orders/fragment_order_status.html:11,+pretix/presale/templates/pretixpresale/event/fragment_order_status.html:11
 msgid "Canceled (paid fee)"
-msgstr "storniert (bezahlte Gebühr)"
+msgstr "Storniert (bezahlte Gebühr)"
 
 #: pretix/control/templates/pretixcontrol/orders/index.html:13
 msgid "Nobody ordered a ticket yet."
@@ -16149,21 +16142,18 @@ msgstr "Ticket-Layout: {}"
 
 #: pretix/presale/checkoutflow.py:54
 #: pretix/presale/checkoutflow.py:52
-#, fuzzy
 msgctxt "checkoutflow"
 msgid "Step"
 msgstr "Schritt"
 
 #: pretix/presale/checkoutflow.py:185
 #: pretix/presale/checkoutflow.py:183
-#, fuzzy
 msgctxt "checkoutflow"
 msgid "Add-on products"
 msgstr "Zusatzauswahl"
 
 #: pretix/presale/checkoutflow.py:310
 #: pretix/presale/checkoutflow.py:308
-#, fuzzy
 msgctxt "checkoutflow"
 msgid "Your information"
 msgstr "Deine Informationen"
@@ -16208,10 +16198,9 @@ msgstr "Die eingegebenen Zahlungsinformationen sind unvollständig."
 #: pretix/presale/checkoutflow.py:600
 #: pretix/presale/checkoutflow.py:585
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:6,+pretix/presale/templates/pretixpresale/event/checkout_confirm.html:8
-#, fuzzy
 msgctxt "checkoutflow"
 msgid "Review order"
-msgstr "Anmeldung prüfen"
+msgstr "Anmeldedaten Überprüfen"
 
 #: pretix/presale/checkoutflow.py:683
 #: pretix/presale/checkoutflow.py:660
@@ -16327,7 +16316,7 @@ msgid ""
 "This ticket shop is currently in test mode. Please do not perform any real "
 "purchases as your order might be deleted without notice."
 msgstr ""
-"Der Ticketshop ist momentan im Testmodus. Bitte führe keine echten Anmeldung "
+"Das Anmeldesystem ist momentan im Testmodus. Bitte führe keine echten Anmeldung "
 "durch, deine Anmeldung kann jederzeit ohne Warnung gelöscht werden."
 
 #: pretix/presale/templates/pretixpresale/event/base.html:93
@@ -16343,16 +16332,15 @@ msgstr "Impressum"
 msgid ""
 "For some of the products in your cart, you can choose additional options "
 "before you continue."
-msgstr "Bevor du fortfährst, wähle bitte eine der Zusatzoptionen aus."
+msgstr "Hier sind zusätzliche Optionen für deine Teilnahme."
 
 #: pretix/presale/templates/pretixpresale/event/checkout_addons.html:10
 #: pretix/presale/templates/pretixpresale/event/checkout_addons.html:9
 msgid "We're now trying to book these add-ons for you!"
-msgstr "Wir versuchen nun, diese Zusatzoption für dich zu buchen!"
+msgstr "Wir speichern die zusätzlichen Optionen für dich!"
 
 #: pretix/presale/templates/pretixpresale/event/checkout_addons.html:39
 #: pretix/presale/templates/pretixpresale/event/checkout_addons.html:35
-#, fuzzy, python-format
 msgid "You need to choose exactly one option from this category."
 msgid_plural "You need to choose %(min_count)s options from this category."
 msgstr[0] "Du musst genau %(min_count)s Optionen aus dieser Kategorie auswählen."
@@ -16391,14 +16379,15 @@ msgstr "Anmeldung fortsetzen"
 #: pretix/presale/templates/pretixpresale/event/index.html:24
 #: pretix/presale/templates/pretixpresale/event/checkout_base.html:11,+pretix/presale/templates/pretixpresale/event/checkout_confirm.html:32,+pretix/presale/templates/pretixpresale/event/index.html:24
 msgid "Your cart"
-msgstr "Deine Auswahl"
+msgstr "Deine Anmeldung"
 
 #: pretix/presale/templates/pretixpresale/event/checkout_base.html:18
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:27
 #: pretix/presale/templates/pretixpresale/event/index.html:31
 #: pretix/presale/templates/pretixpresale/event/checkout_base.html:18,+pretix/presale/templates/pretixpresale/event/checkout_confirm.html:27,+pretix/presale/templates/pretixpresale/event/index.html:31
 msgid "Cart expired"
-msgstr "Auswahl abgelaufen"
+msgstr "Deine Anmeldung wurde zurück gesetzt. Bitte fange noch einmal "
+"am Anfang an."
 
 #: pretix/presale/templates/pretixpresale/event/checkout_base.html:30
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:41
@@ -16406,14 +16395,14 @@ msgstr "Auswahl abgelaufen"
 #: pretix/presale/templates/pretixpresale/event/checkout_base.html:30,+pretix/presale/templates/pretixpresale/event/checkout_confirm.html:41,+pretix/presale/templates/pretixpresale/event/index.html:43
 #, python-format
 msgid "The items in your cart are reserved for you for %(minutes)s minutes."
-msgstr "Deine Auswahl ist noch %(minutes)s Minuten für dich reserviert."
+msgstr "Deine Anmeldung ist noch %(minutes)s Minuten für dich reserviert."
 
 #: pretix/presale/templates/pretixpresale/event/checkout_base.html:34
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:45
 #: pretix/presale/templates/pretixpresale/event/index.html:47
 #: pretix/presale/templates/pretixpresale/event/checkout_base.html:34,+pretix/presale/templates/pretixpresale/event/checkout_confirm.html:45,+pretix/presale/templates/pretixpresale/event/index.html:47
 msgid "The items in your cart are no longer reserved for you."
-msgstr "Deine Auswahl ist nicht mehr für dich reserviert."
+msgstr "Deine Anmeldedaten sind nicht mehr für dich reserviert."
 
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:6
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:8
@@ -16422,12 +16411,11 @@ msgstr "Anmeldung prüfen"
 
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:10
 msgid "Please review the details below and confirm your order."
-msgstr ""
-"Bitte überprüfe die untenstehenden Details und bestätige deiner Anmeldung."
+msgstr "Bitte überprüfe deine Angaben und bestätige deine Anmeldung."
 
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:12
 msgid "Please hang tight, we're finalizing your order!"
-msgstr "Einen Moment, deine Anmeldung ist fast fertig!"
+msgstr "Warte kurz, wir speichern deine Anmeldung!"
 
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:19
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:60
@@ -16453,7 +16441,7 @@ msgstr "Bestätigungen"
 msgid ""
 "Your order requires approval by the event organizer before it can be "
 "confirmed and forms a valid contract."
-msgstr "Deine Anmeldung erfordert eine Bestätigung."
+msgstr "Deine Anmeldung muss durch die Organisator*innen bestätigt werden!"
 
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:168
 msgid ""
@@ -16597,7 +16585,6 @@ msgid "Add one more"
 msgstr "Ein weitereres hinzufügen"
 
 #: pretix/presale/templates/pretixpresale/event/fragment_checkoutflow.html:22
-#, fuzzy
 msgctxt "checkoutflow"
 msgid "Order confirmed"
 msgstr "Anmeldebestätigung"
@@ -16638,7 +16625,7 @@ msgstr "Noch nicht verfügbar"
 
 #: pretix/presale/templates/pretixpresale/event/index.html:9
 msgid "Presale"
-msgstr "Anmeldezeitraum"
+msgstr "Anmeldung"
 
 #: pretix/presale/templates/pretixpresale/event/index.html:55
 #: pretix/presale/templates/pretixpresale/event/index.html:73
@@ -16724,7 +16711,7 @@ msgstr "Minimale Menge: %(num)s"
 #: pretix/presale/templates/pretixpresale/event/voucher.html:203
 msgctxt "price"
 msgid "FREE"
-msgstr ""
+msgstr "&nbsp;"
 
 #: pretix/presale/templates/pretixpresale/event/index.html:248
 msgid "Show variants"
@@ -16826,7 +16813,7 @@ msgstr "Links erneut senden"
 
 #: pretix/presale/templates/pretixpresale/event/order.html:13
 msgid "Thank you!"
-msgstr "Vielen Dank!"
+msgstr "Fertig!"
 
 #: pretix/presale/templates/pretixpresale/event/order.html:16
 msgid "Your order has been placed successfully. See below for details."
@@ -16947,7 +16934,7 @@ msgid ""
 "%(fee)s</strong> will be kept and you will receive a refund of the remainder "
 "to your original payment method."
 msgstr ""
-"Du kannst diese Anmeldung stornieren. In diesem Fall wird eine Stornogebühr "
+"Du kannst diese Anmeldung zurückziehen. In diesem Fall wird eine Stornogebühr "
 "von <strong>%(fee)s</strong> einbehalten und der Restbetrag an deine "
 "ursprüngliche Zahlungsart erstattet."
 
@@ -16964,12 +16951,12 @@ msgid ""
 "You can cancel this order and receive a full refund to your original payment "
 "method."
 msgstr ""
-"Du kannst diese Anmeldung stornieren und eine volle Erstattung auf deine "
+"Du kannst diese Anmeldung zurückziehen und eine volle Erstattung auf deine "
 "ursprüngliche Zahlungsmethode erhalten."
 
 #: pretix/presale/templates/pretixpresale/event/order.html:284
 msgid "You can cancel this order using the following button."
-msgstr "Du kannst diese Anmeldung mit dem folgenden Knopf stornieren."
+msgstr "Du kannst diese Anmeldung mit dem folgenden Knopf zurückziehen."
 
 #: pretix/presale/templates/pretixpresale/event/order.html:297
 msgid ""
@@ -17287,13 +17274,11 @@ msgstr ""
 "Veranstaltung zuzugreifen."
 
 #: pretix/presale/views/event.py:315
-#, fuzzy
 msgctxt "subevent"
 msgid "No date selected."
 msgstr "Kein Termin ausgewählt."
 
 #: pretix/presale/views/event.py:318
-#, fuzzy
 msgctxt "subevent"
 msgid "Unknown date selected."
 msgstr "Ungültiger Termin ausgewählt."
@@ -17371,7 +17356,6 @@ msgid "We could not identify the product you selected."
 msgstr "Wir konnten Deine Auswahl nicht finden."
 
 #: pretix/presale/views/waiting.py:90
-#, fuzzy
 msgctxt "subevent"
 msgid "You need to select a date."
 msgstr "Du musst einen Termin auswählen."

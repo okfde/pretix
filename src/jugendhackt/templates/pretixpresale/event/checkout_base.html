@@ -7,20 +7,35 @@
         <summary class="panel-heading">
             <h3 class="panel-title">
                 <span>
-                    <strong>{% trans "Deine Anmeldung" %}</strong>
+                    <strong>{% trans "Your cart" %}</strong>
                 </span>
                 <span>
                     <strong id="cart-deadline-short" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
                         {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
 
                         {% else %}
-                            {% trans "Anmeldung zurück gesetzt" %}
+                            {% trans "Cart expired" %}
                         {% endif %}
                     </strong>
                 </span>
             </h3>
         </summary>
+        <div>
+            <div class="panel-body">
+                {% include "pretixpresale/event/fragment_cart.html" with cart=cart event=request.event %}
+                <em id="cart-deadline" data-expires="{{ cart.first_expiry|date:"Y-m-d H:i:sO" }}">
+                    {% if cart.minutes_left > 0 or cart.seconds_left > 0 %}
+                        {% blocktrans trimmed with minutes=cart.minutes_left %}
+                            The items in your cart are reserved for you for {{ minutes }} minutes.
+                        {% endblocktrans %}
+                    {% else %}
+                        {% trans "The items in your cart are no longer reserved for you." %}
+                    {% endif %}
+                </em>
+            </div>
+        </div>
     </details>
+    <h2>{% trans "Checkout" %}</h2>
     {% include "pretixpresale/event/fragment_checkoutflow.html" %}
     {% block inner %}
     {% endblock %}

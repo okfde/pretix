@@ -14,15 +14,16 @@
                 – {{ line.variation }}
             {% endif %}
             {% if line.voucher %}
-                <br /><span class="fa fa-tags"></span> {% trans "Voucher code used:" %} {{ line.voucher.code }}
+                <br /><span class="fa fa-tags fa-fw"></span> {% trans "Voucher code used:" %} {{ line.voucher.code }}
             {% endif %}
             {% if line.subevent %}
-                <br /><span class="fa fa-calendar"></span> {{ line.subevent.name }} &middot; {{ line.subevent.get_date_range_display }}
+                <br /><span class="fa fa-calendar fa-fw"></span> {{ line.subevent.name }} &middot; {{ line.subevent.get_date_range_display }}
                 {% if event.settings.show_times %}
                     <span class="fa fa-clock-o"></span>
                     {{ line.subevent.date_from|date:"TIME_FORMAT" }}
                 {% endif %}
             {% endif %}
+
 
             {% if line.has_questions %}
                 <dl>
@@ -74,9 +75,31 @@
                 {% endfor %}
             {% endif %}
             </div>
-        {% else %}
+        {% elif line.addon_to %}
+            <div class="count">&nbsp;</div>
+            {% if line.price > 0 %}
+            <div class="singleprice price">
+                {% if event.settings.display_net_prices %}
+                    {{ line.net_price|money:event.currency }}
+                {% else %}
+                    {{ line.price|money:event.currency }}
+                {% endif %}
+            </div>
+            {% endif %}
+        {% elif line.item.max_per_order > 1 %}
             <div class="count">
-
+                {% if editable %}
+                <form action="{% eventurl event "presale:event.cart.remove" cart_namespace=cart_namespace|default_if_none:"" %}"
+                        data-asynctask-headline="{% trans "Okay, we're removing that…" %}"
+                        method="post" data-asynctask>
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{ line.id }}" />
+                    <button class="btn btn-mini btn-link" title="{% trans "Remove one" %}">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </form>
+                {% endif %}
+                {{ line.count }}
                 {% if editable %}
                 <form action="{% eventurl event "presale:event.cart.add" cart_namespace=cart_namespace|default_if_none:"" %}"
                         data-asynctask-headline="{% trans "We're trying to reserve another one for you!" %}"
@@ -95,13 +118,47 @@
                         <input type="hidden" name="price_{{ line.item.id }}"
                                 value="{% if event.settings.display_net_prices %}{{ line.net_price }}{% else %}{{ line.price }}{% endif %}" />
                     {% endif %}
-
+                    <button class="btn btn-mini btn-link" title="{% trans "Add one more" %}" {% if line.seat %}disabled{% endif %}>
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </form>
                 {% endif %}
             </div>
-
+            {% if line.price > 0 %}
+            <div class="singleprice price">
+                {% if event.settings.display_net_prices %}
+                    {{ line.net_price|money:event.currency }}
+                {% else %}
+                    {{ line.price|money:event.currency }}
+                {% endif %}
+            </div>
+            {% endif %}
         {% endif %}
-
+        {% if line.total > 0 %}
+        <div class="totalprice price">
+            {% if event.settings.display_net_prices %}
+                <strong>{{ line.net_total|money:event.currency }}</strong>
+                {% if line.tax_rate and line.total %}
+                <br />
+                    <small>
+                        {% blocktrans trimmed with rate=line.tax_rate|floatformat:-2 taxname=line.tax_rule.name|default:s_taxes %}
+                            <strong>plus</strong> {{ rate }}% {{ taxname }}
+                            {% endblocktrans %}
+                    </small>
+                    {% endif %}
+            {% else %}
+                <strong>{{ line.total|money:event.currency }}</strong>
+                {% if line.tax_rate and line.total %}
+                <br />
+                    <small>
+                        {% blocktrans trimmed with rate=line.tax_rate|floatformat:-2 taxname=line.tax_rule.name|default:s_taxes %}
+                            incl. {{ rate }}% {{ taxname }}
+                        {% endblocktrans %}
+                    </small>
+                {% endif %}
+            {% endif %}
+        </div>
+        {% endif %}
         {% if download %}
             <div class="download-mobile">
                 {% if line.generate_ticket %}
@@ -168,6 +225,16 @@
         </div>
         <div class="col-md-3 col-xs-6 col-md-offset-5 price">
             {{ cart.tax_total|money:event.currency }}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+{% elif cart.total > 0 %}
+    <div class="row cart-row total">
+        <div class="col-md-4 col-xs-6">
+            <strong>{% trans "Total" %}</strong>
+        </div>
+        <div class="col-md-3 col-xs-6 col-md-offset-5 price">
+            <strong>{{ cart.total|money:event.currency }}</strong>
         </div>
         <div class="clearfix"></div>
     </div>
