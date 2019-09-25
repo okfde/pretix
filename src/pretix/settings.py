@@ -393,23 +393,23 @@ FORMAT_MODULE_PATH = [
 
 ALL_LANGUAGES = [
     ('en', _('English')),
-    ('de', _('German')),
+    # ('de', _('German')),
     ('de-informal', _('German (informal)')),
     ('de-jugendhackt', _('German (Jugend Hackt)')),
-    ('nl', _('Dutch')),
-    ('nl-informal', _('Dutch (informal)')),
-    ('da', _('Danish')),
-    ('fr', _('French')),
-    ('pt-br', _('Portuguese (Brazil)')),
-    ('es', _('Spanish')),
-    ('tr', _('Turkish')),
-    ('pl', _('Polish')),
-    ('it', _('Italian')),
-    ('zh-hans', _('Chinese (simplified)')),
-    ('el', _('Greek'))
+    # ('nl', _('Dutch')),
+    # ('nl-informal', _('Dutch (informal)')),
+    # ('da', _('Danish')),
+    # ('fr', _('French')),
+    # ('pt-br', _('Portuguese (Brazil)')),
+    # ('es', _('Spanish')),
+    # ('tr', _('Turkish')),
+    # ('pl', _('Polish')),
+    # ('it', _('Italian')),
+    # ('zh-hans', _('Chinese (simplified)')),
+    # ('el', _('Greek'))
 ]
 LANGUAGES_OFFICIAL = {
-    'en', 'de', 'de-informal'
+    'en', 'de', 'de-informal', 'de-jugendhackt'
 }
 LANGUAGES_INCUBATING = {
     'pt-br', 'da', 'pl', 'it',
